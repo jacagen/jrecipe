@@ -22,3 +22,6 @@ channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
 If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+
+# Notes
+[Compose tutorial](https://developer.android.com/develop/ui/compose/tutorial)
