@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalUuidApi::class)
 
-package com.jacagen.jrecipe.io.codec
+package com.jacagen.jrecipe.codec
 
 import org.bson.BsonReader
 import org.bson.BsonWriter

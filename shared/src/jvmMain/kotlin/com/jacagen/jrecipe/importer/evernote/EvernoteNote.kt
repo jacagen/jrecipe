@@ -1,9 +1,10 @@
 @file:OptIn(ExperimentalTime::class, ExperimentalUuidApi::class)
 
-package com.jacagen.jrecipe.model.importer.evernote
+package com.jacagen.jrecipe.importer.evernote
 
 
-import com.jacagen.jrecipe.io.database
+import com.jacagen.jrecipe.dao.mongodb.database
+import com.jacagen.jrecipe.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.RecipeSource
 import com.jacagen.jrecipe.model.Tag
@@ -59,7 +60,7 @@ internal data class EvernoteNote(
     internal fun toRecipe() = Recipe(
         id = Uuid.parse(_id),
         title = title,
-        source = RecipeSource.EVERNOTE,
+        source = "EVERNOTE", //RecipeSource.EVERNOTE,
         author = author,
         sourceUrl = sourceUrl,
         content = content,
@@ -172,12 +173,11 @@ internal suspend fun saveNotesToMongo(notes: List<EvernoteNote>) {
 
 
 private suspend fun loadMongoEvernoteToRecipes() {
+    recipeDao.deleteAll()
     val evernoteCollection = database.getCollection<EvernoteNote>("evernote")
-    val recipeCollection = database.getCollection<Recipe>("recipe")
-    recipeCollection.deleteMany(Document())
     val recipes = evernoteCollection.find().map { evernote ->
         evernote.toRecipe()
     }.toList()
-    recipeCollection.insertMany(recipes)
+    recipeDao.insert(recipes)
 }
 

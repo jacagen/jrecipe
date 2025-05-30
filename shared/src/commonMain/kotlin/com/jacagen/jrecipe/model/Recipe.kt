@@ -10,7 +10,7 @@ data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) co
     @ObjectId val id: Uuid,
 
     val title: String,
-    val source: RecipeSource,
+    val source: String, // RecipeSource,
     val author: String?,
     val sourceUrl: String?,
     val content: String,

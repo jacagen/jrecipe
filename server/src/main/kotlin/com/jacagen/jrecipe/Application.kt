@@ -1,5 +1,6 @@
 package com.jacagen.jrecipe
 
+import com.jacagen.jrecipe.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.RecipeSource
 import io.ktor.server.application.*
@@ -25,28 +26,7 @@ fun Application.module() {
         }
         get("/recipes") {
             call.respond(
-                listOf(
-                    Recipe(
-                        Uuid.random(), "Chocolate Cake",
-                        source = RecipeSource.EVERNOTE,
-                        "ChatGPT",
-                        "https://chatgpt.com/share/6834c0c6-21f8-8003-8e84-3892d08d7c77",
-                        "Flour, eggs, sugar...",
-                        createdInSource = Clock.System.now(),
-                        updatedInSource = Clock.System.now(),
-                        tags = emptySet(),
-                    ),
-                    Recipe(
-                        Uuid.random(), "Pasta",
-                        source = RecipeSource.EVERNOTE,
-                        "ChatGPT",
-                        "https://chatgpt.com/share/6834c0c6-21f8-8003-8e84-3892d08d7c77",
-                        "Boil water, add pasta...",
-                        createdInSource = Clock.System.now(),
-                        updatedInSource = Clock.System.now(),
-                        tags = emptySet(),
-                    ),
-                )
+                recipeDao.getAll()
             )
         }
     }
