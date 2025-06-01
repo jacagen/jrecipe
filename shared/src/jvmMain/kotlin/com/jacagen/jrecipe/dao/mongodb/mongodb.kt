@@ -2,6 +2,7 @@
 
 package com.jacagen.jrecipe.dao.mongodb
 
+import com.jacagen.jrecipe.codec.KotlinTimeInstantCodecProvider
 import com.jacagen.jrecipe.codec.KotlinUuidCodecProvider
 import com.jacagen.jrecipe.model.Recipe
 import com.mongodb.MongoClientSettings
@@ -13,6 +14,7 @@ val codecRegistry = CodecRegistries.fromRegistries(
     MongoClientSettings.getDefaultCodecRegistry(),
     CodecRegistries.fromProviders(
         KotlinUuidCodecProvider(),
+        KotlinTimeInstantCodecProvider(),
         PojoCodecProvider.builder().automatic(true).build()
     )
 )
@@ -24,5 +26,5 @@ val settings = MongoClientSettings.builder()
 val coroutineMongoClient = MongoClient.Factory.create(settings) // Should close at app shutdown
 val database = coroutineMongoClient.getDatabase("jcmenu")
 
-internal val recipeCollection = database.getCollection<Recipe>("evernote")
+internal val recipeCollection = database.getCollection<Recipe>("recipe")
 val recipeDao = MongoRecipeDao(recipeCollection)
