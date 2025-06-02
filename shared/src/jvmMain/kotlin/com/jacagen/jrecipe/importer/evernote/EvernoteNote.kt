@@ -3,13 +3,21 @@
 package com.jacagen.jrecipe.importer.evernote
 
 
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.JsonNode
+import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator
 import com.jacagen.jrecipe.dao.mongodb.database
 import com.jacagen.jrecipe.dao.mongodb.recipeDao
+import com.jacagen.jrecipe.llm.model
+import com.jacagen.jrecipe.llm.objectMapper
 import com.jacagen.jrecipe.model.Recipe
-import com.jacagen.jrecipe.model.RecipeSource
 import com.jacagen.jrecipe.model.Tag
+import dev.langchain4j.data.message.SystemMessage
+import dev.langchain4j.data.message.UserMessage
+import dev.langchain4j.kotlin.model.chat.chat
+import dev.langchain4j.model.chat.request.ChatRequest
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
 import org.bson.Document
 import org.w3c.dom.Element
@@ -27,8 +35,10 @@ import kotlin.uuid.Uuid
 
 private val evernoteInstantFormatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss'Z'")
 
+private val systemMessage = systemMessage()
+
 internal data class EvernoteNote(
-    val _id: String = UUID.randomUUID().toString(),
+    @Suppress("PropertyName") val _id: String = UUID.randomUUID().toString(),
     val title: String,
     val created: Instant,
     val updated: Instant,
@@ -43,31 +53,50 @@ internal data class EvernoteNote(
 ) {
     @Suppress("unused")
     fun dump() {
-        println("Title: ${title}")
-        println("Created: ${created}")
-        println("Updated: ${updated}")
-        println("Author: ${author}")
-        println("Source: ${source}")
-        println("SourceUrl: ${sourceUrl}")
-        println("SourceApplication: ${sourceApplication}")
-        println("Subject date: ${subjectDate}")
-        println("Content class: ${contentClass}")
+        println("Title: $title")
+        println("Created: $created")
+        println("Updated: $updated")
+        println("Author: $author")
+        println("Source: $source")
+        println("SourceUrl: $sourceUrl")
+        println("SourceApplication: $sourceApplication")
+        println("Subject date: $subjectDate")
+        println("Content class: $contentClass")
         println("Tags: ${tags.joinToString()}")
         println("Content: ${content.take(100)}...")
         println("---")
     }
 
-    internal fun toRecipe() = Recipe(
-        id = Uuid.parse(_id),
-        title = title,
-        source = "EVERNOTE", //RecipeSource.EVERNOTE,
-        author = author,
-        sourceUrl = sourceUrl,
-        content = content,
-        createdInSource = created.toKotlinInstant(),
-        updatedInSource = updated.toKotlinInstant(),
-        tags = tags,
-    )
+    internal suspend fun toRecipe(): Recipe {
+        val request = ChatRequest.builder().messages(
+            systemMessage, UserMessage(
+                """
+                    Please format the following recipe as instructed.
+                    Set its `id` field to `$_id`.
+                    Set its `title` field to `$title`.
+                    Set its `source` field to `EVERNOTE`.
+                """.trimIndent()
+            ), UserMessage(content)
+        )
+        val response = model.chat(
+            request
+        )
+        val jsonText = response.aiMessage().text()  // JSON string--but what if it's not??
+        println(jsonText)
+        val typeRef = object : TypeReference<Recipe>() {}
+        val recipe = objectMapper.readValue(jsonText, typeRef)
+        println("Processed recipe $title")
+        return recipe.copy(
+            id = Uuid.parse(_id),
+            title = title,
+            source = "EVERNOTE", //RecipeSource.EVERNOTE,
+            author = author,
+            sourceUrl = sourceUrl,
+            createdInSource = created.toKotlinInstant(),
+            updatedInSource = updated.toKotlinInstant(),
+            tags = tags,
+        )
+    }
 }
 
 fun main() = runBlocking {
@@ -147,13 +176,12 @@ private fun parseEnexFile(file: File): List<EvernoteNote> {
 }
 
 private fun parseEvernoteTimestamp(ts: String): Instant {
-    return LocalDateTime.parse(ts, evernoteInstantFormatter)
-        .toInstant(ZoneOffset.UTC)
+    return LocalDateTime.parse(ts, evernoteInstantFormatter).toInstant(ZoneOffset.UTC)
 }
 
 private suspend fun loadEvernoteToMongo() {
-    val resource = EvernoteNote::class.java.classLoader.getResource("recipeSource/Recipes.enex")
-        ?: error("Resource not found")
+    val resource =
+        EvernoteNote::class.java.classLoader.getResource("recipeSource/Recipes.enex") ?: error("Resource not found")
     val file = File(resource.toURI())
     val notes = parseEnexFile(file)
     saveNotesToMongo(notes)
@@ -173,11 +201,38 @@ internal suspend fun saveNotesToMongo(notes: List<EvernoteNote>) {
 
 
 private suspend fun loadMongoEvernoteToRecipes() {
-    recipeDao.deleteAll()
+    //recipeDao.deleteAll()
     val evernoteCollection = database.getCollection<EvernoteNote>("evernote")
-    val recipes = evernoteCollection.find().map { evernote ->
-        evernote.toRecipe()
-    }.toList()
-    recipeDao.insert(recipes)
+    evernoteCollection.find()
+        .filter { recipeDao.findById(Uuid.parse(it._id)) == null }
+        .map { evernote ->
+            evernote.toRecipe()
+        }.collect { recipeDao.insert(it) }
 }
 
+private fun systemMessage(): SystemMessage {
+    val schemaGen = JsonSchemaGenerator(objectMapper)
+    val jsonSchema = schemaGen.generateSchema(Recipe::class.java)
+    val schemaNode: JsonNode = objectMapper.valueToTree(jsonSchema)
+    val props = schemaNode.get("properties")    // Ever null????
+
+    val fields = props.fieldNames().asSequence().map { name ->
+        val typeNode = props.get(name)
+        val typeStr = typeNode?.get("type")?.asText() ?: "unknown"
+        "`$name` ($typeStr)"
+    }.joinToString(", ")
+    val jsonInstruction = """
+        You are a JSON API. 
+        You will be given a recipe described in HTML, and your job is to parse that recipe and convert it to JSON.
+        Here are the available JSON fields for you to use: $fields.
+        You do not need to fill in all of the fields.   
+        Respond only with raw JSON. Do not include explanations, formatting, or commentary.  BE SURE THE JSON IS WELL-FORMED!
+        Do not wrap your response in triple-backticks.
+        Do not include any HTML in field values--if there is a field that contains formatted text, please convert the HTML to Markdown.
+        For any fields which contain date/times: please return them as a structure with two fields: `epochSeconds` and `nanosecondsOfSecond`.
+        Return an empty list ([]) for the value of `tags`.
+        For each recipe always return an `ingredients` list--if you can not figure out any ingredients, return the empty list ([]).
+        If there is no valid value for the `content` field, just make something up yourself.
+    """.trimIndent()
+    return SystemMessage(jsonInstruction)
+}

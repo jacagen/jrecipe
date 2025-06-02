@@ -87,9 +87,12 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
             .padding(16.dp)
             .weight(3f)
     ) {
-        recipe?.let {
-            Text(it.title, style = MaterialTheme.typography.titleLarge)
+        recipe?.let { recipe ->
+            Text(recipe.title, style = MaterialTheme.typography.titleLarge)
             Spacer(Modifier.height(8.dp))
+            recipe.ingredients.forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
+            Spacer(Modifier.height(8.dp))
+            Text(recipe.content, style = MaterialTheme.typography.bodyMedium)
         } ?: Text("Select a recipe to view details")
     }
 }

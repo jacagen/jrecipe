@@ -32,8 +32,9 @@ data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) co
     val source: String, // RecipeSource,
     val author: String?,
     val sourceUrl: String?,
+    val ingredients: List<String>,
     val content: String,
-    @Serializable(with = InstantIso8601Serializer::class) val createdInSource: Instant,
-    @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant,
-    val tags: Set<Tag>,
+    @Serializable(with = InstantIso8601Serializer::class) val createdInSource: Instant?,
+    @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant?,
+    val tags: Set<Tag>?,
 )
