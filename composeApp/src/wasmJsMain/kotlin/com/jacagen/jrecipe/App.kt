@@ -1,27 +1,18 @@
 package com.jacagen.jrecipe
 
-import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.animateContentSize
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.jacagen.jrecipe.model.Recipe
-import jrecipe.composeapp.generated.resources.Res
-import jrecipe.composeapp.generated.resources.cat
 import kotlinx.browser.window
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
-import org.jetbrains.compose.resources.painterResource
 
 @JsName("console")
 external object Console {
@@ -40,15 +31,15 @@ fun App() {
 
     MaterialTheme(colorScheme = colors) {
         Surface(modifier = Modifier.fillMaxSize()) {
-            RecipeList()
+            RecipeView()
         }
     }
 }
 
-
 @Composable
-fun RecipeList() {
+fun RecipeView() {
     var recipes by remember { mutableStateOf<List<Recipe>>(emptyList()) }
+    var selectedRecipe by remember { mutableStateOf<Recipe?>(null) }
 
     LaunchedEffect(Unit) {
         val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
@@ -58,7 +49,8 @@ fun RecipeList() {
                 text.then { textResponse ->
                     recipes = Json.decodeFromString(
                         ListSerializer(Recipe.serializer()),
-                        textResponse.toString())
+                        textResponse.toString()
+                    )
                     null
                 }
 
@@ -69,12 +61,38 @@ fun RecipeList() {
         }
     }
 
+    Row(Modifier.fillMaxSize()) {
+        RecipeListColumn(recipes = recipes, onSelect = { selectedRecipe = it })
+        RecipeDetailColumn(recipe = selectedRecipe)
+    }
+}
+
+@Composable
+fun RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
     LazyColumn {
         items(recipes) { recipe ->
             Text(
-                text = recipe.title, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(8.dp)
+                text = recipe.title,
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.padding(8.dp).clickable { onSelect(recipe) }
             )
         }
+    }
+}
+
+@Composable
+fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
+    Column(
+        modifier = Modifier
+            .padding(16.dp)
+            .weight(1f)
+    ) {
+        recipe?.let {
+            Text("Recipe Details", style = MaterialTheme.typography.titleLarge)
+            Spacer(Modifier.height(8.dp))
+            Text("Title: ${it.title}", style = MaterialTheme.typography.bodyMedium)
+            // Add more fields as needed
+        } ?: Text("Select a recipe to view details")
     }
 }
 
