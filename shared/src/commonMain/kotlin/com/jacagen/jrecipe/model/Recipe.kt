@@ -12,7 +12,7 @@ import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 @OptIn(ExperimentalTime::class)
-object InstantIso8601Serializer : KSerializer<Instant> {
+object InstantIso8601Serializer : KSerializer<Instant> {    // It feels like this should maybe not live in `commonMain?
     override val descriptor = PrimitiveSerialDescriptor("Instant", PrimitiveKind.STRING)
 
     override fun serialize(encoder: Encoder, value: Instant) {

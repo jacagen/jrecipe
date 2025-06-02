@@ -68,8 +68,8 @@ fun RecipeView() {
 }
 
 @Composable
-fun RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
-    LazyColumn {
+fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
+    LazyColumn(modifier = Modifier.weight(1f)) {
         items(recipes) { recipe ->
             Text(
                 text = recipe.title,
@@ -85,13 +85,11 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
     Column(
         modifier = Modifier
             .padding(16.dp)
-            .weight(1f)
+            .weight(3f)
     ) {
         recipe?.let {
-            Text("Recipe Details", style = MaterialTheme.typography.titleLarge)
+            Text(it.title, style = MaterialTheme.typography.titleLarge)
             Spacer(Modifier.height(8.dp))
-            Text("Title: ${it.title}", style = MaterialTheme.typography.bodyMedium)
-            // Add more fields as needed
         } ?: Text("Select a recipe to view details")
     }
 }
