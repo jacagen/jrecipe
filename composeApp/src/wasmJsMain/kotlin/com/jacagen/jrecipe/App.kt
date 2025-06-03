@@ -7,8 +7,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.LocalDining
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.jacagen.jrecipe.model.Recipe
@@ -17,8 +20,8 @@ import com.mikepenz.markdown.model.rememberMarkdownState
 import kotlinx.browser.window
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
-//import androidx.compose.material.icons.Icons
 
+@Suppress("unused")
 @JsName("console")
 external object Console {
     fun log(msg: String)
@@ -76,12 +79,18 @@ fun RecipeView() {
 fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
     LazyColumn(modifier = Modifier.weight(1f)) {
         items(recipes) { recipe ->
-            Row() {
-                //Icon(imageVector = Icons.Filled.LocalDining, contentDescription = "Recipe")
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable { onSelect(recipe) },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(imageVector = Icons.Filled.LocalDining, contentDescription = "Recipe")
                 Text(
                     text = recipe.title,
                     style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.padding(8.dp).clickable { onSelect(recipe) }
+                    modifier = Modifier.padding(8.dp)
                 )
             }
         }
@@ -97,7 +106,20 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
             .verticalScroll(rememberScrollState())
     ) {
         recipe?.let { recipe ->
-            Text(recipe.title, style = MaterialTheme.typography.titleLarge)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.LocalDining,
+                    contentDescription = "Recipe",
+                    modifier = Modifier.size(28.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(recipe.title, style = MaterialTheme.typography.titleLarge)
+            }
             Spacer(Modifier.height(8.dp))
             recipe.ingredients.forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
             Spacer(Modifier.height(8.dp))
@@ -107,5 +129,6 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
     }
 }
 
+@Suppress("RedundantSuspendModifier")
 private suspend fun getConfig(): Map<String, String> =  // Need to do this properly
     mapOf("apiBaseUrl" to "http://localhost:8080")
