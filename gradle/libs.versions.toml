@@ -9,7 +9,7 @@ logback = "1.5.18"
 mongodb = "5.5.0"
 openAi = "1.0.0-rc1"
 jackson = "2.19.0"
-
+markdown = "0.35.0"
 
 
 [libraries]
@@ -31,6 +31,8 @@ langchain4j-openAi = { module = "dev.langchain4j:langchain4j-open-ai", version.r
 langchain4j-kotlin = { module = "dev.langchain4j:langchain4j-kotlin", version.ref = "langchain-kotlin" }
 jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 jackson-jsonSchema = { module = "com.fasterxml.jackson.module:jackson-module-jsonSchema", version.ref = "jackson" }
+mikepenz-markdown = { module = "com.mikepenz:multiplatform-markdown-renderer", version.ref = "markdown" }
+mikepenz-markdownM3 = { module = "com.mikepenz:multiplatform-markdown-renderer-m3", version.ref = "markdown" }
 
 [plugins]
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
