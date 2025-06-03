@@ -1,5 +1,6 @@
 package com.jacagen.jrecipe
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
@@ -8,6 +9,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Label
+import androidx.compose.material.icons.filled.Label
 import androidx.compose.material.icons.filled.LocalDining
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -120,12 +123,46 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(recipe.title, style = MaterialTheme.typography.titleLarge)
             }
+            RecipeTagRow(recipe.tags!!)
             Spacer(Modifier.height(8.dp))
             recipe.ingredients.forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
             Spacer(Modifier.height(8.dp))
             val markdownState = rememberMarkdownState(recipe.content)
             Markdown(markdownState)
         } ?: Text("Select a recipe to view details")
+    }
+}
+
+@Composable
+fun RecipeTagRow(tags: Set<String>) {
+    if (tags.isNotEmpty()) {
+        Spacer(modifier = Modifier.height(4.dp))
+        FlowRow(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            tags.forEach { tag ->
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .padding(end = 4.dp)
+                        .background(
+                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            shape = MaterialTheme.shapes.small
+                        )
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Label,
+                        contentDescription = "Tag icon",
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(text = tag, style = MaterialTheme.typography.labelSmall)
+                }
+            }
+        }
     }
 }
 

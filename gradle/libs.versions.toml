@@ -8,8 +8,9 @@ langchain-kotlin = "1.0.0-beta4"
 logback = "1.5.18"
 mongodb = "5.5.0"
 openAi = "1.0.0-rc1"
-#jackson = "2.19.0"
+jackson = "2.19.0"
 markdown = "0.35.0"
+clikt = "5.0.3"
 
 
 [libraries]
@@ -29,10 +30,12 @@ ktor-serverTestHost = { module = "io.ktor:ktor-server-test-host-jvm", version.re
 mongodb-kotlin = { module = "org.mongodb:mongodb-driver-kotlin-coroutine", version.ref = "mongodb" }
 langchain4j-openAi = { module = "dev.langchain4j:langchain4j-open-ai", version.ref = "openAi" }
 langchain4j-kotlin = { module = "dev.langchain4j:langchain4j-kotlin", version.ref = "langchain-kotlin" }
-#jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
-#jackson-jsonSchema = { module = "com.fasterxml.jackson.module:jackson-module-jsonSchema", version.ref = "jackson" }
+jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
+jackson-jsonSchema = { module = "com.fasterxml.jackson.module:jackson-module-jsonSchema", version.ref = "jackson" }
 mikepenz-markdown = { module = "com.mikepenz:multiplatform-markdown-renderer", version.ref = "markdown" }
 mikepenz-markdownM3 = { module = "com.mikepenz:multiplatform-markdown-renderer-m3", version.ref = "markdown" }
+clikt = {module = "com.github.ajalt.clikt:clikt", version.ref = "clikt"}
+clikt-markdown = {module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt"}
 
 [plugins]
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }

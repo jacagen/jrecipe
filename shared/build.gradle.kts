@@ -37,8 +37,9 @@ kotlin {
             implementation(libs.mongodb.kotlin)
             implementation(libs.langchain4j.openAi)
             implementation(libs.langchain4j.kotlin)
-            implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.0")
-            implementation("com.fasterxml.jackson.module:jackson-module-jsonSchema:2.19.0")
+            implementation(libs.jackson.kotlin)
+            implementation(libs.jackson.jsonSchema)
+            implementation(libs.clikt)
         }
     }
 }
