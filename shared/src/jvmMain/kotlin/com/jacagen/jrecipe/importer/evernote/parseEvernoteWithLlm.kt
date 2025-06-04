@@ -14,6 +14,7 @@ import com.jacagen.jrecipe.model.Tag
 import com.mongodb.client.model.Filters.eq
 import dev.langchain4j.data.message.SystemMessage
 import dev.langchain4j.data.message.UserMessage
+import dev.langchain4j.exception.HttpException
 import dev.langchain4j.kotlin.model.chat.chat
 import dev.langchain4j.model.chat.request.ChatRequest
 import kotlinx.coroutines.delay
@@ -26,6 +27,7 @@ import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 internal val llmRecipeCollection = database.getCollection<LlmRecipe>("llm-recipe")
+private val systemMessage = systemMessage()
 
 internal data class LlmRecipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
     @ObjectId val _id: Uuid,
@@ -44,7 +46,21 @@ internal data class LlmRecipe @OptIn(ExperimentalTime::class, ExperimentalUuidAp
     val tags: Set<Tag>,
 )
 
-private val systemMessage = systemMessage()
+internal suspend fun parseEvernoteRecipesWithLlm() {
+    val evernoteCollection = database.getCollection<EvernoteNote>("evernote")
+    evernoteCollection.find()
+        .filter { !llmRecipeExists(Uuid.parse(it._id)) }
+        .collect { evernote ->
+            delay(5000) // Someday add more graceful rate limiting (see https://chatgpt.com/share/683f2059-1c48-8003-bcfc-59a8795d5785)
+            try {
+                val recipe = evernote.toLlmRecipe()
+                llmRecipeCollection.insertOne(recipe)
+            } catch (x: Throwable) {
+                println("ERROR: Could not save recipe ${evernote.title}")
+                x.printStackTrace()
+            }
+        }
+}
 
 private fun systemMessage(): SystemMessage {
     val schemaGen = JsonSchemaGenerator(objectMapper)
@@ -76,17 +92,7 @@ private suspend fun llmRecipeExists(id: Uuid) =
     llmRecipeCollection.find(eq("_id", id)).firstOrNull() != null
 
 
-internal suspend fun parseEvernoteRecipesWithLlm() {
-    val evernoteCollection = database.getCollection<EvernoteNote>("evernote")
-    evernoteCollection.find()
-        .limit(1)
-        .filter { !llmRecipeExists(Uuid.parse(it._id)) }
-        .collect { evernote ->
-            delay(5000) // Someday add more graceful rate limiting (see https://chatgpt.com/share/683f2059-1c48-8003-bcfc-59a8795d5785)
-            val recipe = evernote.toLlmRecipe()
-            llmRecipeCollection.insertOne(recipe)
-        }
-}
+
 
 private suspend fun EvernoteNote.toLlmRecipe(): LlmRecipe {
     val request = ChatRequest.builder().messages(

@@ -3,35 +3,13 @@
 package com.jacagen.jrecipe.importer.evernote
 
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator
 import com.jacagen.jrecipe.dao.mongodb.database
-import com.jacagen.jrecipe.dao.mongodb.recipeDao
-import com.jacagen.jrecipe.llm.model
-import com.jacagen.jrecipe.llm.objectMapper
-import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.Tag
-import dev.langchain4j.data.message.SystemMessage
-import dev.langchain4j.data.message.UserMessage
-import dev.langchain4j.kotlin.model.chat.chat
-import dev.langchain4j.model.chat.request.ChatRequest
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.runBlocking
 import org.bson.Document
-import org.w3c.dom.Element
-import java.io.File
 import java.time.Instant
-import java.time.LocalDateTime
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
 import java.util.*
-import javax.xml.parsers.DocumentBuilderFactory
 import kotlin.time.ExperimentalTime
-import kotlin.time.toKotlinInstant
 import kotlin.uuid.ExperimentalUuidApi
-import kotlin.uuid.Uuid
 
 internal data class EvernoteNote(
     @Suppress("PropertyName") val _id: String = UUID.randomUUID().toString(),
@@ -63,11 +41,6 @@ internal data class EvernoteNote(
         println("---")
     }
 }
-
-
-
-
-
 
 
 internal suspend fun saveNotesToMongo(notes: List<EvernoteNote>) {
