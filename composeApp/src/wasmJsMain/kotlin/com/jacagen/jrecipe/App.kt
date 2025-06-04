@@ -37,7 +37,11 @@ fun App() {
     val isDark = isSystemInDarkTheme()  // or manually toggle via state
     val colors = if (isDark) darkColorScheme() else lightColorScheme()
 
-    MaterialTheme(colorScheme = colors) {
+    MaterialTheme(
+        colorScheme = colors,
+        typography = Typography(),
+        shapes = Shapes()
+    ) {
         Surface(modifier = Modifier.fillMaxSize()) {
             RecipeView()
         }
@@ -76,7 +80,11 @@ fun RecipeView() {
 
 @Composable
 fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
-    LazyColumn(modifier = Modifier.weight(1f)) {
+    LazyColumn(
+        modifier = Modifier.weight(1f).fillMaxHeight()
+            .background(MaterialTheme.colorScheme.surfaceVariant)
+            .padding(8.dp)
+    ) {
         items(recipes) { recipe ->
             Row(
                 modifier = Modifier
@@ -111,38 +119,24 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
 
             // Tags
             RecipeTagRow(recipe.tags!!)
-            Spacer(Modifier.height(8.dp))
+            SectionSpacer()
 
             // Yield
             if (recipe.yield != null) {
                 Header("Yield")
                 RenderMarkdown(recipe.yield!!)
-                Spacer(Modifier.height(8.dp))
+                SectionSpacer()
             }
 
             // Notes
             if (recipe.notes != null) {
                 Header("Notes")
                 RenderMarkdown(recipe.notes!!)
-                Spacer(Modifier.height(8.dp))
+                SectionSpacer()
             }
 
             // Ingredients
-            if (recipe.ingredients.isNotEmpty()) {
-                Header("Ingredients")
-                recipe.ingredients.forEach { ingredient ->
-                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(bottom = 4.dp)) {
-                        Icon(
-                            imageVector = Icons.Filled.Kitchen,
-                            contentDescription = null,
-                            modifier = Modifier.size(20.dp)
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        RenderMarkdown(ingredient)
-                    }
-                }
-                Spacer(Modifier.height(8.dp))
-            }
+            Ingredients(recipe)
 
             // Steps
             if (recipe.steps.isNotEmpty()) {
@@ -160,6 +154,26 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
 
 
         } ?: Text("Select a recipe to view details")
+    }
+}
+
+@Composable
+private fun Ingredients(recipe: Recipe) {
+    if (recipe.ingredients.isNotEmpty()) {
+        Header("Ingredients")
+        recipe.ingredients.forEach { ingredient ->
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(bottom = 4.dp)) {
+                Icon(
+                    imageVector = Icons.Filled.Kitchen,
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                RenderMarkdown(ingredient)
+            }
+            ListSpacer()
+        }
+        SectionSpacer()
     }
 }
 
@@ -216,7 +230,12 @@ fun Title(text: String, icon: ImageVector, iconDescription: String) {
             modifier = Modifier.size(28.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
-        RenderMarkdown("# $text")
+        Text(
+            text = text,
+            style = MaterialTheme.typography.headlineLarge,
+            modifier = Modifier.padding(horizontal = 8.dp)
+        )
+        //RenderMarkdown("# $text")
         //Text(text, style = MaterialTheme.typography.titleLarge)
     }
     Spacer(Modifier.height(8.dp))
@@ -225,13 +244,25 @@ fun Title(text: String, icon: ImageVector, iconDescription: String) {
 
 @Composable
 private fun Header(text: String) {
-    RenderMarkdown("## $text")
-    //Text(text, style = MaterialTheme.typography.titleMedium)
-    Spacer(Modifier.height(4.dp))
+    Text(
+        text = text,
+        style = MaterialTheme.typography.headlineSmall,
+        modifier = Modifier.padding(vertical = 4.dp)
+    )
 }
 
 @Composable
 fun RenderMarkdown(content: String) {
     val markdownState = rememberMarkdownState(content)
     Markdown(markdownState)
+}
+
+@Composable
+fun SectionSpacer() {
+    Spacer(Modifier.height(12.dp))
+}
+
+@Composable
+fun ListSpacer() {
+    Spacer(Modifier.height(4.dp))
 }
