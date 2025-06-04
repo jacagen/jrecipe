@@ -1,0 +1,19 @@
+Please parse the content of this recipe PDF, and produce a JSON file of it.
+
+Give it the title: Make-Ahead Mashed Potatoes
+
+Give it the following list of tags: #food #food-recipe #food-side #food-vegetarian #food-vegetable
+
+Add a "sourceUrl" field with the value: https://www.americastestkitchen.com/recipes/3594-make-ahead-mashed-potatoes
+
+Be sure to include the _amount_ of each ingredient.  The PDF lists two amounts for each ingredient--please use the first one.
+
+Also, add an _id field, set to a new UUID.
+
+
+
+
+------------------
+
+Please create a JSON file based on the following recipe, with an _id field set to a new UUID.
+
