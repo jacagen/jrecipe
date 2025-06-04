@@ -25,12 +25,6 @@ object InstantIso8601Serializer : KSerializer<Instant> {    // It feels like thi
 }
 
 @Serializable
-data class RecipeIngredient(
-    val amount: String?,
-    val ingredient: String
-)
-
-@Serializable
 data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
     @ObjectId val id: Uuid,
 
@@ -41,7 +35,6 @@ data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) co
     val yield: String?,
     val notes: String?,
     val ingredients: List<String>,
-    val technique: String?,
     val steps: List<String>,
     @Serializable(with = InstantIso8601Serializer::class) val createdInSource: Instant?,
     @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant?,

@@ -14,7 +14,6 @@ import com.jacagen.jrecipe.model.Tag
 import com.mongodb.client.model.Filters.eq
 import dev.langchain4j.data.message.SystemMessage
 import dev.langchain4j.data.message.UserMessage
-import dev.langchain4j.exception.HttpException
 import dev.langchain4j.kotlin.model.chat.chat
 import dev.langchain4j.model.chat.request.ChatRequest
 import kotlinx.coroutines.delay
@@ -59,7 +58,7 @@ internal suspend fun parseEvernoteRecipesWithLlm() {
                 println("ERROR: Could not save recipe ${evernote.title}")
                 x.printStackTrace()
             }
-        }
+            }
 }
 
 private fun systemMessage(): SystemMessage {
@@ -84,14 +83,14 @@ private fun systemMessage(): SystemMessage {
         For any fields which contain date/times: please return them as a structure with two fields: `epochSeconds` and `nanosecondsOfSecond`.
         Return an empty list ([]) for the value of `tags`.
         Always set the `source` field to `EVERNOTE`.
+        If there is any information about "techniques" in the recipe, also include this in the `notes` field (along with any other notes).
+        For any field expressing a duration (such as `time`), express it as the number of seconds since the UNIX epoch start.
     """.trimIndent()
     return SystemMessage(jsonInstruction)
 }
 
 private suspend fun llmRecipeExists(id: Uuid) =
     llmRecipeCollection.find(eq("_id", id)).firstOrNull() != null
-
-
 
 
 private suspend fun EvernoteNote.toLlmRecipe(): LlmRecipe {
@@ -102,7 +101,7 @@ private suspend fun EvernoteNote.toLlmRecipe(): LlmRecipe {
                     Set its `id` field to `$_id`.
                     Set its `title` field to `$title`.
                     Set its `source` field to `EVERNOTE`.
-                    Set its `sourceUrl` field to ${if (sourceUrl != null) null else "`$sourceUrl`"}.
+                    Set its `sourceUrl` field to ${if (sourceUrl == null) null else "`$sourceUrl`"}.
                     Set its `tags` to the following list: ${tags.joinToString(", ") { "`$it`" }}.
                 """.trimIndent()
         ), UserMessage(content)

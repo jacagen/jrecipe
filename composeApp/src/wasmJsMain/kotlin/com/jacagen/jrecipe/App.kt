@@ -51,7 +51,7 @@ fun RecipeView() {
 
     LaunchedEffect(Unit) {
         val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
-        window.fetch("$apiBaseUrl/recipes").then { response ->
+        window.fetch("$apiBaseUrl/recipes?sortByTitle").then { response ->
             if (response.ok) {
                 val text = response.text()
                 text.then { textResponse ->

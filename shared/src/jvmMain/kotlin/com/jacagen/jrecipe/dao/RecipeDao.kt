@@ -7,6 +7,7 @@ import kotlin.uuid.Uuid
 @OptIn(ExperimentalUuidApi::class)
 interface RecipeDao {
     suspend fun getAll(): List<Recipe>
+    suspend fun getAllSortedByTitle(): List<Recipe>
     suspend fun findById(id: Uuid): Recipe?
     suspend fun insert(recipe: Recipe)
     suspend fun insert(recipes: List<Recipe>)

@@ -10,6 +10,8 @@ import kotlin.time.ExperimentalTime
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
+private const val cooksIllustrated = "Cooks Illustrated"
+
 private suspend fun recipeExists(id: Uuid) =
     recipeDao.findById(id) != null
 
@@ -49,7 +51,8 @@ private fun LlmRecipe.adjustTitle() = title.removeSuffix(" - Cooks Illustrated")
 private fun LlmRecipe.adjustAuthor() =
     if (title.endsWith(" - Cooks Illustrated")) {
         when (author) {
-            "Cooks Illustrated" -> author
+            "Cooks Illustrated" -> cooksIllustrated
+            "Cook's Illustrated" -> cooksIllustrated
             null -> "Cooks Illustrated"
             else -> error("Conflicting authors $this")
         }

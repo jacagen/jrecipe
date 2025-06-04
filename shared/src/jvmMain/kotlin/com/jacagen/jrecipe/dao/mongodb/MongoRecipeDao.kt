@@ -16,6 +16,11 @@ class MongoRecipeDao(private val collection: MongoCollection<Recipe>) : RecipeDa
         return collection.find().toList()
     }
 
+    override suspend fun getAllSortedByTitle(): List<Recipe> {
+        return collection.find().sort(Document("title", 1)).toList()
+
+    }
+
     override suspend fun findById(id: Uuid): Recipe? {
         val filter = org.bson.Document("_id", id.toString())
         return collection.find(filter).firstOrNull()

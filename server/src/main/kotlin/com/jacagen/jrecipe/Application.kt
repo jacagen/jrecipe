@@ -43,8 +43,9 @@ fun Application.module() {
             call.respondText("Ktor: ${Greeting().greet()}")
         }
         get("/recipes") {
+            val sortByTitle = call.request.queryParameters.contains("sortByTitle")
             call.respond(
-                recipeDao.getAll()
+                if (sortByTitle) recipeDao.getAllSortedByTitle() else recipeDao.getAll()
             )
         }
     }
