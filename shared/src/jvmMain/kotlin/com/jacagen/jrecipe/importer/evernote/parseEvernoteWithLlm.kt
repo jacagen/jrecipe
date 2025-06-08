@@ -6,59 +6,34 @@ import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator
 import com.jacagen.jrecipe.dao.mongodb.database
+import com.jacagen.jrecipe.importer.LlmRecipe
+import com.jacagen.jrecipe.importer.llmRecipeExists
 import com.jacagen.jrecipe.llm.model
 import com.jacagen.jrecipe.llm.objectMapper
-import com.jacagen.jrecipe.model.InstantIso8601Serializer
-import com.jacagen.jrecipe.model.ObjectId
-import com.jacagen.jrecipe.model.Tag
-import com.mongodb.client.model.Filters.eq
 import dev.langchain4j.data.message.SystemMessage
 import dev.langchain4j.data.message.UserMessage
 import dev.langchain4j.kotlin.model.chat.chat
 import dev.langchain4j.model.chat.request.ChatRequest
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.serialization.Serializable
-import kotlin.time.ExperimentalTime
-import kotlin.time.Instant
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 internal val llmRecipeCollection = database.getCollection<LlmRecipe>("llm-recipe")
 private val systemMessage = systemMessage()
 
-internal data class LlmRecipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
-    @ObjectId val _id: Uuid,
-
-    val title: String,
-    val source: String,
-    val author: String?,
-    val sourceUrl: String?,
-    val yield: String?,
-    val time: String?,
-    val ingredients: List<String>?,
-    val notes: String?,
-    val steps: List<String>?,
-    @Serializable(with = InstantIso8601Serializer::class) val createdInSource: Instant?,
-    @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant?,
-    val tags: Set<Tag>,
-)
-
 internal suspend fun parseEvernoteRecipesWithLlm() {
     val evernoteCollection = database.getCollection<EvernoteNote>("evernote")
-    evernoteCollection.find()
-        .filter { !llmRecipeExists(Uuid.parse(it._id)) }
-        .collect { evernote ->
-            delay(5000) // Someday add more graceful rate limiting (see https://chatgpt.com/share/683f2059-1c48-8003-bcfc-59a8795d5785)
-            try {
-                val recipe = evernote.toLlmRecipe()
-                llmRecipeCollection.insertOne(recipe)
-            } catch (x: Throwable) {
-                println("ERROR: Could not save recipe ${evernote.title}")
-                x.printStackTrace()
-            }
-            }
+    evernoteCollection.find().filter { !llmRecipeExists(Uuid.parse(it._id)) }.collect { evernote ->
+        delay(5000) // Someday add more graceful rate limiting (see https://chatgpt.com/share/683f2059-1c48-8003-bcfc-59a8795d5785)
+        try {
+            val recipe = evernote.toLlmRecipe()
+            llmRecipeCollection.insertOne(recipe)
+        } catch (x: Throwable) {
+            println("ERROR: Could not save recipe ${evernote.title}")
+            x.printStackTrace()
+        }
+    }
 }
 
 private fun systemMessage(): SystemMessage {
@@ -88,9 +63,6 @@ private fun systemMessage(): SystemMessage {
     """.trimIndent()
     return SystemMessage(jsonInstruction)
 }
-
-private suspend fun llmRecipeExists(id: Uuid) =
-    llmRecipeCollection.find(eq("_id", id)).firstOrNull() != null
 
 
 private suspend fun EvernoteNote.toLlmRecipe(): LlmRecipe {
