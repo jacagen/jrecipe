@@ -21,7 +21,7 @@ class MongoRecipeDao(private val collection: MongoCollection<Recipe>) : RecipeDa
 
     }
 
-    override suspend fun findById(id: Uuid): Recipe? {
+    override suspend fun findById(id: String): Recipe? {
         val filter = org.bson.Document("_id", id.toString())
         return collection.find(filter).firstOrNull()
     }

@@ -26,7 +26,7 @@ object InstantIso8601Serializer : KSerializer<Instant> {    // It feels like thi
 
 @Serializable
 data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
-    @ObjectId val id: Uuid,
+    @ObjectId val id: String,
 
     val title: String,
     val source: String, // RecipeSource,
@@ -34,9 +34,17 @@ data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) co
     val sourceUrl: String?,
     val yield: String?,
     val notes: String?,
-    val ingredients: List<String>,
-    val steps: List<String>,
+    val ingredients: List<Ingredient>?, // This probably does not really want to be nullable...
+    val steps: List<String>?,
     @Serializable(with = InstantIso8601Serializer::class) val createdInSource: Instant?,
     @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant?,
     val tags: Set<Tag>?,
+)
+
+@Serializable
+data class Ingredient(
+    val ingredient: String,
+    val amount: String?,
+    val unit: String?,
+    val note: String?
 )

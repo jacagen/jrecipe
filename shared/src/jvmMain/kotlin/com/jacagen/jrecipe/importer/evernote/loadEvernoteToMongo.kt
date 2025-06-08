@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalUuidApi::class)
+
 package com.jacagen.jrecipe.importer.evernote
 
 import org.w3c.dom.Element
@@ -7,6 +9,7 @@ import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import javax.xml.parsers.DocumentBuilderFactory
+import kotlin.uuid.ExperimentalUuidApi
 
 private val evernoteInstantFormatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss'Z'")
 

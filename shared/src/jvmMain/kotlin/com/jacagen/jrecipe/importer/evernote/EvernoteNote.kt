@@ -4,15 +4,16 @@ package com.jacagen.jrecipe.importer.evernote
 
 
 import com.jacagen.jrecipe.dao.mongodb.database
+import com.jacagen.jrecipe.model.ObjectId
 import com.jacagen.jrecipe.model.Tag
 import org.bson.Document
 import java.time.Instant
-import java.util.*
 import kotlin.time.ExperimentalTime
 import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 
 internal data class EvernoteNote(
-    @Suppress("PropertyName") val _id: String = UUID.randomUUID().toString(),
+    @ObjectId val id: String = Uuid.random().toString(),    // Using real Uuids turns out to be a giant pain in the neck
     val title: String,
     val created: Instant,
     val updated: Instant,

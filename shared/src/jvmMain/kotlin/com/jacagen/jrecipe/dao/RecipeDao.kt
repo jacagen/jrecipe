@@ -8,7 +8,7 @@ import kotlin.uuid.Uuid
 interface RecipeDao {
     suspend fun getAll(): List<Recipe>
     suspend fun getAllSortedByTitle(): List<Recipe>
-    suspend fun findById(id: Uuid): Recipe?
+    suspend fun findById(id: String): Recipe?
     suspend fun insert(recipe: Recipe)
     suspend fun insert(recipes: List<Recipe>)
     suspend fun update(recipe: Recipe)
