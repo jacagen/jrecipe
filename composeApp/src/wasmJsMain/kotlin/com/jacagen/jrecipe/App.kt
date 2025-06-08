@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.jacagen.jrecipe.model.Ingredient
 import com.jacagen.jrecipe.model.Recipe
 import com.mikepenz.markdown.m3.Markdown
 import com.mikepenz.markdown.model.rememberMarkdownState
@@ -75,6 +76,7 @@ fun RecipeView() {
     Row(Modifier.fillMaxSize()) {
         RecipeListColumn(recipes = recipes, onSelect = { selectedRecipe = it })
         RecipeDetailColumn(recipe = selectedRecipe)
+        ChatColumn()
     }
 }
 
@@ -139,9 +141,9 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
             Ingredients(recipe)
 
             // Steps
-            if (recipe.steps.isNotEmpty()) {
+            if (recipe.steps?.isNotEmpty() ?: false) {
                 Header("Steps")
-                recipe.steps.withIndex().forEach { (index, step) ->
+                recipe.steps!!.withIndex().forEach { (index, step) ->
                     Row(modifier = Modifier.padding(bottom = 8.dp)) {
                         Text(
                             text = "${index + 1}. ",
@@ -159,9 +161,9 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
 
 @Composable
 private fun Ingredients(recipe: Recipe) {
-    if (recipe.ingredients.isNotEmpty()) {
+    if (recipe.ingredients?.isNotEmpty() ?: false) {
         Header("Ingredients")
-        recipe.ingredients.forEach { ingredient ->
+        recipe.ingredients!!.forEach { ingredient ->
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(bottom = 4.dp)) {
                 Icon(
                     imageVector = Icons.Filled.Kitchen,
@@ -169,7 +171,7 @@ private fun Ingredients(recipe: Recipe) {
                     modifier = Modifier.size(20.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                RenderMarkdown(ingredient)
+                RenderMarkdown(ingredient.format())
             }
             ListSpacer()
         }
@@ -199,7 +201,7 @@ fun RecipeTagRow(tags: Set<String>) {
                         .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Filled.Label,
+                        imageVector = Icons.Filled.Label,   // Fix
                         contentDescription = "Tag icon",
                         modifier = Modifier.size(16.dp)
                     )
@@ -266,3 +268,68 @@ fun SectionSpacer() {
 fun ListSpacer() {
     Spacer(Modifier.height(4.dp))
 }
+
+@Composable
+fun RowScope.ChatColumn() {
+    var userInput by remember { mutableStateOf("") }
+    var messages by remember { mutableStateOf(listOf("Welcome to the LLM chat!")) }
+
+    Column(
+        modifier = Modifier
+            .weight(2f)
+            .fillMaxHeight()
+            .padding(8.dp)
+            .background(MaterialTheme.colorScheme.surfaceVariant)
+    ) {
+        Text(
+            text = "Chat",
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.padding(8.dp)
+        )
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+                .padding(8.dp)
+        ) {
+            messages.forEach { message ->
+                Text(
+                    text = message,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(bottom = 4.dp)
+                )
+            }
+        }
+        OutlinedTextField(
+            value = userInput,
+            onValueChange = { userInput = it },
+            label = { Text("Ask a question...") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Button(
+            onClick = {
+                if (userInput.isNotBlank()) {
+                    messages = messages + "You: $userInput"
+                    messages = messages + "LLM: (stub response)"
+                    userInput = ""
+                }
+            },
+            modifier = Modifier
+                .align(Alignment.End)
+                .padding(top = 8.dp)
+        ) {
+            Text("Send")
+        }
+    }
+}
+
+
+private fun Ingredient.format() = StringBuilder().apply {
+    if (amount != null)
+        append(amount)
+    if (unit != null)
+        append(" ").append(unit)
+    append(" ").append(ingredient)
+    if (note != null)
+        append(", ").append(note)
+}.trimStart().toString()
