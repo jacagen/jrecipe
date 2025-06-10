@@ -14,8 +14,8 @@ import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 // Need to move this!
-const val apiKey =
-    "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"
+val apiKey: String = TODO()
+
 
 class UuidDeserializer : JsonDeserializer<Uuid>() {
     override fun deserialize(p: JsonParser, ctxt: DeserializationContext): Uuid {

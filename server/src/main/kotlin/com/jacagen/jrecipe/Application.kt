@@ -1,7 +1,9 @@
 package com.jacagen.jrecipe
 
 import com.jacagen.jrecipe.dao.mongodb.recipeDao
+import com.jacagen.jrecipe.llm.recipeBot
 import com.jacagen.jrecipe.model.InstantIso8601Serializer
+import com.jacagen.jrecipe.service.RecipeChatBot
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
@@ -9,6 +11,7 @@ import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
+import io.ktor.server.request.receiveText
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.json.Json
@@ -47,6 +50,11 @@ fun Application.module() {
             call.respond(
                 if (sortByTitle) recipeDao.getAllSortedByTitle() else recipeDao.getAll()
             )
+        }
+        post("/chat") {
+            val request = call.receiveText()
+            val response = recipeBot.chat(request)  // Set up memory at some point?
+            call.respondText(response)
         }
     }
 }

@@ -1,0 +1,4 @@
+POST http://localhost:8080/chat
+Content-Type: text/plain
+
+Please give me all of the recipe tags.

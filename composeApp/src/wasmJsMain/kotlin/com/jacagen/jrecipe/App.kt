@@ -19,8 +19,14 @@ import com.jacagen.jrecipe.model.Recipe
 import com.mikepenz.markdown.m3.Markdown
 import com.mikepenz.markdown.model.rememberMarkdownState
 import kotlinx.browser.window
+import kotlinx.coroutines.await
+import kotlinx.coroutines.launch
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
+import org.w3c.fetch.*
+
+@JsFun("input => input")
+external fun asBodyInit(input: String): JsAny
 
 @Suppress("unused")
 @JsName("console")
@@ -39,9 +45,7 @@ fun App() {
     val colors = if (isDark) darkColorScheme() else lightColorScheme()
 
     MaterialTheme(
-        colorScheme = colors,
-        typography = Typography(),
-        shapes = Shapes()
+        colorScheme = colors, typography = Typography(), shapes = Shapes()
     ) {
         Surface(modifier = Modifier.fillMaxSize()) {
             RecipeView()
@@ -61,8 +65,7 @@ fun RecipeView() {
                 val text = response.text()
                 text.then { textResponse ->
                     recipes = Json.decodeFromString(
-                        ListSerializer(Recipe.serializer()),
-                        textResponse.toString()
+                        ListSerializer(Recipe.serializer()), textResponse.toString()
                     )
                     null
                 }
@@ -83,23 +86,17 @@ fun RecipeView() {
 @Composable
 fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
     LazyColumn(
-        modifier = Modifier.weight(1f).fillMaxHeight()
-            .background(MaterialTheme.colorScheme.surfaceVariant)
+        modifier = Modifier.weight(1f).fillMaxHeight().background(MaterialTheme.colorScheme.surfaceVariant)
             .padding(8.dp)
     ) {
         items(recipes) { recipe ->
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp)
-                    .clickable { onSelect(recipe) },
+                modifier = Modifier.fillMaxWidth().padding(8.dp).clickable { onSelect(recipe) },
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(imageVector = Icons.Filled.LocalDining, contentDescription = "Recipe")
                 Text(
-                    text = recipe.title,
-                    style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.padding(8.dp)
+                    text = recipe.title, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(8.dp)
                 )
             }
         }
@@ -109,10 +106,7 @@ fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit)
 @Composable
 fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
     Column(
-        modifier = Modifier
-            .padding(16.dp)
-            .weight(3f)
-            .verticalScroll(rememberScrollState())
+        modifier = Modifier.padding(16.dp).weight(3f).verticalScroll(rememberScrollState())
     ) {
         recipe?.let { recipe ->
 
@@ -146,8 +140,7 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
                 recipe.steps!!.withIndex().forEach { (index, step) ->
                     Row(modifier = Modifier.padding(bottom = 8.dp)) {
                         Text(
-                            text = "${index + 1}. ",
-                            style = MaterialTheme.typography.bodyLarge
+                            text = "${index + 1}. ", style = MaterialTheme.typography.bodyLarge
                         )
                         RenderMarkdown(step)
                     }
@@ -166,9 +159,7 @@ private fun Ingredients(recipe: Recipe) {
         recipe.ingredients!!.forEach { ingredient ->
             Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(bottom = 4.dp)) {
                 Icon(
-                    imageVector = Icons.Filled.Kitchen,
-                    contentDescription = null,
-                    modifier = Modifier.size(20.dp)
+                    imageVector = Icons.Filled.Kitchen, contentDescription = null, modifier = Modifier.size(20.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
                 RenderMarkdown(ingredient.format())
@@ -191,19 +182,13 @@ fun RecipeTagRow(tags: Set<String>) {
         ) {
             tags.forEach { tag ->
                 Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier
-                        .padding(end = 4.dp)
-                        .background(
-                            color = MaterialTheme.colorScheme.surfaceVariant,
-                            shape = MaterialTheme.shapes.small
-                        )
-                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                    verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(end = 4.dp).background(
+                            color = MaterialTheme.colorScheme.surfaceVariant, shape = MaterialTheme.shapes.small
+                        ).padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Label,   // Fix
-                        contentDescription = "Tag icon",
-                        modifier = Modifier.size(16.dp)
+                        contentDescription = "Tag icon", modifier = Modifier.size(16.dp)
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(text = tag, style = MaterialTheme.typography.labelSmall)
@@ -221,21 +206,14 @@ private suspend fun getConfig(): Map<String, String> =  // Need to do this prope
 @Composable
 fun Title(text: String, icon: ImageVector, iconDescription: String) {
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
-        verticalAlignment = Alignment.CenterVertically
+        modifier = Modifier.fillMaxWidth().padding(8.dp), verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            imageVector = icon,
-            contentDescription = iconDescription,
-            modifier = Modifier.size(28.dp)
+            imageVector = icon, contentDescription = iconDescription, modifier = Modifier.size(28.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(
-            text = text,
-            style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.padding(horizontal = 8.dp)
+            text = text, style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(horizontal = 8.dp)
         )
         //RenderMarkdown("# $text")
         //Text(text, style = MaterialTheme.typography.titleLarge)
@@ -247,9 +225,7 @@ fun Title(text: String, icon: ImageVector, iconDescription: String) {
 @Composable
 private fun Header(text: String) {
     Text(
-        text = text,
-        style = MaterialTheme.typography.headlineSmall,
-        modifier = Modifier.padding(vertical = 4.dp)
+        text = text, style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(vertical = 4.dp)
     )
 }
 
@@ -271,26 +247,19 @@ fun ListSpacer() {
 
 @Composable
 fun RowScope.ChatColumn() {
+    val coroutineScope = rememberCoroutineScope()
     var userInput by remember { mutableStateOf("") }
     var messages by remember { mutableStateOf(listOf("Welcome to the LLM chat!")) }
 
     Column(
-        modifier = Modifier
-            .weight(2f)
-            .fillMaxHeight()
-            .padding(8.dp)
+        modifier = Modifier.weight(2f).fillMaxHeight().padding(8.dp)
             .background(MaterialTheme.colorScheme.surfaceVariant)
     ) {
         Text(
-            text = "Chat",
-            style = MaterialTheme.typography.headlineSmall,
-            modifier = Modifier.padding(8.dp)
+            text = "Chat", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(8.dp)
         )
         Column(
-            modifier = Modifier
-                .weight(1f)
-                .verticalScroll(rememberScrollState())
-                .padding(8.dp)
+            modifier = Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(8.dp)
         ) {
             messages.forEach { message ->
                 Text(
@@ -308,15 +277,55 @@ fun RowScope.ChatColumn() {
         )
         Button(
             onClick = {
+                messages = messages + "Clicked chat button"
                 if (userInput.isNotBlank()) {
                     messages = messages + "You: $userInput"
-                    messages = messages + "LLM: (stub response)"
+                    val input = userInput.toJsString()
+                    messages = messages + "Cast <$input> to JsAny"
                     userInput = ""
+
+                    coroutineScope.launch {
+                        try {
+                            messages = messages + "Launched coroutine"
+                            val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
+
+                            val requestInit = RequestInit(
+                                method = "POST",
+                                headers = Headers().apply { append("Content-Type", "text/plain") },  // Or "application/json"
+                                body = userInput.toJsString(), // or your payload
+
+                                // Set all enum/option fields to plausible values
+                                referrer = "", // Empty string is valid and means "no referrer"
+                                referrerPolicy = "no-referrer".toJsString(),
+                                mode = RequestMode.CORS,
+                                credentials = RequestCredentials.SAME_ORIGIN,
+                                cache = RequestCache.DEFAULT,
+                                redirect = RequestRedirect.FOLLOW,
+                                integrity = "", // Default empty means no SRI
+                                keepalive = false, // Default is false; only set true for long requests
+                                //window = undefined // Always undefined for browsers; don't set to null
+                            )
+                            messages = messages + "request init: $requestInit"
+                            val responseWaiter = window.fetch("$apiBaseUrl/chat", requestInit)
+                            messages = messages + "responseWaiter:  $responseWaiter"
+                            val responseObject: JsAny = responseWaiter.await()
+                            messages = messages + "response object: $responseObject"
+                            val response = responseObject as Response
+                            messages = messages + "Got response: $response"
+                            val reply: JsAny = response.text().await()
+                            messages = messages + "LLM: $reply"
+                        } catch (e: Throwable) {
+                            val stack = e.stackTraceToString()
+                            val message = e.message ?: e.toString()
+                            e.printStackTrace()
+                            messages = messages + "LLM: [Error fetching response] $e"
+                            messages = messages + message
+                            messages = messages + stack
+                        }
+                    }
+
                 }
-            },
-            modifier = Modifier
-                .align(Alignment.End)
-                .padding(top = 8.dp)
+            }, modifier = Modifier.align(Alignment.End).padding(top = 8.dp)
         ) {
             Text("Send")
         }
@@ -325,11 +334,8 @@ fun RowScope.ChatColumn() {
 
 
 private fun Ingredient.format() = StringBuilder().apply {
-    if (amount != null)
-        append(amount)
-    if (unit != null)
-        append(" ").append(unit)
+    if (amount != null) append(amount)
+    if (unit != null) append(" ").append(unit)
     append(" ").append(ingredient)
-    if (note != null)
-        append(", ").append(note)
+    if (note != null) append(", ").append(note)
 }.trimStart().toString()

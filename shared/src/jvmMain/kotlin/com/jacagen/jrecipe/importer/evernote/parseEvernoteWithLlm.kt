@@ -7,6 +7,7 @@ import com.jacagen.jrecipe.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.importer.recipeExists
 import com.jacagen.jrecipe.llm.model
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.service.EvernoteToLlmConverter
 import dev.langchain4j.service.AiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -61,15 +62,3 @@ private fun Recipe.adjustAuthor() =
         }
     } else author
 
-private interface EvernoteToLlmConverter {
-    @dev.langchain4j.service.SystemMessage(
-        """
-        Your job is to take a recipe, and convert it to a standard output format.
-        If there is any information about "techniques" in the recipe, include this in the `notes` field (along with any other notes).
-        The input recipe will always have an id, and this id must *always* be included as the output id, and *never* changed.  
-        The id will always be a UUID4 id.  Be sure to represent it as such.
-        Always set the `source` to `EVERNOTE`.
-    """
-    )
-    fun convertRecipe(evernoteRecipe: EvernoteNote): Recipe
-}
