@@ -25,9 +25,6 @@ import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import org.w3c.fetch.*
 
-@JsFun("input => input")
-external fun asBodyInit(input: String): JsAny
-
 @Suppress("unused")
 @JsName("console")
 external object Console {
@@ -262,11 +259,7 @@ fun RowScope.ChatColumn() {
             modifier = Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(8.dp)
         ) {
             messages.forEach { message ->
-                Text(
-                    text = message,
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(bottom = 4.dp)
-                )
+                RenderMarkdown(message)
             }
         }
         OutlinedTextField(
@@ -303,6 +296,7 @@ fun RowScope.ChatColumn() {
                                 keepalive = false, // Default is false; only set true for long requests
                             )
                             val responseWaiter = window.fetch("$apiBaseUrl/chat", requestInit)
+                            // It would be nice to have some sort of "waiting" icon
                             val responseObject: JsAny = responseWaiter.await()
                             val response = responseObject as Response
                             val reply: JsAny = response.text().await()
