@@ -183,8 +183,8 @@ fun RecipeTagRow(tags: Set<String>) {
             tags.forEach { tag ->
                 Row(
                     verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(end = 4.dp).background(
-                            color = MaterialTheme.colorScheme.surfaceVariant, shape = MaterialTheme.shapes.small
-                        ).padding(horizontal = 8.dp, vertical = 4.dp)
+                        color = MaterialTheme.colorScheme.surfaceVariant, shape = MaterialTheme.shapes.small
+                    ).padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Label,   // Fix
@@ -277,25 +277,23 @@ fun RowScope.ChatColumn() {
         )
         Button(
             onClick = {
-                messages = messages + "Clicked chat button"
                 if (userInput.isNotBlank()) {
                     messages = messages + "You: $userInput"
                     val input = userInput.toJsString()
-                    messages = messages + "Cast <$input> to JsAny"
                     userInput = ""
 
                     coroutineScope.launch {
                         try {
-                            messages = messages + "Launched coroutine"
                             val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
-
                             val requestInit = RequestInit(
                                 method = "POST",
-                                headers = Headers().apply { append("Content-Type", "text/plain") },  // Or "application/json"
-                                body = userInput.toJsString(), // or your payload
-
-                                // Set all enum/option fields to plausible values
-                                referrer = "", // Empty string is valid and means "no referrer"
+                                headers = Headers().apply {
+                                    append(
+                                        "Content-Type", "text/plain"
+                                    )
+                                },  // Or "application/json"
+                                body = input,
+                                referrer = "",
                                 referrerPolicy = "no-referrer".toJsString(),
                                 mode = RequestMode.CORS,
                                 credentials = RequestCredentials.SAME_ORIGIN,
@@ -303,24 +301,15 @@ fun RowScope.ChatColumn() {
                                 redirect = RequestRedirect.FOLLOW,
                                 integrity = "", // Default empty means no SRI
                                 keepalive = false, // Default is false; only set true for long requests
-                                //window = undefined // Always undefined for browsers; don't set to null
                             )
-                            messages = messages + "request init: $requestInit"
                             val responseWaiter = window.fetch("$apiBaseUrl/chat", requestInit)
-                            messages = messages + "responseWaiter:  $responseWaiter"
                             val responseObject: JsAny = responseWaiter.await()
-                            messages = messages + "response object: $responseObject"
                             val response = responseObject as Response
-                            messages = messages + "Got response: $response"
                             val reply: JsAny = response.text().await()
                             messages = messages + "LLM: $reply"
                         } catch (e: Throwable) {
                             val stack = e.stackTraceToString()
-                            val message = e.message ?: e.toString()
-                            e.printStackTrace()
-                            messages = messages + "LLM: [Error fetching response] $e"
-                            messages = messages + message
-                            messages = messages + stack
+                            messages = messages + "ERROR: [Error fetching response] $e"
                         }
                     }
 

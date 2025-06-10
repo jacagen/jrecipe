@@ -13,10 +13,6 @@ import dev.langchain4j.model.openai.OpenAiChatModel
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
-// Need to move this!
-val apiKey: String = TODO()
-
-
 class UuidDeserializer : JsonDeserializer<Uuid>() {
     override fun deserialize(p: JsonParser, ctxt: DeserializationContext): Uuid {
         val uuidString = p.valueAsString

@@ -19,3 +19,6 @@ captures
 
 # Recipe data
 shared/src/jvmMain/resources/recipeSource/**
+
+# Secrets
+**/apiKey.kt
