@@ -38,7 +38,7 @@ data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) co
     val steps: List<String>?,
     @Serializable(with = InstantIso8601Serializer::class) val createdInSource: Instant?,
     @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant?,
-    val tags: Set<Tag>?,
+    val tags: Set<Tag>,
 )
 
 @Serializable

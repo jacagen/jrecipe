@@ -1,7 +1,9 @@
 package com.jacagen.jrecipe.service
 
+import com.jacagen.jrecipe.dao.mongodb.recipeDao
 import dev.langchain4j.agent.tool.Tool
 import dev.langchain4j.service.UserMessage
+import kotlinx.coroutines.runBlocking
 
 interface RecipeChatBot {
     @UserMessage("{{it}}")
@@ -10,5 +12,10 @@ interface RecipeChatBot {
 
 class RecipeHelper {
     @Tool
-    fun getAllTags() = setOf("Breakfast", "Drink")
+    fun getAllTags() = runBlocking {
+        recipeDao.getAll()
+            .map { it.tags }
+            .flatten()
+            .toSet()
+    }
 }
