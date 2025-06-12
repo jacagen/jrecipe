@@ -1,0 +1,52 @@
+package com.jacagen.jrecipe
+
+import com.jacagen.jrecipe.model.TagDefinition
+
+val tagsDefinitions = listOf(
+    TagDefinition("Side", "Course"),
+    TagDefinition("Main Course", "Course"),
+    TagDefinition("Snack", "Course"),
+    TagDefinition("Hors D'ouevres", "Course"),
+    TagDefinition("Appetizer", "Course"),
+    TagDefinition("Drink", "Course"),
+
+    TagDefinition("Easy", "Difficulty", setOf("Ian can prepare")),
+    TagDefinition("Medium", "Difficulty"),
+
+    TagDefinition("Breakfast", "Meal"),
+    TagDefinition("Lunch at School", "Meal"),
+    TagDefinition("Dim Sum", "Meal", setOf("Димсам")),
+    TagDefinition("Dessert", "Meal"),
+
+    TagDefinition("Mexican", "Cuisine", setOf("Мексиканский")),
+    TagDefinition("Chinese", "Cuisine", setOf("Китайский")),
+    TagDefinition("Italian", "Cuisine", setOf("Итальянский")),
+    TagDefinition("Polish", "Cuisine", setOf("PolishCuisine")),
+    TagDefinition("Cajun/Creole", "Cuisine", setOf("Каджунский/креольский")),
+    TagDefinition("Korean", "Cuisine", setOf("Корейский")),
+    TagDefinition("Japanese", "Cuisine", setOf("Японский")),
+    TagDefinition("Hungarian", "Cuisine"),
+    TagDefinition("Russian", "Cuisine", setOf("RussianCuisine")),
+    TagDefinition("Szechuan", "Chinese", setOf("Сычыаньский")),
+
+    TagDefinition("Grill", "Technique"),
+
+    TagDefinition("Sauce"),
+    TagDefinition("Vegetarian"),
+    TagDefinition("Healthier"),
+    TagDefinition("Sandwich", null, setOf("Сандвич")),
+    TagDefinition("Bread", null, setOf("Сандвич")),
+    TagDefinition("Vegetable"),
+    TagDefinition("Soup"),
+    TagDefinition("Seafood", null, setOf("Морепродукты")),
+    TagDefinition("Salad"),
+    TagDefinition("Comfort Food"),
+    TagDefinition("Fruit"),
+    TagDefinition("Burger", "Sandwich", setOf("Бургеры")),
+    TagDefinition("Pasta"),
+    TagDefinition("Fruit"),
+    TagDefinition("Dumpling", null, setOf("Пельмени")),
+    TagDefinition("Taco", "Mexican", setOf("Тако")),
+    TagDefinition("Pho", "Vietnamese", setOf("Фо")),
+    TagDefinition("Pizza", "Italian", setOf("Пицца")),
+)

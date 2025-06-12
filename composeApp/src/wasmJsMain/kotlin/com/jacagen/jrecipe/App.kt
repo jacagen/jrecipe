@@ -16,14 +16,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import com.jacagen.jrecipe.model.Ingredient
 import com.jacagen.jrecipe.model.Recipe
-import com.mikepenz.markdown.m3.Markdown
-import com.mikepenz.markdown.model.rememberMarkdownState
 import kotlinx.browser.window
-import kotlinx.coroutines.await
-import kotlinx.coroutines.launch
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
-import org.w3c.fetch.*
 
 @Suppress("unused")
 @JsName("console")
@@ -111,7 +106,7 @@ fun RowScope.RecipeDetailColumn(recipe: Recipe?) {
             Title(recipe.title, Icons.Filled.LocalDining, "Recipe")
 
             // Tags
-            RecipeTagRow(recipe.tags!!)
+            RecipeTagRow(recipe.tags)
             SectionSpacer()
 
             // Yield
@@ -197,7 +192,7 @@ fun RecipeTagRow(tags: Set<String>) {
 
 
 @Suppress("RedundantSuspendModifier")
-private suspend fun getConfig(): Map<String, String> =  // Need to do this properly
+internal suspend fun getConfig(): Map<String, String> =  // Need to do this properly
     mapOf("apiBaseUrl" to "http://localhost:8080")
 
 @Composable
@@ -226,11 +221,6 @@ private fun Header(text: String) {
     )
 }
 
-@Composable
-fun RenderMarkdown(content: String) {
-    val markdownState = rememberMarkdownState(content)
-    Markdown(markdownState)
-}
 
 @Composable
 fun SectionSpacer() {
@@ -240,79 +230,6 @@ fun SectionSpacer() {
 @Composable
 fun ListSpacer() {
     Spacer(Modifier.height(4.dp))
-}
-
-@Composable
-fun RowScope.ChatColumn() {
-    val coroutineScope = rememberCoroutineScope()
-    var userInput by remember { mutableStateOf("") }
-    var messages by remember { mutableStateOf(listOf("Welcome to the LLM chat!")) }
-
-    Column(
-        modifier = Modifier.weight(2f).fillMaxHeight().padding(8.dp)
-            .background(MaterialTheme.colorScheme.surfaceVariant)
-    ) {
-        Text(
-            text = "Chat", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(8.dp)
-        )
-        Column(
-            modifier = Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(8.dp)
-        ) {
-            messages.forEach { message ->
-                RenderMarkdown(message)
-            }
-        }
-        OutlinedTextField(
-            value = userInput,
-            onValueChange = { userInput = it },
-            label = { Text("Ask a question...") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Button(
-            onClick = {
-                if (userInput.isNotBlank()) {
-                    messages = messages + "You: $userInput"
-                    val input = userInput.toJsString()
-                    userInput = ""
-
-                    coroutineScope.launch {
-                        try {
-                            val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
-                            val requestInit = RequestInit(
-                                method = "POST",
-                                headers = Headers().apply {
-                                    append(
-                                        "Content-Type", "text/plain"
-                                    )
-                                },  // Or "application/json"
-                                body = input,
-                                referrer = "",
-                                referrerPolicy = "no-referrer".toJsString(),
-                                mode = RequestMode.CORS,
-                                credentials = RequestCredentials.SAME_ORIGIN,
-                                cache = RequestCache.DEFAULT,
-                                redirect = RequestRedirect.FOLLOW,
-                                integrity = "", // Default empty means no SRI
-                                keepalive = false, // Default is false; only set true for long requests
-                            )
-                            val responseWaiter = window.fetch("$apiBaseUrl/chat", requestInit)
-                            // It would be nice to have some sort of "waiting" icon
-                            val responseObject: JsAny = responseWaiter.await()
-                            val response = responseObject as Response
-                            val reply: JsAny = response.text().await()
-                            messages = messages + "LLM: $reply"
-                        } catch (e: Throwable) {
-                            val stack = e.stackTraceToString()
-                            messages = messages + "ERROR: [Error fetching response] $e"
-                        }
-                    }
-
-                }
-            }, modifier = Modifier.align(Alignment.End).padding(top = 8.dp)
-        ) {
-            Text("Send")
-        }
-    }
 }
 
 
