@@ -1,6 +1,4 @@
-package com.jacagen.jrecipe
-
-import com.jacagen.jrecipe.model.TagDefinition
+package com.jacagen.jrecipe.model
 
 val tagsDefinitions = listOf(
     TagDefinition("Side", "Course"),

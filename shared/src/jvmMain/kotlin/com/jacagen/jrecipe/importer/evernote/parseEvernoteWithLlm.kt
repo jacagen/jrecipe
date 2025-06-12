@@ -7,6 +7,8 @@ import com.jacagen.jrecipe.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.importer.recipeExists
 import com.jacagen.jrecipe.llm.model
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.Tag
+import com.jacagen.jrecipe.model.TagCatalog
 import com.jacagen.jrecipe.service.EvernoteToLlmConverter
 import dev.langchain4j.service.AiServices
 import kotlinx.coroutines.Dispatchers
@@ -19,9 +21,7 @@ import kotlin.uuid.ExperimentalUuidApi
 
 private const val cooksIllustrated = "Cooks Illustrated"
 
-private val assistant = AiServices.builder(EvernoteToLlmConverter::class.java)
-    .chatModel(model)
-    .build()
+private val assistant = AiServices.builder(EvernoteToLlmConverter::class.java).chatModel(model).build()
 
 internal suspend fun parseEvernoteRecipesWithLlm() {
     val evernoteCollection = database.getCollection<EvernoteNote>("evernote")
@@ -45,20 +45,25 @@ private suspend fun EvernoteNote.toRecipe() = withContext(Dispatchers.IO) {
     val adjustedId = id
     val adjustedTitle = recipe.adjustTitle()
     val adjustedAuthor = recipe.adjustAuthor()
-    val adjustedRecipe = recipe.copy(id = adjustedId, title = adjustedTitle, author = adjustedAuthor)
+
+    // Normlize the tags
+    @Suppress("UNCHECKED_CAST") val normlizedTags =
+        recipe.tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
+
+    val adjustedRecipe =
+        recipe.copy(id = adjustedId, title = adjustedTitle, author = adjustedAuthor, tags = normlizedTags)
 
     println("Processed recipe $title")
     adjustedRecipe
 }
 
 private fun Recipe.adjustTitle() = title.removeSuffix(" - Cooks Illustrated")
-private fun Recipe.adjustAuthor() =
-    if (title.endsWith(" - Cooks Illustrated")) {
-        when (author) {
-            "Cooks Illustrated" -> cooksIllustrated
-            "Cook's Illustrated" -> cooksIllustrated
-            null -> "Cooks Illustrated"
-            else -> error("Conflicting authors $this")
-        }
-    } else author
+private fun Recipe.adjustAuthor() = if (title.endsWith(" - Cooks Illustrated")) {
+    when (author) {
+        "Cooks Illustrated" -> cooksIllustrated
+        "Cook's Illustrated" -> cooksIllustrated
+        null -> "Cooks Illustrated"
+        else -> error("Conflicting authors $this")
+    }
+} else author
 
