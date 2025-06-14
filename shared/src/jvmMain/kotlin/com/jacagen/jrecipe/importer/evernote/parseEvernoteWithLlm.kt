@@ -31,7 +31,7 @@ internal suspend fun parseEvernoteRecipesWithLlm() {
             val recipe = evernote.toRecipe()
             recipeCollection.insertOne(recipe)
         } catch (x: Throwable) {
-            println("ERROR: Could not save recipe ${evernote.title}")
+            println("ERROR: Could not save recipe ${evernote.id}: ${evernote.title}")
             x.printStackTrace()
         }
     }

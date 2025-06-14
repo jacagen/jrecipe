@@ -1,9 +1,13 @@
+@file:OptIn(ExperimentalTime::class)
+
 package com.jacagen.jrecipe.tool
 
 import com.jacagen.jrecipe.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.llm.embeddingModel
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.Tag
+import com.jacagen.jrecipe.model.TagCatalog
 import dev.langchain4j.agent.tool.Tool
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
@@ -13,10 +17,7 @@ import kotlin.time.ExperimentalTime
 class RecipeHelper {
     @Tool
     fun getAllTags() = runBlocking {
-        recipeDao.getAll()
-            .map { it.tags }
-            .flatten()
-            .toSet()
+        recipeDao.getAll().map { it.tags }.flatten().toSet()
     }
 
     @OptIn(ExperimentalTime::class)
@@ -35,6 +36,14 @@ class RecipeHelper {
         println("Sorting results")
         val sortedRecipes = recipesWithSimilarities.sortedByDescending { it.first }
         sortedRecipes.take(topK).map { it.second }.map { it.copy(embedding = null) }
+    }
+
+    @Tool
+    fun importRecipe(id: String, tags: Set<Tag>, recipe: Recipe) = runBlocking {
+        @Suppress("UNCHECKED_CAST") val adjustedTags =
+            tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
+        val recipeToSave = recipe.copy(id = id, tags = adjustedTags)
+        recipeDao.insert(recipeToSave)
     }
 }
 
