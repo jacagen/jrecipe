@@ -29,7 +29,8 @@ val model = OpenAiChatModel.builder().apiKey(apiKey).modelName("gpt-4o").logResp
     .supportedCapabilities(setOf(Capability.RESPONSE_FORMAT_JSON_SCHEMA))
     .strictJsonSchema(true)     // Required for OpenAI (not necessarily others)
     .logRequests(true)  // What is this for?
-    .logResponses(true).build()
+    .logResponses(true)
+    .temperature(0.9).build()
 
 val embeddingModel = OpenAiEmbeddingModel.builder()
     .apiKey(apiKey)
