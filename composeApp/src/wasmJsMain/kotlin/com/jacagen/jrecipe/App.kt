@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material.icons.filled.Kitchen
-import androidx.compose.material.icons.filled.Label
 import androidx.compose.material.icons.filled.LocalDining
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -28,8 +28,6 @@ external object Console {
     fun warn(msg: String)
     fun info(msg: String)
 }
-
-data class Message(val author: String, val body: String)
 
 @Composable
 fun App() {
@@ -179,7 +177,7 @@ fun RecipeTagRow(tags: Set<String>) {
                     ).padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Filled.Label,   // Fix
+                        imageVector = Icons.AutoMirrored.Filled.Label,   // Fix
                         contentDescription = "Tag icon", modifier = Modifier.size(16.dp)
                     )
                     Spacer(modifier = Modifier.width(4.dp))

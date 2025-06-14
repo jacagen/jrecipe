@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import dev.langchain4j.model.chat.Capability
 import dev.langchain4j.model.openai.OpenAiChatModel
+import dev.langchain4j.model.openai.OpenAiEmbeddingModel
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
@@ -29,5 +30,11 @@ val model = OpenAiChatModel.builder().apiKey(apiKey).modelName("gpt-4o").logResp
     .strictJsonSchema(true)     // Required for OpenAI (not necessarily others)
     .logRequests(true)  // What is this for?
     .logResponses(true).build()
+
+val embeddingModel = OpenAiEmbeddingModel.builder()
+    .apiKey(apiKey)
+    .modelName("text-embedding-3-small")
+    .build()
+
 
 internal val objectMapper: ObjectMapper = jacksonObjectMapper().registerModule(uuidModule)

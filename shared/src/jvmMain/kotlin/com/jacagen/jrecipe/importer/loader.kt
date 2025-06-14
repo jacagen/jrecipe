@@ -12,6 +12,7 @@ import com.jacagen.jrecipe.importer.evernote.loadEvernoteToMongo
 import com.jacagen.jrecipe.importer.evernote.parseEvernoteRecipesWithLlm
 import com.jacagen.jrecipe.model.Tag
 import com.jacagen.jrecipe.model.TagCatalog
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlin.time.ExperimentalTime
 
@@ -22,6 +23,7 @@ class RecipeTool : CliktCommand() {
     val parseRecipesWithLlm by option("--parse-evernote-recipes-with-llm", help = "Parse recipes with LLM").flag()
     val parseAppleRecipesWithLlm by option("--parse-apple-note-recipes-with-llm", help = "Parse recipes with LLM").flag()
     val normalizeTags by option("--normalize-tags", help = "Normlize recipe tags").flag()
+    val createEmbeddings by option("--create-embeddings",  help = "Create Embeddings").flag()
 
 
     override fun run() = runBlocking {
@@ -46,6 +48,13 @@ class RecipeTool : CliktCommand() {
                 @Suppress("UNCHECKED_CAST") val adjustedTags = r.tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
                 r.copy(tags = adjustedTags)
             }.forEach { recipeDao.update(it) }
+        }
+        if (createEmbeddings) {
+            recipeDao.getAll().forEach { r ->
+                embedAndStore(r)
+                println("Created embedding for ${r.title}")
+                delay(5000)
+            }
         }
     }
 }
