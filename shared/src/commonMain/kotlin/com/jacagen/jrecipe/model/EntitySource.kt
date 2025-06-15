@@ -1,6 +1,6 @@
 package com.jacagen.jrecipe.model
 
-enum class RecipeSource {
+enum class EntitySource {
     EVERNOTE,
     APPLE_NOTE,
 }

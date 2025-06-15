@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalTime::class)
+@file:OptIn(ExperimentalTime::class) @file:JvmName("RestaurantToolsKt")
 
 package com.jacagen.jrecipe.tool
 
@@ -14,7 +14,7 @@ import kotlinx.coroutines.runBlocking
 import kotlin.time.ExperimentalTime
 
 @Suppress("unused")
-class RecipeHelper {
+class RecipeTools {
     @Tool
     fun getAllTags() = runBlocking {
         recipeDao.getAll().map { it.tags }.flatten().toSet()

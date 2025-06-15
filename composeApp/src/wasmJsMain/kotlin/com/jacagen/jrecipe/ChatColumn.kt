@@ -12,7 +12,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import kotlinx.browser.window
 import kotlinx.coroutines.await
@@ -33,10 +32,10 @@ fun RowScope.ChatColumn() {
         modifier = Modifier.Companion.weight(2f).fillMaxHeight().padding(8.dp)
             .background(MaterialTheme.colorScheme.surfaceVariant)
     ) {
-        Column {
-            Text("The quick brown fox", style = TextStyle(fontFamily = latinFontFamily()))
-            Text("こんにちは世界", style = TextStyle(fontFamily = japaneseFontFamily()))
-        }
+//        Column {
+//            Text("The quick brown fox", style = TextStyle(fontFamily = latinFontFamily()))
+//            Text("こんにちは世界", style = TextStyle(fontFamily = japaneseFontFamily()))
+//        }
         Text(
             text = "Chat", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.Companion.padding(8.dp)
         )
@@ -53,37 +52,44 @@ fun RowScope.ChatColumn() {
                 }
             }
         }
-        OutlinedTextField(
-            value = userInput,
-            onValueChange = { userInput = it },
-            label = { Text("Ask a question...") },
-            modifier = Modifier.Companion.fillMaxWidth()
-        )
-        IconButton(
-            onClick = {
-                if (userInput.isNotBlank()) {
-                    messages = messages + "You: $userInput"
-                    val input = userInput.toJsString()
-                    userInput = ""
-                    val requestInit = createChatRequest(input)
-                    coroutineScope.launch {
-                        isThinking = true   // Also should make the button non-clickable
-                        try {
-                            val reply: JsAny = submitChatRequest(requestInit)
-                            messages = messages + "LLM: $reply"
-                        } catch (e: Throwable) {
-                            messages = messages + "ERROR: [Error fetching response] $e"
-                        } finally {
-                            isThinking = false
+        Row(
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically
+        ) {
+            OutlinedTextField(
+                value = userInput,
+                onValueChange = { userInput = it },
+                label = { Text("Ask a question...") },
+                modifier = Modifier.weight(1f)
+            )
+            IconButton(
+                onClick = {
+                    if (userInput.isNotBlank()) {
+                        messages = messages + "You: $userInput"
+                        val input = userInput.toJsString()
+                        userInput = ""
+                        val requestInit = createChatRequest(input)
+                        coroutineScope.launch {
+                            isThinking = true
+                            try {
+                                val reply: JsAny = submitChatRequest(requestInit)
+                                messages = messages + "LLM: $reply"
+                            } catch (e: Throwable) {
+                                messages = messages + "ERROR: $e"
+                            } finally {
+                                isThinking = false
+                            }
                         }
                     }
-                }
-            }, modifier = Modifier.Companion.align(Alignment.Companion.End).padding(top = 8.dp)
-        ) {
-            if (isThinking) Icon(Icons.Filled.HourglassEmpty, contentDescription = "Waiting...")
-            else Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send")
+                }) {
+                if (isThinking) Icon(Icons.Filled.HourglassEmpty, contentDescription = "Waiting...")
+                else Icon(Icons.AutoMirrored.Filled.Send, contentDescription = "Send")
+            }
         }
     }
+}
+
+private class ChatError(val msg: String) : Exception(msg) {
+    override fun toString() = msg
 }
 
 private suspend fun submitChatRequest(requestInit: RequestInit): JsAny {
@@ -91,8 +97,11 @@ private suspend fun submitChatRequest(requestInit: RequestInit): JsAny {
     val responseWaiter = window.fetch("$apiBaseUrl/chat", requestInit)
     val responseObject: JsAny = responseWaiter.await()
     val response = responseObject as Response
-    val reply: JsAny = response.text().await()
-    return reply
+    if (response.ok)
+        return response.text().await()
+    else
+        //if (response.ok) return reply else throw ChatError(reply.toString())
+        throw ChatError(response.statusText)
 }
 
 private fun createChatRequest(input: JsString): RequestInit {

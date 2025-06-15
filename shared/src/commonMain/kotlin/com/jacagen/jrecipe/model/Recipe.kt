@@ -10,6 +10,8 @@ import kotlin.time.ExperimentalTime
 import kotlin.time.Instant
 import kotlin.uuid.ExperimentalUuidApi
 
+typealias RecipeId = String
+
 @OptIn(ExperimentalTime::class)
 object InstantIso8601Serializer : KSerializer<Instant> {    // It feels like this should maybe not live in `commonMain?
     override val descriptor = PrimitiveSerialDescriptor("Instant", PrimitiveKind.STRING)
@@ -25,7 +27,7 @@ object InstantIso8601Serializer : KSerializer<Instant> {    // It feels like thi
 
 @Serializable
 data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
-    @ObjectId val id: String,
+    @ObjectId val id: RecipeId,
 
     val title: String,
     val source: String, // RecipeSource,
