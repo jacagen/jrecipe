@@ -7,6 +7,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material.icons.filled.Kitchen
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.LocalDining
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -75,19 +77,63 @@ fun RecipeView() {
 
 @Composable
 fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
+    val grouped = mapOf(
+        "Recipes" to recipes.filter { true }, // Placeholder - adjust if categorization is needed
+        "Ingredients" to emptyList(), // Future implementation
+        "Other" to emptyList()
+    )
+
     LazyColumn(
-        modifier = Modifier.weight(1f).fillMaxHeight().background(MaterialTheme.colorScheme.surfaceVariant)
+        modifier = Modifier
+            .weight(1f)
+            .fillMaxHeight()
+            .background(MaterialTheme.colorScheme.surfaceVariant)
             .padding(8.dp)
     ) {
-        items(recipes) { recipe ->
-            Row(
-                modifier = Modifier.fillMaxWidth().padding(8.dp).clickable { onSelect(recipe) },
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(imageVector = Icons.Filled.LocalDining, contentDescription = "Recipe")
-                Text(
-                    text = recipe.title, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(8.dp)
-                )
+        grouped.forEach { (sectionTitle, sectionRecipes) ->
+            item {
+                var expanded by remember { mutableStateOf(true) }
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { expanded = !expanded }
+                            .padding(vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = sectionTitle,
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.weight(1f)
+                        )
+                        Icon(
+                            imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                            contentDescription = if (expanded) "Collapse" else "Expand"
+                        )
+                    }
+
+                    if (expanded) {
+                        sectionRecipes.forEach { recipe ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 8.dp, vertical = 4.dp)
+                                    .clickable { onSelect(recipe) },
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Filled.LocalDining,
+                                    contentDescription = "Recipe"
+                                )
+                                Text(
+                                    text = recipe.title,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    modifier = Modifier.padding(start = 8.dp)
+                                )
+                            }
+                        }
+                    }
+                }
             }
         }
     }
