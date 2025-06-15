@@ -35,7 +35,7 @@ fun App() {
     val colors = if (isDark) darkColorScheme() else lightColorScheme()
 
     MaterialTheme(
-        colorScheme = colors, typography = Typography(), shapes = Shapes()
+        colorScheme = colors, typography = appTypography(), shapes = Shapes()
     ) {
         Surface(modifier = Modifier.fillMaxSize()) {
             RecipeView()

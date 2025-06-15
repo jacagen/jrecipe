@@ -12,6 +12,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import kotlinx.browser.window
 import kotlinx.coroutines.await
@@ -32,6 +33,10 @@ fun RowScope.ChatColumn() {
         modifier = Modifier.Companion.weight(2f).fillMaxHeight().padding(8.dp)
             .background(MaterialTheme.colorScheme.surfaceVariant)
     ) {
+        Column {
+            Text("The quick brown fox", style = TextStyle(fontFamily = latinFontFamily()))
+            Text("こんにちは世界", style = TextStyle(fontFamily = japaneseFontFamily()))
+        }
         Text(
             text = "Chat", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.Companion.padding(8.dp)
         )
