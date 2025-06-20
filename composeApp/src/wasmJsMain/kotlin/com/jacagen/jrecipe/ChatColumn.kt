@@ -59,7 +59,9 @@ fun RowScope.ChatColumn() {
                 value = userInput,
                 onValueChange = { userInput = it },
                 label = { Text("Ask a question...") },
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(start = 8.dp)
             )
             IconButton(
                 onClick = {
