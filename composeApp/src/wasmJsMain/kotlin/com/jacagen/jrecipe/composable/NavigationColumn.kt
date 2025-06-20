@@ -42,50 +42,106 @@ fun RowScope.NavigationColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit)
             .padding(8.dp)
     ) {
         grouped.forEach { (sectionTitle, sectionRecipes) ->
-            item {
-                var expanded by remember { mutableStateOf(true) }
-                Column(modifier = Modifier.Companion.fillMaxWidth()) {
-                    Row(
-                        modifier = Modifier.Companion
-                            .fillMaxWidth()
-                            .clickable { expanded = !expanded }
-                            .padding(vertical = 8.dp),
-                        verticalAlignment = Alignment.Companion.CenterVertically
-                    ) {
-                        Text(
-                            text = sectionTitle,
-                            style = MaterialTheme.typography.titleMedium,
-                            modifier = Modifier.Companion.weight(1f)
-                        )
-                        Icon(
-                            imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                            contentDescription = if (expanded) "Collapse" else "Expand"
-                        )
-                    }
 
-                    if (expanded) {
-                        sectionRecipes.forEach { recipe ->
-                            Row(
-                                modifier = Modifier.Companion
-                                    .fillMaxWidth()
-                                    .padding(horizontal = 8.dp, vertical = 4.dp)
-                                    .clickable { onSelect(recipe) },
-                                verticalAlignment = Alignment.Companion.CenterVertically
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Filled.LocalDining,
-                                    contentDescription = "Recipe"
-                                )
-                                Text(
-                                    text = recipe.title,
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    modifier = Modifier.Companion.padding(start = 8.dp)
-                                )
-                            }
+        }
+
+        // Tags
+        item {
+            var expanded by remember { mutableStateOf(true) }
+            Column(modifier = Modifier.Companion.fillMaxWidth()) {
+                Row(
+                    modifier = Modifier.Companion
+                        .fillMaxWidth()
+                        .clickable { expanded = !expanded }
+                        .padding(vertical = 8.dp),
+                    verticalAlignment = Alignment.Companion.CenterVertically
+                ) {
+                    Text(
+                        text = "Tags",
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.Companion.weight(1f)
+                    )
+                    Icon(
+                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                        contentDescription = if (expanded) "Collapse" else "Expand"
+                    )
+                }
+            }
+        }
+
+        // Recipes
+        item {
+            var expanded by remember { mutableStateOf(true) }
+            Column(modifier = Modifier.Companion.fillMaxWidth()) {
+                Row(
+                    modifier = Modifier.Companion
+                        .fillMaxWidth()
+                        .clickable { expanded = !expanded }
+                        .padding(vertical = 8.dp),
+                    verticalAlignment = Alignment.Companion.CenterVertically
+                ) {
+                    Text(
+                        text = "Recipes",
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.Companion.weight(1f)
+                    )
+                    Icon(
+                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                        contentDescription = if (expanded) "Collapse" else "Expand"
+                    )
+                }
+
+                if (expanded) {
+                    recipes.forEach { recipe ->
+                        Row(
+                            modifier = Modifier.Companion
+                                .fillMaxWidth()
+                                .padding(horizontal = 8.dp, vertical = 4.dp)
+                                .clickable { onSelect(recipe) },
+                            verticalAlignment = Alignment.Companion.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.LocalDining,
+                                contentDescription = "Recipe"
+                            )
+                            Text(
+                                text = recipe.title,
+                                style = MaterialTheme.typography.bodyLarge,
+                                modifier = Modifier.Companion.padding(start = 8.dp)
+                            )
                         }
                     }
                 }
             }
         }
+
+        // Ingredients
+        item {
+            var expanded by remember { mutableStateOf(true) }
+            Column(modifier = Modifier.Companion.fillMaxWidth()) {
+                Row(
+                    modifier = Modifier.Companion
+                        .fillMaxWidth()
+                        .clickable { expanded = !expanded }
+                        .padding(vertical = 8.dp),
+                    verticalAlignment = Alignment.Companion.CenterVertically
+                ) {
+                    Text(
+                        text = "Ingredients",
+                        style = MaterialTheme.typography.titleMedium,
+                        modifier = Modifier.Companion.weight(1f)
+                    )
+                    Icon(
+                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                        contentDescription = if (expanded) "Collapse" else "Expand"
+                    )
+                }
+            }
+        }
+
+
+
+
+
     }
 }
