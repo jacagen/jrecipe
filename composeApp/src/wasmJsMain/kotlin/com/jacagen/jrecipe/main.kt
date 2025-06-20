@@ -7,6 +7,6 @@ import kotlinx.browser.document
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
     ComposeViewport(document.body!!) {
-        App()
+        _root_ide_package_.com.jacagen.jrecipe.composable.App()
     }
 }

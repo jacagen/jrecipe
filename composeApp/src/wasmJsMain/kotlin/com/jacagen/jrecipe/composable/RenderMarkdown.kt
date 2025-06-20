@@ -1,4 +1,4 @@
-package com.jacagen.jrecipe
+package com.jacagen.jrecipe.composable
 
 import androidx.compose.runtime.Composable
 import com.mikepenz.markdown.m3.Markdown

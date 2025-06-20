@@ -1,14 +1,10 @@
-package com.jacagen.jrecipe
+package com.jacagen.jrecipe.composable
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material.icons.filled.Kitchen
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.LocalDining
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -40,13 +36,13 @@ fun App() {
         colorScheme = colors, typography = appTypography(), shapes = Shapes()
     ) {
         Surface(modifier = Modifier.fillMaxSize()) {
-            RecipeView()
+            MainView()
         }
     }
 }
 
 @Composable
-fun RecipeView() {
+fun MainView() {
     var recipes by remember { mutableStateOf<List<Recipe>>(emptyList()) }
     var selectedRecipe by remember { mutableStateOf<Recipe?>(null) }
 
@@ -69,73 +65,9 @@ fun RecipeView() {
     }
 
     Row(Modifier.fillMaxSize()) {
-        RecipeListColumn(recipes = recipes, onSelect = { selectedRecipe = it })
+        NavigationColumn(recipes = recipes, onSelect = { selectedRecipe = it })
         RecipeDetailColumn(recipe = selectedRecipe)
         ChatColumn()
-    }
-}
-
-@Composable
-fun RowScope.RecipeListColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
-    val grouped = mapOf(
-        "Recipes" to recipes.filter { true }, // Placeholder - adjust if categorization is needed
-        "Ingredients" to emptyList(), // Future implementation
-        "Other" to emptyList()
-    )
-
-    LazyColumn(
-        modifier = Modifier
-            .weight(1f)
-            .fillMaxHeight()
-            .background(MaterialTheme.colorScheme.surfaceVariant)
-            .padding(8.dp)
-    ) {
-        grouped.forEach { (sectionTitle, sectionRecipes) ->
-            item {
-                var expanded by remember { mutableStateOf(true) }
-                Column(modifier = Modifier.fillMaxWidth()) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { expanded = !expanded }
-                            .padding(vertical = 8.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = sectionTitle,
-                            style = MaterialTheme.typography.titleMedium,
-                            modifier = Modifier.weight(1f)
-                        )
-                        Icon(
-                            imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                            contentDescription = if (expanded) "Collapse" else "Expand"
-                        )
-                    }
-
-                    if (expanded) {
-                        sectionRecipes.forEach { recipe ->
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .padding(horizontal = 8.dp, vertical = 4.dp)
-                                    .clickable { onSelect(recipe) },
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Filled.LocalDining,
-                                    contentDescription = "Recipe"
-                                )
-                                Text(
-                                    text = recipe.title,
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    modifier = Modifier.padding(start = 8.dp)
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 

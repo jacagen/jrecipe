@@ -1,4 +1,4 @@
-package com.jacagen.jrecipe
+package com.jacagen.jrecipe.composable
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.resources.Font

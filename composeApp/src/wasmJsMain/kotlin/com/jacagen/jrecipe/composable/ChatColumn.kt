@@ -1,4 +1,4 @@
-package com.jacagen.jrecipe
+package com.jacagen.jrecipe.composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
