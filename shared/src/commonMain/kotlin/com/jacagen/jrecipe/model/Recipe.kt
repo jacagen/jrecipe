@@ -24,6 +24,7 @@ data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) co
     @Serializable(with = InstantIso8601Serializer::class) val updatedInSource: Instant?,
     val tags: Set<Tag>,
     val embedding: List<Float>? = null,
+    @Serializable(with = InstantIso8601Serializer::class) val verified: Instant? = null,  // null == never verified
 ) {
     fun toEmbeddingText(): String {
         val tagText = "Tags: ${tags.joinToString(", ")}"
