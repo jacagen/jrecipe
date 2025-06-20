@@ -1,21 +1,13 @@
 package com.jacagen.jrecipe.model
 
+import com.jacagen.jrecipe.serde.DayOfWeekSerializer
+import com.jacagen.jrecipe.serde.WeeklyHoursSerializer
 import kotlinx.datetime.LocalTime
-import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.builtins.ListSerializer
-import kotlinx.serialization.builtins.MapSerializer
-import kotlinx.serialization.builtins.serializer
-import kotlinx.serialization.descriptors.PrimitiveKind
-import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
-import kotlinx.serialization.descriptors.SerialDescriptor
-import kotlinx.serialization.descriptors.buildClassSerialDescriptor
-import kotlinx.serialization.encoding.CompositeDecoder
-import kotlinx.serialization.encoding.Decoder
-import kotlinx.serialization.encoding.Encoder
 
 typealias RestaurantId = String
 
+@Serializable
 data class Restaurant(
     val id: RestaurantId,
     val name: String,
@@ -25,10 +17,12 @@ data class Restaurant(
     val source: EntitySource,
 )
 
-enum class DayOfWeek {
+@Serializable(with = DayOfWeekSerializer::class)
+enum class DayOfWeek {  // ChatGPT suggested I needed to roll this myself--I suspect this is not true
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
 }
 
+@Serializable
 data class OpeningPeriod(
     val open: LocalTime,
     val close: LocalTime
@@ -36,6 +30,7 @@ data class OpeningPeriod(
 
 typealias DailyHours = List<OpeningPeriod>
 
+@Serializable(with = WeeklyHoursSerializer::class)
 data class WeeklyHours(
     val hours: Map<DayOfWeek, DailyHours> = emptyMap()
 )

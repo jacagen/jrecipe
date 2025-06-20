@@ -1,6 +1,6 @@
-package com.jacagen.jrecipe.dao.mongodb
+package com.jacagen.jrecipe.data.dao.mongodb
 
-import com.jacagen.jrecipe.dao.RecipeDao
+import com.jacagen.jrecipe.data.dao.RecipeDao
 import com.jacagen.jrecipe.model.Recipe
 import com.mongodb.kotlin.client.coroutine.MongoCollection
 import kotlinx.coroutines.flow.firstOrNull
@@ -22,7 +22,7 @@ class MongoRecipeDao(private val collection: MongoCollection<Recipe>) : RecipeDa
     }
 
     override suspend fun findById(id: String): Recipe? {
-        val filter = org.bson.Document("_id", id.toString())
+        val filter = Document("_id", id.toString())
         return collection.find(filter).firstOrNull()
     }
 
@@ -31,12 +31,12 @@ class MongoRecipeDao(private val collection: MongoCollection<Recipe>) : RecipeDa
     }
 
     override suspend fun update(recipe: Recipe) {
-        val filter = org.bson.Document("_id", recipe.id.toString())
+        val filter = Document("_id", recipe.id.toString())
         collection.replaceOne(filter, recipe)
     }
 
     override suspend fun delete(id: Uuid) {
-        val filter = org.bson.Document("_id", id.toString())
+        val filter = Document("_id", id.toString())
         collection.deleteOne(filter)
     }
 

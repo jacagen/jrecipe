@@ -6,7 +6,7 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.main
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
-import com.jacagen.jrecipe.dao.mongodb.recipeDao
+import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.importer.applenote.parseAppleNoteRecipesWithLlm
 import com.jacagen.jrecipe.importer.evernote.loadEvernoteToMongo
 import com.jacagen.jrecipe.importer.evernote.parseEvernoteRecipesWithLlm

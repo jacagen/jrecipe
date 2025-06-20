@@ -3,7 +3,7 @@
 package com.jacagen.jrecipe.importer.evernote
 
 
-import com.jacagen.jrecipe.dao.mongodb.database
+import com.jacagen.jrecipe.data.dao.mongodb.database
 import com.jacagen.jrecipe.model.ObjectId
 import com.jacagen.jrecipe.model.Tag
 import org.bson.Document

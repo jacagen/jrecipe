@@ -1,11 +1,11 @@
-package com.jacagen.jrecipe.service
+package com.jacagen.jrecipe.llm.`interface`
 
 import com.jacagen.jrecipe.importer.applenote.AppleNoteRecipe
 import com.jacagen.jrecipe.importer.evernote.EvernoteNote
 import com.jacagen.jrecipe.model.Recipe
 import dev.langchain4j.service.SystemMessage
 
-internal interface SourceToReipeConverter {
+internal interface SourceToRecipeConverter {
     @SystemMessage(
         """
         Your job is to take a recipe, and convert it to a standard output format.

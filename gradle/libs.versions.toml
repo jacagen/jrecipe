@@ -22,8 +22,10 @@ androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle
 clikt = {module = "com.github.ajalt.clikt:clikt", version.ref = "clikt"}
 clikt-markdown = {module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt"}
 
+jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
 jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 jackson-jsonSchema = { module = "com.fasterxml.jackson.module:jackson-module-jsonSchema", version.ref = "jackson" }
+jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson"}
 
 #junit = { module = "junit:junit", version.ref = "junit" }
 

@@ -2,14 +2,14 @@
 
 package com.jacagen.jrecipe.importer.evernote
 
-import com.jacagen.jrecipe.dao.mongodb.database
-import com.jacagen.jrecipe.dao.mongodb.recipeCollection
+import com.jacagen.jrecipe.data.dao.mongodb.database
+import com.jacagen.jrecipe.data.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.importer.recipeExists
 import com.jacagen.jrecipe.llm.model
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.Tag
 import com.jacagen.jrecipe.model.TagCatalog
-import com.jacagen.jrecipe.service.SourceToReipeConverter
+import com.jacagen.jrecipe.llm.`interface`.SourceToRecipeConverter
 import dev.langchain4j.service.AiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -21,7 +21,7 @@ import kotlin.uuid.ExperimentalUuidApi
 
 private const val cooksIllustrated = "Cooks Illustrated"
 
-private val assistant = AiServices.builder(SourceToReipeConverter::class.java).chatModel(model).build()
+private val assistant = AiServices.builder(SourceToRecipeConverter::class.java).chatModel(model).build()
 
 internal suspend fun parseEvernoteRecipesWithLlm() {
     val evernoteCollection = database.getCollection<EvernoteNote>("evernote")

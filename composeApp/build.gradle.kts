@@ -24,7 +24,7 @@ kotlin {
                 }
             }
             testTask {
-                enabled = false // 👈 disables broken test task
+                enabled = true // false // 👈 disables broken test task
             }
         }
         binaries.executable()

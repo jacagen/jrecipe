@@ -1,4 +1,4 @@
-package com.jacagen.jrecipe.dao
+package com.jacagen.jrecipe.data.dao
 
 import com.jacagen.jrecipe.model.Recipe
 import kotlin.uuid.ExperimentalUuidApi
