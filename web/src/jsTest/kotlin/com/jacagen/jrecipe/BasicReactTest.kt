@@ -3,10 +3,10 @@ package com.jacagen.jrecipe
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class ComposeAppWasmJsTest {
+class BasicReactTest {
 
     @Test
-    fun example() {
+    fun basicAdditionTest() {
         assertEquals(3, 1 + 2)
     }
 }

@@ -19,21 +19,6 @@ import androidx.compose.ui.text.TextStyle
 
 @Composable
 @OptIn(ExperimentalResourceApi::class)
-fun latinFontFamily(): FontFamily = FontFamily(
-    Font(Res.font.NotoSans_Regular, weight = FontWeight.Normal),
-    Font(Res.font.NotoSans_Bold, weight = FontWeight.Bold),
-    Font(Res.font.NotoSans_Italic, style = FontStyle.Italic)
-)
-
-@Composable
-@OptIn(ExperimentalResourceApi::class)
-fun japaneseFontFamily(): FontFamily = FontFamily(
-    Font(Res.font.NotoSansJP_Regular, weight = FontWeight.Normal),
-    Font(Res.font.NotoSansJP_Bold, weight = FontWeight.Bold)
-)
-
-@Composable
-@OptIn(ExperimentalResourceApi::class)
 fun appFontFamily(): FontFamily = FontFamily(
     Font(Res.font.NotoSans_Regular, weight = FontWeight.Normal),
     Font(Res.font.NotoSans_Bold, weight = FontWeight.Bold),

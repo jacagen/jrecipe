@@ -43,9 +43,6 @@ fun Application.module() {
     }
     routing {
         // Is there a more REST-ish way of defining some of these?
-        get("/") {
-            call.respondText("Ktor: ${Greeting().greet()}")
-        }
         get("/recipes") {
             val sortByTitle = call.request.queryParameters.contains("sortByTitle")
             call.respond(
