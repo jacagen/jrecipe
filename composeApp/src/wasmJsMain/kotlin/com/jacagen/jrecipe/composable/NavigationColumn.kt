@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.LocalDining
@@ -25,15 +26,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.TagDefinition
 
 @Composable
-fun RowScope.NavigationColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit) {
-    val grouped = mapOf(
-        "Recipes" to recipes.filter { true }, // Placeholder - adjust if categorization is needed
-        "Ingredients" to emptyList(), // Future implementation
-        "Other" to emptyList()
-    )
-
+fun RowScope.NavigationColumn(recipes: List<Recipe>, tags: List<TagDefinition>, onRecipeSelect: (Recipe) -> Unit) {
     LazyColumn(
         modifier = Modifier.Companion
             .weight(1f)
@@ -41,13 +37,9 @@ fun RowScope.NavigationColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit)
             .background(MaterialTheme.colorScheme.surfaceVariant)
             .padding(8.dp)
     ) {
-        grouped.forEach { (sectionTitle, sectionRecipes) ->
-
-        }
-
         // Tags
         item {
-            var expanded by remember { mutableStateOf(true) }
+            var expanded by remember { mutableStateOf(false) }
             Column(modifier = Modifier.Companion.fillMaxWidth()) {
                 Row(
                     modifier = Modifier.Companion
@@ -67,11 +59,32 @@ fun RowScope.NavigationColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit)
                     )
                 }
             }
+
+            if (expanded) {
+                tags.forEach { tag ->
+                    Row(
+                        modifier = Modifier.Companion
+                            .fillMaxWidth()
+                            .padding(horizontal = 8.dp, vertical = 4.dp),
+                        verticalAlignment = Alignment.Companion.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.Label,
+                            contentDescription = "Label"
+                        )
+                        Text(
+                            text = tag.tag,
+                            style = MaterialTheme.typography.bodyLarge,
+                            modifier = Modifier.Companion.padding(start = 8.dp)
+                        )
+                    }
+                }
+            }
         }
 
         // Recipes
         item {
-            var expanded by remember { mutableStateOf(true) }
+            var expanded by remember { mutableStateOf(false) }
             Column(modifier = Modifier.Companion.fillMaxWidth()) {
                 Row(
                     modifier = Modifier.Companion
@@ -97,7 +110,7 @@ fun RowScope.NavigationColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit)
                             modifier = Modifier.Companion
                                 .fillMaxWidth()
                                 .padding(horizontal = 8.dp, vertical = 4.dp)
-                                .clickable { onSelect(recipe) },
+                                .clickable { onRecipeSelect(recipe) },
                             verticalAlignment = Alignment.Companion.CenterVertically
                         ) {
                             Icon(
@@ -138,10 +151,5 @@ fun RowScope.NavigationColumn(recipes: List<Recipe>, onSelect: (Recipe) -> Unit)
                 }
             }
         }
-
-
-
-
-
     }
 }

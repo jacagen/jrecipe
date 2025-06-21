@@ -1,7 +1,10 @@
 package com.jacagen.jrecipe.composable
 
-import androidx.compose.foundation.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Label
 import androidx.compose.material.icons.filled.Kitchen
@@ -14,6 +17,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import com.jacagen.jrecipe.model.Ingredient
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.TagDefinition
 import kotlinx.browser.window
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
@@ -46,6 +50,9 @@ fun MainView() {
     var recipes by remember { mutableStateOf<List<Recipe>>(emptyList()) }
     var selectedRecipe by remember { mutableStateOf<Recipe?>(null) }
 
+    var tags by remember { mutableStateOf<List<TagDefinition>>(emptyList()) }
+
+    // Load recipes
     LaunchedEffect(Unit) {
         val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
         window.fetch("$apiBaseUrl/recipes?sortByTitle").then { response ->
@@ -58,6 +65,25 @@ fun MainView() {
                     null
                 }
             } else {
+                error("Could not fetch recipes")    // We need better error handling
+            }
+            null
+        }
+    }
+
+    // Load tags
+    LaunchedEffect(Unit) {
+        val apiBaseUrl = getConfig()["apiBaseUrl"] ?: error("Missing apiBaseUrl in config.json")
+        window.fetch("$apiBaseUrl/tags").then { response ->
+            if (response.ok) {
+                val text = response.text()
+                text.then { textResponse ->
+                    tags = Json.decodeFromString(
+                        ListSerializer(TagDefinition.serializer()), textResponse.toString()
+                    )
+                    null
+                }
+            } else {
                 error("Could not fetch recipes")
             }
             null
@@ -65,7 +91,7 @@ fun MainView() {
     }
 
     Row(Modifier.fillMaxSize()) {
-        NavigationColumn(recipes = recipes, onSelect = { selectedRecipe = it })
+        NavigationColumn(recipes = recipes, tags = tags, onRecipeSelect = { selectedRecipe = it })
         RecipeDetailColumn(recipe = selectedRecipe)
         ChatColumn()
     }

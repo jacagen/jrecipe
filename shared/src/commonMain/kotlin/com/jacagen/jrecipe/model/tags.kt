@@ -1,5 +1,6 @@
 package com.jacagen.jrecipe.model
 
+// This most likely needs to go in the database
 val tagsDefinitions = listOf(
     TagDefinition("Side", "Course", setOf("#food-side")),
     TagDefinition("Main Course", "Course", setOf("#food-main-course")),
@@ -35,7 +36,7 @@ val tagsDefinitions = listOf(
     TagDefinition("Vegetarian"),
     TagDefinition("Healthier"),
     TagDefinition("Sandwich", null, setOf("Сандвич")),
-    TagDefinition("Bread", null, setOf("Сандвич")),
+    TagDefinition("Bread", null),
     TagDefinition("Vegetable"),
     TagDefinition("Soup", null, setOf("#food-soup")),
     TagDefinition("Seafood", null, setOf("Морепродукты")),

@@ -2,6 +2,7 @@ package com.jacagen.jrecipe
 
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.llm.`interface`.recipeBot
+import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
@@ -41,6 +42,7 @@ fun Application.module() {
         })
     }
     routing {
+        // Is there a more REST-ish way of defining some of these?
         get("/") {
             call.respondText("Ktor: ${Greeting().greet()}")
         }
@@ -49,6 +51,9 @@ fun Application.module() {
             call.respond(
                 if (sortByTitle) recipeDao.getAllSortedByTitle() else recipeDao.getAll()
             )
+        }
+        get("/tags") {
+            call.respond(tagsDefinitions)
         }
         post("/chat") {
             val request = call.receiveText()
