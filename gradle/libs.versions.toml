@@ -4,7 +4,7 @@ clikt = "5.0.3"
 kotlin = "2.1.21"
 kotlinx-datetime = "0.6.2"
 kotlin-emotion = "2025.3.26"
-kotlin-mui = "5.14.12-pre.638"
+kotlin-mui = "2025.6.5-5.17.1"
 kotlin-react = "2025.6.5-19.1.0"
 kotlin-react-router-dom = "2025.1.6-6.28.0"
 ktor = "3.1.3"
@@ -28,7 +28,7 @@ jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr
 
 kotlin-emotion = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-emotion", version.ref = "kotlin-emotion" }
 
-kotlin-mui = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui", version.ref = "kotlin-mui" }
+kotlin-mui = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui-material", version.ref = "kotlin-mui" }
 
 kotlin-react = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-react", version.ref = "kotlin-react" }
 kotlin-react-dom = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-react-dom", version.ref = "kotlin-react" }
