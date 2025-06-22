@@ -22,3 +22,6 @@ shared/src/jvmMain/resources/recipeSource/**
 
 # Secrets
 **/apiKey.kt
+
+# NPM
+node_modules

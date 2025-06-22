@@ -11,7 +11,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.ktor.serializationKotlinxJson)
+            implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.datetime)
         }
         commonTest.dependencies {

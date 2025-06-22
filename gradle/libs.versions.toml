@@ -7,7 +7,7 @@ kotlin-emotion = "2025.3.26"
 kotlin-mui = "2025.6.5-5.17.1"
 kotlin-react = "2025.6.5-19.1.0"
 kotlin-react-router-dom = "2025.1.6-6.28.0"
-ktor = "3.1.3"
+ktor = "3.2.0"
 langchain = "1.0.1"
 langchain-kotlin = "1.0.1-beta6"
 logback = "1.5.18"
@@ -16,19 +16,20 @@ jackson = "2.19.0"
 
 
 [libraries]
-clikt = {module = "com.github.ajalt.clikt:clikt", version.ref = "clikt"}
-clikt-markdown = {module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt"}
+clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
+clikt-markdown = { module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt" }
 
 jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
 jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 jackson-jsonSchema = { module = "com.fasterxml.jackson.module:jackson-module-jsonSchema", version.ref = "jackson" }
-jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson"}
+jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
 
 #junit = { module = "junit:junit", version.ref = "junit" }
 
 kotlin-emotion = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-emotion", version.ref = "kotlin-emotion" }
 
 kotlin-mui = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui-material", version.ref = "kotlin-mui" }
+kotlin-mui-icons-material = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui-icons-material", version.ref = "kotlin-mui" }
 
 kotlin-react = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-react", version.ref = "kotlin-react" }
 kotlin-react-dom = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-react-dom", version.ref = "kotlin-react" }
@@ -37,16 +38,18 @@ kotlin-react-router-dom = { group = "org.jetbrains.kotlin-wrappers", name = "kot
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 
-
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
-ktor-serverContentNegotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-client = { module = "io.ktor:ktor-client", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
-ktor-serializationKotlinxJson = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-serverContentNegotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
 ktor-serverCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-serverNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
 ktor-serverTestHost = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor" }
-
 
 langchain4j = { module = "dev.langchain4j:langchain4j", version.ref = "langchain" }
 langchain4j-kotlin = { module = "dev.langchain4j:langchain4j-kotlin", version.ref = "langchain-kotlin" }
