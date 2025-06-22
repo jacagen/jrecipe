@@ -2,37 +2,34 @@ package com.jacagen.jrecipe.component
 
 import com.jacagen.jrecipe.client
 import com.jacagen.jrecipe.model.Recipe
-import io.ktor.client.call.body
-import io.ktor.client.request.get
+import com.jacagen.jrecipe.model.TagDefinition
+import io.ktor.client.call.*
+import io.ktor.client.request.*
 import mui.material.Box
 import mui.material.Paper
 import mui.system.sx
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML.div
 import react.useEffect
 import react.useState
-import web.cssom.Border
-import web.cssom.Display
-import web.cssom.Flex
-import web.cssom.FlexDirection
-import web.cssom.LineStyle
-import web.cssom.NamedColor
-import web.cssom.Overflow
-import web.cssom.number
-import web.cssom.pct
-import web.cssom.px
-import web.cssom.vh
-import web.cssom.vw
+import web.cssom.*
 
 val ThreeColumnLayout = FC<Props> {
     var recipes by useState(emptyList<Recipe>())
     var selectedRecipe by useState<Recipe?>(null)
 
+    var tags by useState(emptyList<TagDefinition>())
+
     useEffect(Unit) {
         val result = client.get("http://localhost:8080/recipes?sortByTitle")
         recipes = result.body()
     }
+
+    useEffect(Unit) {
+        val result = client.get("http://localhost:8080/tags")
+        tags = result.body()
+    }
+
     Box {
         sx {
             display = Display.flex
@@ -53,6 +50,7 @@ val ThreeColumnLayout = FC<Props> {
             Navigator {
                 this.recipes = recipes
                 onRecipeClick = { selectedRecipe = it }
+                this.tags = tags
             }
         }
 
