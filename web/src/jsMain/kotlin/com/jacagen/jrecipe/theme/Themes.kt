@@ -25,7 +25,12 @@ private val TYPOGRAPHY_OPTIONS = TypographyOptions {
 object Themes {
     val Light = createTheme(
         unsafeJso {
-            palette = unsafeJso { mode = PaletteMode.light }
+            palette = unsafeJso {
+                mode = PaletteMode.light
+                background = unsafeJso {
+                    paper = "#f7f9fc" // light bluish-gray, very subtle
+                }
+            }
             typography = TYPOGRAPHY_OPTIONS
         }
     )
