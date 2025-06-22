@@ -60,6 +60,7 @@ fun Application.module() {
             var message: String? = null
             var fileBytes: ByteArray? = null
             var fileName: String? = null
+            val currentRecipe = call.request.queryParameters["selectedRecipe"]
 
             multipart.forEachPart { part ->
                 when (part) {
@@ -83,9 +84,10 @@ fun Application.module() {
                 call.respond(HttpStatusCode.BadRequest, "Missing 'message' part")
                 return@post
             }
+            val updatedMessage = if (currentRecipe == null) message
+                else "\n\nWhen answering the following, note that the the ID of the currently selected recipe is \"$currentRecipe\"\n\n\n" + message
 
-            // You can use fileBytes and fileName here if needed
-            val response = recipeBot.chat(message)
+            val response = recipeBot.chat(updatedMessage)
             call.respondText(response)
         }
     }

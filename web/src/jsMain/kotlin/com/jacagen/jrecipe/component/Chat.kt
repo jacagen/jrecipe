@@ -1,27 +1,24 @@
 package com.jacagen.jrecipe.component
 
-import js.core.JsAny
-import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.await
 import kotlinx.coroutines.launch
 import mui.icons.material.HourglassEmpty
 import mui.icons.material.Send
 import mui.material.*
 import mui.material.styles.TypographyVariant
 import mui.system.sx
-import org.w3c.fetch.*
 import org.w3c.files.File
-import org.w3c.xhr.FormData
 import react.*
 import react.dom.html.ReactHTML.div
 import react.dom.onChange
 import web.cssom.*
 import web.html.HTMLInputElement
 
-external interface ChatColumnProps : Props
+external interface ChatColumnProps : Props {
+    var onSubmitChatRequest: suspend (String, File?) -> String
+}
 
-val ChatColumn = FC<ChatColumnProps> {
+val ChatColumn = FC<ChatColumnProps> { props ->
     val coroutineScope = useMemo { MainScope() }
 
     var userInput by useState("")
@@ -102,7 +99,7 @@ val ChatColumn = FC<ChatColumnProps> {
                         coroutineScope.launch {
                             isThinking = true
                             try {
-                                val reply = submitChatRequest(createChatRequest(currentInput, currentFile)).toString()
+                                val reply = props.onSubmitChatRequest(currentInput, currentFile)
                                 currentFile = null
                                 setMessages { old -> old + "LLM: $reply" }
                             } catch (e: Throwable) {
@@ -126,28 +123,3 @@ val ChatColumn = FC<ChatColumnProps> {
 
 // Utilities
 
-suspend fun submitChatRequest(requestInit: RequestInit): JsAny {
-    val response = window.fetch("http://localhost:8080/chat", requestInit).await()  // Don't hardcode
-    if (response.ok) return response.text().await()
-    else throw Exception(response.statusText)
-}
-
-fun createChatRequest(input: String, file: File? = null): RequestInit {
-    val formData = FormData()
-    formData.append("message", input)
-    if (file != null) {
-        formData.append("file", file, file.name)
-    }
-    return RequestInit(
-        method = "POST", body = formData
-    ).apply {
-        referrer = ""
-        referrerPolicy = "no-referrer"
-        mode = RequestMode.CORS
-        credentials = RequestCredentials.SAME_ORIGIN
-        cache = RequestCache.DEFAULT
-        redirect = RequestRedirect.FOLLOW
-        integrity = ""
-        keepalive = false
-    }
-}

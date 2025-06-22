@@ -6,6 +6,7 @@ import com.jacagen.jrecipe.data.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.llm.embeddingModel
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.RecipeId
 import com.jacagen.jrecipe.model.Tag
 import com.jacagen.jrecipe.model.TagCatalog
 import dev.langchain4j.agent.tool.Tool
@@ -45,6 +46,11 @@ class RecipeTools {
             tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
         val recipeToSave = recipe.copy(id = id, tags = adjustedTags)
         recipeDao.insert(recipeToSave)
+    }
+
+    @Tool
+    fun getRecipeById(id: RecipeId) = runBlocking {
+        recipeDao.findById(id)
     }
 }
 
