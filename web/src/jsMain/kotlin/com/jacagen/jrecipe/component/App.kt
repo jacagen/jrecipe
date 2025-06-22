@@ -11,6 +11,8 @@ import react.StrictMode
 
 val App = FC<Props> {
     StrictMode {
-        ThreeColumnLayout()
+        ThemeModule {
+            ThreeColumnLayout()
+        }
     }
 }

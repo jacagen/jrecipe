@@ -3,6 +3,7 @@ package com.jacagen.jrecipe.component
 import com.jacagen.jrecipe.client
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.TagDefinition
+import com.jacagen.jrecipe.theme.useTheme
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import mui.icons.material.Chat
@@ -16,6 +17,8 @@ import react.useState
 import web.cssom.*
 
 val ThreeColumnLayout = FC<Props> {
+    val theme = useTheme()
+
     var recipes by useState(emptyList<Recipe>())
     var selectedRecipe by useState<Recipe?>(null)
 
@@ -47,6 +50,7 @@ val ThreeColumnLayout = FC<Props> {
                 minWidth = 240.px
                 maxWidth = 300.px
                 overflowY = Overflow.scroll
+                backgroundColor = Color(theme.palette.background.paper)
             }
             Navigator {
                 this.recipes = recipes
