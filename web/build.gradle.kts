@@ -29,6 +29,9 @@ kotlin {
                 implementation(libs.kotlin.react.dom)
                 implementation(libs.kotlin.react.router.dom)
 
+                implementation(libs.kotlinx.coroutines.core)
+                //implementation(libs.kotlinx.coroutines.react)
+
                 implementation(libs.ktor.client.js)
                 implementation(libs.ktor.client.logging)
                 implementation(libs.ktor.client.content.negotiation)

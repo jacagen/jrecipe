@@ -5,6 +5,7 @@ import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.TagDefinition
 import io.ktor.client.call.*
 import io.ktor.client.request.*
+import mui.icons.material.Chat
 import mui.material.Box
 import mui.material.Paper
 import mui.system.sx
@@ -74,7 +75,7 @@ val ThreeColumnLayout = FC<Props> {
                 maxWidth = 300.px
                 overflowY = Overflow.scroll
             }
-            +"Chat Column"
+            ChatColumn()
         }
     }
 }
