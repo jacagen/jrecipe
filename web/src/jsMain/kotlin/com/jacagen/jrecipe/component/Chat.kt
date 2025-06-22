@@ -14,7 +14,7 @@ import org.w3c.fetch.*
 import react.*
 import react.dom.html.ReactHTML.div
 import react.dom.onChange
-import web.cssom.px
+import web.cssom.*
 import web.html.HTMLInputElement
 
 external interface ChatColumnProps : Props
@@ -27,6 +27,21 @@ val ChatColumn = FC<ChatColumnProps> {
     var isThinking by useState(false)
 
     Box {
+        sx {
+            height = 100.vh
+            display = Display.flex
+            flexDirection = FlexDirection.column
+            padding = 16.px
+        }
+
+        onDragOver = {
+            it.preventDefault()
+        }
+        onDrop = { event ->
+            event.preventDefault()
+            messages = messages + "Dropped something!"
+        }
+
         Typography {
             variant = TypographyVariant.h6
             sx { padding = 8.px }
@@ -34,6 +49,10 @@ val ChatColumn = FC<ChatColumnProps> {
         }
 
         Box {
+            sx {
+                flexGrow = number(1.0)
+                overflowY = Overflow.scroll
+            }
             messages.forEach { message ->
                 div {
                     ReactMarkdown {
@@ -44,7 +63,14 @@ val ChatColumn = FC<ChatColumnProps> {
         }
 
         Box {
+            sx {
+                display = Display.flex
+                gap = 8.px
+                marginTop = 8.px
+            }
+
             TextField {
+                sx { flexGrow = number(1.0) }
                 value = userInput
                 onChange = { event ->
                     val target = event.target as? HTMLInputElement
