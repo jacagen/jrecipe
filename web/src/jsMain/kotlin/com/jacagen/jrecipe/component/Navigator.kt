@@ -45,7 +45,7 @@ val Navigator = FC<NavigatorProps> { props ->
 
         Collapse {
             this.`in` = tagsExpanded
-            timeout = "auto"
+            timeout = 0
 
             List {
                 component = div
@@ -85,7 +85,7 @@ val Navigator = FC<NavigatorProps> { props ->
 
         Collapse {
             this.`in` = recipesExpanded
-            timeout = "auto"
+            timeout = 0
 
             List {
                 component = div
