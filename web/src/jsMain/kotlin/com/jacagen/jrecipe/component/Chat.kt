@@ -11,6 +11,8 @@ import mui.material.*
 import mui.material.styles.TypographyVariant
 import mui.system.sx
 import org.w3c.fetch.*
+import org.w3c.files.File
+import org.w3c.xhr.FormData
 import react.*
 import react.dom.html.ReactHTML.div
 import react.dom.onChange
@@ -23,8 +25,9 @@ val ChatColumn = FC<ChatColumnProps> {
     val coroutineScope = useMemo { MainScope() }
 
     var userInput by useState("")
-    var messages by useState(listOf("Welcome to the LLM chat!"))
+    var (messages, setMessages) = useState(listOf("Welcome to the LLM chat!"))
     var isThinking by useState(false)
+    var currentFile by useState<File?>(null)
 
     Box {
         sx {
@@ -39,7 +42,14 @@ val ChatColumn = FC<ChatColumnProps> {
         }
         onDrop = { event ->
             event.preventDefault()
-            messages = messages + "Dropped something!"
+            val file = event.dataTransfer.files.item(0)
+            if (file != null) {
+                if (file.type == "application/pdf") {
+                    currentFile = file as File
+                } else {
+                    messages = messages + "Cannot handle files of type ${file.type}"
+                }
+            }
         }
 
         Typography {
@@ -88,15 +98,15 @@ val ChatColumn = FC<ChatColumnProps> {
                     if (userInput.isNotBlank()) {
                         val currentInput = userInput
                         userInput = ""
-                        messages = messages + "You: $currentInput"
-
+                        setMessages { old -> old + "You: $currentInput" }
                         coroutineScope.launch {
                             isThinking = true
                             try {
-                                val reply = submitChatRequest(createChatRequest(currentInput)).toString()
-                                messages = messages + "LLM: $reply"
+                                val reply = submitChatRequest(createChatRequest(currentInput, currentFile)).toString()
+                                currentFile = null
+                                setMessages { old -> old + "LLM: $reply" }
                             } catch (e: Throwable) {
-                                messages = messages + "ERROR: $e"
+                                setMessages { old -> old + "ERROR: $e" }
                             } finally {
                                 isThinking = false
                             }
@@ -122,13 +132,14 @@ suspend fun submitChatRequest(requestInit: RequestInit): JsAny {
     else throw Exception(response.statusText)
 }
 
-fun createChatRequest(input: String): RequestInit {
+fun createChatRequest(input: String, file: File? = null): RequestInit {
+    val formData = FormData()
+    formData.append("message", input)
+    if (file != null) {
+        formData.append("file", file, file.name)
+    }
     return RequestInit(
-        method = "POST",
-        headers = Headers().apply {
-            append("Content-Type", "text/plain")
-        },
-        body = input
+        method = "POST", body = formData
     ).apply {
         referrer = ""
         referrerPolicy = "no-referrer"

@@ -5,6 +5,9 @@ import com.jacagen.jrecipe.llm.`interface`.recipeBot
 import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
 import io.ktor.http.*
+import io.ktor.http.content.PartData
+import io.ktor.http.content.forEachPart
+import io.ktor.http.content.streamProvider
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
@@ -53,8 +56,36 @@ fun Application.module() {
             call.respond(tagsDefinitions)
         }
         post("/chat") {
-            val request = call.receiveText()
-            val response = recipeBot.chat(request)  // Set up memory at some point?
+            val multipart = call.receiveMultipart()
+            var message: String? = null
+            var fileBytes: ByteArray? = null
+            var fileName: String? = null
+
+            multipart.forEachPart { part ->
+                when (part) {
+                    is PartData.FormItem -> {
+                        if (part.name == "message") {
+                            message = part.value
+                        }
+                    }
+                    is PartData.FileItem -> {
+                        if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
+                            fileName = part.originalFileName
+                            fileBytes = part.streamProvider().readBytes()
+                        }
+                    }
+                    else -> {}
+                }
+                part.dispose()
+            }
+
+            if (message == null) {
+                call.respond(HttpStatusCode.BadRequest, "Missing 'message' part")
+                return@post
+            }
+
+            // You can use fileBytes and fileName here if needed
+            val response = recipeBot.chat(message)
             call.respondText(response)
         }
     }
