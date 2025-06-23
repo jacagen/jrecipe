@@ -12,6 +12,7 @@ import com.jacagen.jrecipe.model.TagCatalog
 import dev.langchain4j.agent.tool.Tool
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
+import kotlin.collections.toList
 import kotlin.math.sqrt
 import kotlin.time.ExperimentalTime
 

@@ -18,15 +18,6 @@ kotlin {
             implementation(libs.kotlin.test)
         }
         jvmMain.dependencies {
-            implementation(libs.clikt)
-
-            implementation(libs.jackson.kotlin)
-            implementation(libs.jackson.jsonSchema)
-
-            implementation(libs.langchain4j)
-            implementation(libs.langchain4j.openAi)
-            implementation(libs.langchain4j.kotlin)
-
             implementation(libs.mongodb.kotlin)
         }
 

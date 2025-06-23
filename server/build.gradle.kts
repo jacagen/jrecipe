@@ -22,6 +22,16 @@ dependencies {
     implementation(libs.ktor.serverCore)
     implementation(libs.ktor.serverNetty)
     implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.mongodb.kotlin)
+    implementation(libs.jackson.kotlin)
+    implementation(libs.jackson.jsonSchema)
+    implementation(libs.langchain4j)
+    implementation(libs.langchain4j.openAi)
+    implementation(libs.langchain4j.kotlin)
+    implementation(libs.clikt)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.kotlinx.datetime)
+
     testImplementation(libs.ktor.serverTestHost)
     testImplementation(libs.kotlin.testJunit)
 }

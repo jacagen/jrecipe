@@ -2,8 +2,8 @@
 
 package com.jacagen.jrecipe.data.dao.mongodb
 
-import com.jacagen.jrecipe.data.codec.KotlinTimeInstantCodecProvider
-import com.jacagen.jrecipe.data.codec.KotlinUuidCodecProvider
+import com.jacagen.jrecipe.data.dao.codec.KotlinTimeInstantCodecProvider
+import com.jacagen.jrecipe.data.dao.codec.KotlinUuidCodecProvider
 import com.jacagen.jrecipe.model.Recipe
 import com.mongodb.MongoClientSettings
 import com.mongodb.kotlin.client.coroutine.MongoClient

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalTime::class)
 
-package com.jacagen.jrecipe.data.codec
+package com.jacagen.jrecipe.data.dao.codec
 
 import org.bson.BsonReader
 import org.bson.BsonWriter
