@@ -4,6 +4,7 @@ package com.jacagen.jrecipe.llm.tool
 
 import com.jacagen.jrecipe.data.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
+import com.jacagen.jrecipe.importer.embedAndStore
 import com.jacagen.jrecipe.llm.embeddingModel
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.RecipeId
@@ -52,6 +53,17 @@ class RecipeTools {
     @Tool
     fun getRecipeById(id: RecipeId) = runBlocking {
         recipeDao.findById(id)
+    }
+
+    @Tool
+    fun updateRecipeContents(id: RecipeId, updatedRecipe: Recipe) = runBlocking{
+        println("**** Update recipe $id with contents: $updatedRecipe")
+        val oldRecipe = recipeDao.findById(id)!!
+        val updatedRecipe = updatedRecipe.copy(
+            id = id,
+            tags = oldRecipe.tags,
+        )
+        embedAndStore(updatedRecipe)
     }
 }
 

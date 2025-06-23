@@ -5,9 +5,7 @@ import com.jacagen.jrecipe.llm.`interface`.recipeBot
 import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
 import io.ktor.http.*
-import io.ktor.http.content.PartData
-import io.ktor.http.content.forEachPart
-import io.ktor.http.content.streamProvider
+import io.ktor.http.content.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
@@ -19,13 +17,14 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
+import org.apache.pdfbox.Loader
+import org.apache.pdfbox.text.PDFTextStripper
 import kotlin.time.ExperimentalTime
 import kotlin.time.Instant
 import kotlin.uuid.ExperimentalUuidApi
 
 fun main() {
-    embeddedServer(Netty, port = SERVER_PORT, host = "0.0.0.0", module = Application::module)
-        .start(wait = true)
+    embeddedServer(Netty, port = SERVER_PORT, host = "0.0.0.0", module = Application::module).start(wait = true)
 }
 
 @OptIn(ExperimentalUuidApi::class, ExperimentalTime::class)
@@ -56,39 +55,54 @@ fun Application.module() {
             call.respond(tagsDefinitions)
         }
         post("/chat") {
-            val multipart = call.receiveMultipart()
-            var message: String? = null
-            var fileBytes: ByteArray? = null
-            var fileName: String? = null
-            val currentRecipe = call.request.queryParameters["selectedRecipe"]
-
-            multipart.forEachPart { part ->
-                when (part) {
-                    is PartData.FormItem -> {
-                        if (part.name == "message") {
-                            message = part.value
-                        }
-                    }
-                    is PartData.FileItem -> {
-                        if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
-                            fileName = part.originalFileName
-                            fileBytes = part.streamProvider().readBytes()
-                        }
-                    }
-                    else -> {}
-                }
-                part.dispose()
-            }
-
+            val (message, currentRecipe, fileBytes) = retrieveTextAndFileFromHttpRequest(call)
             if (message == null) {
                 call.respond(HttpStatusCode.BadRequest, "Missing 'message' part")
                 return@post
             }
-            val updatedMessage = if (currentRecipe == null) message
-                else "\n\nWhen answering the following, note that the the ID of the currently selected recipe is \"$currentRecipe\"\n\n\n" + message
 
-            val response = recipeBot.chat(updatedMessage)
+            val messagePartOne =
+                if (currentRecipe == null) "" else "When answering the following, note that the the ID of the currently selected recipe is \"$currentRecipe\"\n\n\n"
+            val messagePartThree =
+                if (fileBytes == null) "" else "\n\n\nThe contents of the attached file are as follow: ${fileBytes.extractTextFromPdf()}"
+
+            val response = recipeBot.chat(messagePartOne + message + messagePartThree)
             call.respondText(response)
         }
+    }
+}
+
+private suspend fun retrieveTextAndFileFromHttpRequest(call: RoutingCall): Triple<String?, String?, ByteArray?> {  // Text request, current selected recipe, uploaded file
+    val multipart = call.receiveMultipart()
+    var message: String? = null
+    var fileBytes: ByteArray? = null
+    var fileName: String? = null
+    val currentRecipe = call.request.queryParameters["selectedRecipe"]
+
+    multipart.forEachPart { part ->
+        when (part) {
+            is PartData.FormItem -> {
+                if (part.name == "message") {
+                    message = part.value
+                }
+            }
+
+            is PartData.FileItem -> {
+                if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
+                    fileName = part.originalFileName
+                    fileBytes = part.streamProvider().readBytes()
+                }
+            }
+
+            else -> {}
+        }
+        part.dispose()
+    }
+    return Triple(message, currentRecipe, fileBytes)
+}
+
+fun ByteArray.extractTextFromPdf(): String {
+    Loader.loadPDF(this).use { document ->
+        return PDFTextStripper().getText(document)
     }
 }

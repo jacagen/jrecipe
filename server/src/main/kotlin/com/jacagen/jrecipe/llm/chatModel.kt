@@ -5,6 +5,7 @@ package com.jacagen.jrecipe.llm
 import dev.langchain4j.model.chat.Capability
 import dev.langchain4j.model.openai.OpenAiChatModel
 import dev.langchain4j.model.openai.OpenAiEmbeddingModel
+import java.time.Duration
 import kotlin.uuid.ExperimentalUuidApi
 
 val model = OpenAiChatModel.builder().apiKey(apiKey).modelName("gpt-4o").logResponses(true)
@@ -12,6 +13,7 @@ val model = OpenAiChatModel.builder().apiKey(apiKey).modelName("gpt-4o").logResp
     .strictJsonSchema(true)     // Required for OpenAI (not necessarily others)
     .logRequests(true)  // What is this for?
     .logResponses(true)
+    .timeout(Duration.ofSeconds(60))
     .temperature(0.9).build()
 
 val embeddingModel = OpenAiEmbeddingModel.builder()

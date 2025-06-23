@@ -1,5 +1,6 @@
 [versions]
 # Is there a way to specify these only down to the minor release?
+apache-pdfbox = "3.0.5"
 clikt = "5.0.3"
 kotlin = "2.1.21"
 kotlin-emotion = "2025.3.26"
@@ -17,6 +18,8 @@ jackson = "2.19.0"
 
 
 [libraries]
+apache-pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "apache-pdfbox" }
+
 clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
 clikt-markdown = { module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt" }
 

@@ -9,7 +9,7 @@ import dev.langchain4j.service.SystemMessage
 import dev.langchain4j.service.UserMessage
 
 interface RecipeChatBot {
-    // I do not like hardcoding the `Restaurant` schema in the @SystemMessage
+    // I do not like hardcoding the `Restaurant` schema in the @SystemMessage. Or the repeated instructions.
 
     @UserMessage("{{it}}")
     @SystemMessage(
@@ -38,4 +38,5 @@ interface RecipeChatBot {
 }
 
 val recipeBot = AiServices.builder(RecipeChatBot::class.java).chatModel(model)
-    .chatMemory(MessageWindowChatMemory.withMaxMessages(100)).tools(RecipeTools(), RestaurantTools()).build()
+    .chatMemory(MessageWindowChatMemory.withMaxMessages(100)).tools(RecipeTools(), RestaurantTools())
+    .build()

@@ -16,6 +16,7 @@ application {
 
 dependencies {
     implementation(projects.shared)
+    implementation(libs.apache.pdfbox)
     implementation(libs.logback)
     implementation(libs.ktor.cors)
     implementation(libs.ktor.serverContentNegotiation)
