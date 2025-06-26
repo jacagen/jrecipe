@@ -34,6 +34,7 @@ kotlin-emotion = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-emoti
 
 kotlin-mui = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui-material", version.ref = "kotlin-mui" }
 kotlin-mui-icons-material = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui-icons-material", version.ref = "kotlin-mui" }
+kotlin-mui-system = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-mui-system", version.ref = "kotlin-mui" }
 
 kotlin-react = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-react", version.ref = "kotlin-react" }
 kotlin-react-dom = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-react-dom", version.ref = "kotlin-react" }

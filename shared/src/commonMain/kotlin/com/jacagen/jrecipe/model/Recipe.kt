@@ -9,6 +9,13 @@ import kotlin.uuid.ExperimentalUuidApi
 typealias RecipeId = String
 
 @Serializable
+data class RecipeSummary(
+    @ObjectId val id: RecipeId,
+    val title: String,
+    val tags: Set<Tag>,
+)
+
+@Serializable
 data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
     @ObjectId val id: RecipeId,
 

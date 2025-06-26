@@ -45,6 +45,28 @@ fun Application.module() {
     }
     routing {
         // Is there a more REST-ish way of defining some of these?
+        get("/recipes/summary") {
+            val sortByTitle = call.request.queryParameters.contains("sortByTitle")
+            call.respond(
+                if (sortByTitle) recipeDao.getSummariesSortedByTitle() else TODO()
+            )
+        }
+        get("/recipes/{id}") {
+            val id = call.parameters["id"]
+
+            if (id == null) {
+                call.respond(HttpStatusCode.BadRequest, "Missing recipe ID")
+                return@get
+            }
+
+            val recipe = recipeDao.findById(id)
+
+            if (recipe == null) {
+                call.respond(HttpStatusCode.NotFound, "Recipe not found")
+            } else {
+                call.respond(recipe)
+            }
+        }
         get("/recipes") {
             val sortByTitle = call.request.queryParameters.contains("sortByTitle")
             call.respond(

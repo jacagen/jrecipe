@@ -1,8 +1,11 @@
 package com.jacagen.jrecipe.component
 
-import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.RecipeSummary
 import com.jacagen.jrecipe.model.TagDefinition
 import js.objects.jso
+import js.objects.unsafeJso
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import mui.icons.material.ExpandLess
 import mui.icons.material.ExpandMore
 import mui.icons.material.Label
@@ -15,9 +18,12 @@ import react.dom.html.ReactHTML.div
 import react.useState
 import web.cssom.px
 
+
+private val scope = MainScope()
+
 external interface NavigatorProps : Props {
-    var recipes: List<Recipe>
-    var onRecipeClick: (Recipe) -> Unit
+    var recipes: List<RecipeSummary>
+    var onRecipeClick: suspend (RecipeSummary) -> Unit
     var tags: List<TagDefinition>
 }
 
@@ -53,9 +59,12 @@ val Navigator = FC<NavigatorProps> { props ->
 
                 tags.forEach { tag ->
                     ListItemButton {
-                        sx = jso { paddingLeft = 32.px }
+                        sx = unsafeJso {
+                            paddingLeft = 32.px
+                        }
+
                         ListItemIcon {
-                            sx = jso {
+                            sx = unsafeJso {
                                 minWidth = 36.px // or even 32.px
                             }
                             Label()
@@ -93,7 +102,7 @@ val Navigator = FC<NavigatorProps> { props ->
 
                 recipes.forEach { recipe ->
                     ListItemButton {
-                        onClick = { props.onRecipeClick(recipe) }
+                        onClick = { scope.launch { props.onRecipeClick(recipe) } }
                         sx = jso { paddingLeft = 32.px }
                         ListItemIcon {
                             sx = jso {

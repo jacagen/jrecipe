@@ -25,6 +25,7 @@ kotlin {
                 implementation(libs.kotlin.emotion)
                 implementation(libs.kotlin.mui)
                 implementation(libs.kotlin.mui.icons.material)
+                implementation(libs.kotlin.mui.system)
                 implementation(libs.kotlin.react)
                 implementation(libs.kotlin.react.dom)
                 implementation(libs.kotlin.react.router.dom)

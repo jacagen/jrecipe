@@ -2,6 +2,7 @@ package com.jacagen.jrecipe.data.dao.mongodb
 
 import com.jacagen.jrecipe.data.dao.RecipeDao
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.RecipeSummary
 import com.mongodb.kotlin.client.coroutine.MongoCollection
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.toList
@@ -18,7 +19,13 @@ class MongoRecipeDao(private val collection: MongoCollection<Recipe>) : RecipeDa
 
     override suspend fun getAllSortedByTitle(): List<Recipe> {
         return collection.find().sort(Document("title", 1)).toList()
+    }
 
+    override suspend fun getSummariesSortedByTitle(): List<RecipeSummary> {
+        val summary = collection.withDocumentClass(RecipeSummary::class.java)
+        return summary.find()
+            .projection(Document(mapOf("_id" to 1, "title" to 1, "tags" to 1)))
+            .sort(Document("title", 1)).toList()
     }
 
     override suspend fun findById(id: String): Recipe? {

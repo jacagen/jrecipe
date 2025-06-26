@@ -2,6 +2,7 @@ package com.jacagen.jrecipe.component
 
 import com.jacagen.jrecipe.client
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.RecipeSummary
 import com.jacagen.jrecipe.model.TagDefinition
 import com.jacagen.jrecipe.theme.useTheme
 import io.ktor.client.call.*
@@ -20,17 +21,19 @@ import react.Props
 import react.useEffect
 import react.useState
 import web.cssom.*
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 
 val ThreeColumnLayout = FC<Props> {
     val theme = useTheme()
 
-    var recipes by useState(emptyList<Recipe>())
+    var recipes by useState(emptyList<RecipeSummary>())
     var selectedRecipe by useState<Recipe?>(null)
 
     var tags by useState(emptyList<TagDefinition>())
 
     useEffect(Unit) {
-        val result = client.get("http://localhost:8080/recipes?sortByTitle")
+        val result = client.get("http://localhost:8080/recipes/summary?sortByTitle")
         recipes = result.body()
     }
 
@@ -45,6 +48,16 @@ val ThreeColumnLayout = FC<Props> {
             else "http://localhost:8080/chat?selectedRecipe=${selectedRecipe!!.id}"
         val response = window.fetch(url, requestInit).await()
         if (response.ok) return response.text().await()
+        else throw Exception(response.statusText)
+    }
+
+    suspend fun retrieveRecipe(summary: RecipeSummary): Recipe {
+        val url = "http://localhost:8080/recipes/${summary.id}"
+        val response = window.fetch(url).await()
+        if (response.ok) {
+            val text = response.text().await()
+            return Json.decodeFromString(text)
+        }
         else throw Exception(response.statusText)
     }
 
@@ -91,7 +104,9 @@ val ThreeColumnLayout = FC<Props> {
             }
             Navigator {
                 this.recipes = recipes
-                onRecipeClick = { selectedRecipe = it }
+                onRecipeClick = {
+                    selectedRecipe = retrieveRecipe(it)
+                }
                 this.tags = tags
             }
         }
