@@ -12,6 +12,7 @@ import com.jacagen.jrecipe.importer.evernote.loadEvernoteToMongo
 import com.jacagen.jrecipe.importer.evernote.parseEvernoteRecipesWithLlm
 import com.jacagen.jrecipe.model.Tag
 import com.jacagen.jrecipe.model.TagCatalog
+import com.jacagen.jrecipe.importer.vcard.loadRestaurantsFromVCard
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlin.time.ExperimentalTime
@@ -19,6 +20,7 @@ import kotlin.time.ExperimentalTime
 
 class RecipeTool : CliktCommand() {
     val load by option("--load-evernote", help = "Load Evernote notes").flag()
+    val loadRestaurantsFromVCard by option ("--load-restaurants-vcard", help = "Load restaurants from vCard").flag()
     val dropRecipes by option("--drop-recipes", help = "Drop recipes").flag()
     val parseRecipesWithLlm by option("--parse-evernote-recipes-with-llm", help = "Parse recipes with LLM").flag()
     val parseAppleRecipesWithLlm by option("--parse-apple-note-recipes-with-llm", help = "Parse recipes with LLM").flag()
@@ -30,6 +32,10 @@ class RecipeTool : CliktCommand() {
         if (load) {
             println("Loading...")
             loadEvernoteToMongo()
+        }
+        if (loadRestaurantsFromVCard) {
+            println("Loading restaurnts from vCard")
+            loadRestaurantsFromVCard()
         }
         if (parseRecipesWithLlm) {
             println("Parsing recipes with LLM...")

@@ -2,6 +2,7 @@
 # Is there a way to specify these only down to the minor release?
 apache-pdfbox = "3.0.5"
 clikt = "5.0.3"
+ez-vcard = "0.12.1"
 kotlin = "2.1.21"
 kotlin-emotion = "2025.3.26"
 kotlin-mui = "2025.6.5-5.17.1"
@@ -22,6 +23,8 @@ apache-pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "apache-pdf
 
 clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
 clikt-markdown = { module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt" }
+
+googlecode-ez-vcard = { module = "com.googlecode.ez-vcard:ez-vcard", version.ref = "ez-vcard" }
 
 jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
 jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }

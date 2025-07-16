@@ -1,0 +1,2355 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:M3 (Defunct)
+ORG:M3 (Defunct);
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Popeye's
+ORG:Popeye's;
+NOTE:Cajun\nFast Food\nEverett
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Five Spices House
+ORG:Five Spices House;
+NOTE:Chinese\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tory Row
+ORG:Tory Row;
+NOTE:Harvard Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Plough and Stars
+ORG:Plough and Stars;
+NOTE:Central Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Silvertone
+ORG:Silvertone;
+NOTE:Bar\nAmerican\nDowntown
+item1.URL;type=pref:https://silvertonedowntown.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Snappy Pattys
+ORG:Snappy Pattys;
+NOTE:Medford\nAmerican\nBar
+item1.URL;type=pref:http://snappypattys.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:True Grounds
+ORG:True Grounds;
+EMAIL;type=INTERNET;type=WORK;type=pref:amy@truegrounds.com
+EMAIL;type=INTERNET;type=WORK:rhett@truegrounds.com
+TEL;type=WORK;type=VOICE;type=pref:617-591-9559
+item1.ADR;type=WORK;type=pref:;;717 Broadway;Somerville;MA;02144;USA
+item1.X-ABADR:us
+item2.ADR;type=WORK:;;717 Broadway;Somerville;MA;02144;USA
+item2.X-ABADR:us
+item3.ADR;type=WORK:;;717 Broadway;Somerville;MA;02144;USA
+item3.X-ABADR:us
+NOTE:coffee\nWi-Fi (free)\nBall Square\nNew\n\nBroadway @ Willow\nhttp://www.truegrounds.com/\n\nHours:\nM-F: 7am to 7pm\nSat-Sun: 8am to 7pm \n\nFrom their site:\nWe are your favorite coffeeshop...\n\nWe're pleased to offer the best coffee\, breakfast\, lunch\, music\, art\, and overall cafe atmosphere in the Ball Square\, Somerville area.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:La Hacienda (Defunct)
+ORG:La Hacienda (Defunct);
+TEL;type=WORK;type=VOICE;type=pref:617-864-2553
+item1.ADR;type=WORK;type=pref:;;;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:Pizza\nBar\ncheap\nkids
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Thelonious Monkfish
+ORG:Thelonious Monkfish;
+NOTE:Asian\nSushi\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Domino's Davis Square
+ORG:Domino's Davis Square;
+TEL;type=WORK;type=VOICE;type=pref:6
+ADR;type=WORK;type=pref:;;;Somerville;MA;;USA
+NOTE:Pizza\nDavis Square\nDavis Square\nPizza\nBar\nNice\nDavis Square\nNice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tip Tap Room
+ORG:Tip Tap Room;
+NOTE:Bar\nGovernment Center\nCharles
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Little Q Hot Pot
+ORG:Little Q Hot Pot;
+NOTE:Szechuan\nChinese\nArlington
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Roxy's
+ORG:Roxy's;
+NOTE:Grilled cheese\nHamburgers\nAlston
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pizzeria Regina
+ORG:Pizzeria Regina;
+item1.ADR;type=WORK;type=pref:;;11 1/2 Thacher St.;Boston;MA;;
+item1.X-ABADR:us
+item2.URL;type=pref:www.pizzeriaregina.com
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Joey's Thai Café
+ORG:Joey's Thai Café;
+item1.ADR;type=WORK;type=pref:;;195 Elm St.;Somerville;MA;02144;USA
+item1.X-ABADR:us
+NOTE:Thai\n\nM-Sa 11AM-10PM\nDelivery 5PM-10PM
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Harvard Gardens
+ORG:Harvard Gardens;
+NOTE:Bar\nCharles\nMGH
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pantry
+ORG:Pantry;
+NOTE:Restaurant at VERVE - Crown Plaza Hotel in Natick\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Rafiki (Defunct)
+ORG:Rafiki (Defunct);
+ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+NOTE:Porter Square\nBar\nAmerica\nNice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Select Oyster Bar
+ORG:Select Oyster Bar;
+NOTE:Seafood\nBack Bay\n\nWent with John Tan & his sister that time
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Wild Willy's Burgers
+ORG:Wild Willy's Burgers;
+ADR;type=WORK;type=pref:;;46 Arsenal St;Watertown;MA;;USA
+NOTE:Burgers\ncheap\nAmerican\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pho Pasteur
+ORG:Pho Pasteur;
+TEL;type=WORK;type=VOICE;type=pref:617-482-7467
+ADR;type=WORK;type=pref:;;682 Washington St.;Boston;MA;;USA
+NOTE:Vietnamese\nChinatown\nCheap\nNice\nNew\n\nFrom TealMeal: Pair of small Vietnameses pho shops.  Americanized\, but still very good & inexpensive.  The Chinatown shop is more "traditional"....  At both locations one must ask for "nam ngoc" (fish sauce).
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pabu
+ORG:Pabu;
+NOTE:Downtown\nDowntown Crossing\nPark Street\nSushi\nBar\nNice\n\nWent there with Kyreé
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sólás Irish Pub
+ORG:Sólás Irish Pub;
+NOTE:Bar\nBack Bay\n(not very good…)\nAt Lenox Hotel
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Masala Square Indian Kitchen
+ORG:Masala Square Indian Kitchen;
+NOTE:Indian\nUnion Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pini's
+ORG:Pini's;
+TEL;type=WORK;type=VOICE;type=pref:617-628-8668
+ADR;type=WORK;type=pref:;;511 Broadway;Somerville;MA;;USA
+NOTE:Pizza\nDelivery
+item1.URL;type=pref:http://www.tuftslife.com/dining/menuview.php?ID=00044
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Flame's
+ORG:Flame's;
+NOTE:Carribean\nBrigham Circle
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:South End Buttery
+ORG:South End Buttery;
+TEL;type=WORK;type=FAX;type=pref:617 482 4015
+TEL;type=WORK;type=VOICE:617-482-1015
+ADR;type=WORK;type=pref:;;314 Shawmut Ave.;Boston;MA;02118;USA
+NOTE:Cheap\nOuts\nCatering\n\nSandwiches\, cupcakes.
+item1.URL;type=pref:southendbuttery.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Lucky's Lounge
+ORG:Lucky's Lounge;
+NOTE:Downtown\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:I Love Sushi
+ORG:I Love Sushi;
+NOTE:Sushi bar\nPorter\nPorter Exchange
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:La Victoria
+ORG:La Victoria;
+NOTE:Mexican\nBurritos\nTortas\nArlington Center
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Hourly
+ORG:The Hourly;
+NOTE:Oysters\nseafood\nbar\n\nHarvard Square\n\nWhere First Printer used to be
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Kirkland Tap and Trotter
+ORG:Kirkland Tap and Trotter;
+NOTE:Bar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Liberty Hotel
+ORG:Liberty Hotel;
+NOTE:Charles\nVarious bars & restaurants
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Granary Tavern
+ORG:Granary Tavern;
+ADR;type=WORK;type=pref:;;160 Milk St.;Boston;MA;;USA
+NOTE:Place I stopped by after Pega holiday party\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Union Oyster House
+ORG:Union Oyster House;
+NOTE:Government Center\nSeafood\nFaneuil Hall\nNew
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Flash's
+ORG:Flash's;
+NOTE:South End\nbar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:McCabe's
+ORG:McCabe's;
+NOTE:North Cambridge\nBar\nAmerican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Qing Dao Garden
+ORG:Qing Dao Garden;
+item1.ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:North Cambridge\nNew\nChinese\nSzechuan\nOuts\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Shy Bird
+ORG:Shy Bird;
+NOTE:Kendall Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:State Park
+ORG:State Park;
+NOTE:One Kendall\nBar\n\nhttps://www.evernote.com/shard/s39/nl/4265152/f78e9a91-dda7-475d-9fac-07f639f5d7ac/\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Met Back Bay
+ORG:Met Back Bay;
+TEL;type=WORK;type=VOICE;type=pref:617 267 0451
+ADR;type=WORK;type=pref:;;279 Dartmouth St.;Boston;MA;02116;
+NOTE:Nice\nBar (?)\nBack Bay\nDartmouth & Newbury
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Similans\, The
+ORG:Similans\, The;
+TEL;type=WORK;type=VOICE;type=pref:1 (617) 491-6999
+ADR;type=WORK;type=pref:;;145 1st Street;Cambridge;MA;02142;United States of America
+NOTE:Thai\nOuts\nDelivery\nDelivery\nKids\nKendall\n\nEB's favorite: kow rad gaprow kai do with beef\n\nLunch\nMon-Fri 11:00am - 3:00pm\nSat-Sun 12:00pm - 3:00pm\n\nDinner\nSun-Thu 3:00pm - 10:00pm\nFri-Sat 3:00pm - 11:00pm \n
+item1.URL;type=pref:http://www.brownsugarcafe.com/index.html
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Scoozi
+ORG:Scoozi;
+NOTE:pizza\nBack Bay
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Wang's Chinese Cuisine
+ORG:Wang's Chinese Cuisine;
+TEL;type=WORK;type=VOICE;type=pref:1 (617) 623-2982
+NOTE:Ball Square\nChinese\nOuts\n\nGood dumplings\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Fugakyu
+ORG:Fugakyu;
+NOTE:Japanese\nsushi\nBrookline\nnice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Papa John's
+ORG:Papa John's;
+TEL;type=WORK;type=VOICE;type=pref:617-627-9100
+item1.ADR;type=WORK;type=pref:;;622 Somerville Avenue;Somerville;MA;02143 -321;USA
+item1.X-ABADR:us
+NOTE:Delivery Hours: 11:00 am - 12:00 am\nCarryout Hours: 11:00 am - 10:00 pm
+item2.URL;type=pref:http://www.papajohns.com/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:King & I
+ORG:King & I;
+TEL;type=WORK;type=VOICE;type=pref:617 227 3320
+ADR;type=WORK;type=pref:;;145 Charles St.;Boston;MA;;USA
+NOTE:Thai\nBeacon Hill\nCharles\nCheap\nNice\n\nFrom TealMeal:\nReaonsably priced\, authentic Thai in Beacon Hill.  Must try the stuffed Squid!
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Friendly Toast
+ORG:Friendly Toast;
+NOTE:One Kendall Square\nBreakfast\nBar\nBrunch
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Zócalo (Defunct)
+ORG:Zócalo (Defunct);
+ADR;type=WORK;type=pref:;;203a Broadway;Arlington;MA;;USA
+NOTE:Mexican\nArlington
+item1.URL;type=pref:http://www.zocaloarlington.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Trina's Starlite Lounge
+ORG:Trina's Starlite Lounge;
+NOTE:Bar\nInman
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sky Lounge (Yotel)
+ORG:Sky Lounge (Yotel);
+NOTE:Seaport\nBar\nRoofdeck\n\nWhere networking event was
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Wit's End
+ORG:Wit's End;
+NOTE:Inman\nBar\n\nHas lots of board games\nGood drink\nFood was okay but a little cold\, maybe not great\n\nWent with Lee 12/20/2018
+item1.URL;type=pref:https://www.yelp.com/biz/wits-end-cambridge-2?osq=restaurants
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sherman Cafe (Defunct)
+ORG:Sherman Cafe (Defunct);
+item1.ADR;type=WORK;type=pref:;;;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:Cafe\nCoffee\nSandwiches\nUnion Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hana Sushi
+ORG:Hana Sushi;
+item1.ADR;type=WORK;type=pref:;;Massachusetts Ave.;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:sushi\ndelivery\nJapanese\nDavis Square \nNew\n\n\nhttp://community.livejournal.com/davis_square/641704.html
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Shabu Zen
+ORG:Shabu Zen;
+ADR;type=WORK;type=pref:;;16 Tyler St\,;Boston;MA;;USA
+NOTE:Japanese\nSushi\nHot pot\nChinatown\nShabu shabu\nNoodles
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:On the Hill Tavern
+ORG:On the Hill Tavern;
+ADR;type=WORK;type=pref:;;499 Braodway;Somerville;MA;;USA
+NOTE:Bar \nDive\nBall Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Whiskey Park
+ORG:Whiskey Park;
+item1.ADR;type=WORK;type=pref:;;;Boston;MA;;USA
+item1.X-ABADR:us
+NOTE:Park Street\nBack Bay\nNice\nBar\nAt Park Plaza hotel\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Saloniki
+ORG:Saloniki;
+NOTE:Greek\nCentral (kind of)\nKendall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:McDonald's
+ORG:McDonald's;
+NOTE:McGrath Highway\nCambridge/Somerville line\ntakeout
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Haymarket Pizza
+ORG:Haymarket Pizza;
+NOTE:Pizza\nFaneuil Hall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tavern in the Square (DEFUNCT)
+ORG:Tavern in the Square (DEFUNCT);
+NOTE:Bar\nCentral Square\nPorter Square\nhttp://www.thetavernandwish.com/index.html\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Lobster Pool
+ORG:Lobster Pool;
+ADR;type=WORK;type=pref:;;329 Granite St;Rockport;MA;01966;USA
+NOTE:Rockport\nseafood\nLobster shack
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Ginza
+ORG:Ginza;
+TEL;type=WORK;type=VOICE;type=pref:617-338-2261
+item1.ADR;type=WORK;type=pref:;;14 Hudson St.;Boston;MA;;USA
+item1.X-ABADR:us
+NOTE:From TealMeal: More upscale sushi\, maki\, tempura.\nsushi\nChinatown
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Oishii
+ORG:Oishii;
+NOTE:Sushi\nChestnut Hill\n\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Port Hole
+ORG:Port Hole;
+NOTE:Lynn\nSeafood\nBar\n\nPlace I went with Paul Gaffney May 12\, 2018
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Vineyard Grille
+ORG:Vineyard Grille;
+NOTE:Bar\nAirport
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Nick's Bistro
+ORG:Nick's Bistro;
+TEL;type=WORK;type=VOICE;type=pref:781-284-9400
+ADR;type=WORK;type=pref:;;69 Squire Rd.;Revere;MA;02151;
+NOTE:Revere\nPizza\nSubs\nLots of other stuff\nOrder at the counter\, they bring it to the table
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:TimeOut Boston
+ORG:TimeOut Boston;
+NOTE:Fenway\nMarketplace
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tupelo
+ORG:Tupelo;
+TEL;type=MAIN;type=pref:+1 (617) 868-0004
+item1.ADR;type=WORK;type=pref:;;1193 Cambridge St;Cambridge;MA;02139-1317;United States
+item1.X-ABADR:US
+X-SOCIALPROFILE;type=Yelp;x-displayname=Tupelo:http://yelp.com/apple_maps_action?id=xzbO73WYZVtIPpra7MCqWA&action=view&language=en-US
+NOTE:Southern\nNice
+item2.URL;type=pref:http://www.tupelo02139.com/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Kelly's Roast Beef
+ORG:Kelly's Roast Beef;
+NOTE:Medford\nRevere\nSaugus\nroast beef
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Spoke
+ORG:Spoke;
+NOTE:Wine bar\nDavis Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Firenze
+ORG:Firenze;
+NOTE:Italian\nSalem\nPlace with the good gnocchi that Yuji likes
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sligo
+ORG:Sligo;
+NOTE:Davis \nDive Bar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Di Mio - DEFUNCT
+ORG:Di Mio - DEFUNCT;
+item1.ADR;type=WORK;type=pref:;;Massachusetts Ave.;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Pizza\nPorter Square\nOuts\nKids\n\nThin-crust pizza.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Union Oyster House
+ORG:Union Oyster House;
+NOTE:Seafood\nBar\nDowntown
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:El Pelon
+ORG:El Pelon;
+TEL;type=WORK;type=VOICE;type=pref:617 262 9090
+item1.ADR;type=WORK;type=pref:;;92 Peterborough St.;Boston;MA;;USA
+item1.X-ABADR:us
+NOTE:Fenway\nMexican\nCheap\nOuts\nNew\n\nFrom TealMeal:  Authentic Mexican place that serves more than just burritos.  Convenient to Fenway (movies & Red Sox) but be warned: they close at 9pm every day!
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:La Vita Mia
+ORG:La Vita Mia;
+NOTE:Saugus\nItalian\nBar\n\nWent there with Paul\nGot the pork chops with pepers & potatoes
+item1.URL;type=pref:http://www.lavitamia.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Spring Shabu-Shabu
+ORG:Spring Shabu-Shabu;
+NOTE:Shabu Shabu\nHot Pot\nBrighton\n\nWhere we went with Fred Jao\, Tommy & friends (Donna\, J. C.)\, and Yuji.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Toscanini's
+ORG:Toscanini's;
+NOTE:Ice cream\nLechemere\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Fat Cat
+ORG:The Fat Cat;
+TEL;type=WORK;type=VOICE;type=pref:617-471-4363
+item1.ADR;type=WORK;type=pref:;;24 Chestnut Street;Quincy;MA;02169;USA
+item1.X-ABADR:us
+NOTE:Kids\nBar\nNice\nQuincy Center\n\nFat Cat is heavy on sauces and big portions\nEmail|Print| Text size – + By Bella English\nGlobe Staff / March 5\, 2008\nNeil Kiley is a big guy\, 6-foot-2 and 270. Played football in high school. Has a huge gray cat that weighs in at 32 pounds. Loves and adores food of all sorts. Put it all together and you've got The Fat Cat\, a Quincy restaurant he opened just before Christmas.\nThe Fat Cat is a throw-back to pre-health food days: There are lots of sauces and creams on the menu. "It's not called 'The Skinny Cat\,' " Kiley notes wryly.\nWhatever\, it makes for a good neighborhood gastropub where the fries come with dipping sauces\, the burgers are gargantuan\, and the mac 'n' cheese is loaded with lobster. Elastic-waist pants are your best bet here.\nKiley was born and raised in Quincy\, where he still lives with his wife\, Nicole\, who helps manage the place. The chef is Tom Coleman\, late of Fifty Three South in Norwell. Kiley has worked in the kitchen and in management at chain restaurants and mom-and-pops.\nThe 65-seat restaurant\, in a historic building\, has exposed brick walls and an industrial ceiling. A glass partition divides the long bar from the dining area\; there are the usual flat-screen TVs - and a big sketch of a fat cat looking over the kitchen window.\nThough the lobster mac 'n' cheese ($16 and enough for two) is the biggest seller\, Kiley says he loves the loaded fat dog ($6)\, a "gourmet hot dog" - surely an oxymoron - with a choice of several toppings.\n"I'm a fat kid at heart and always will be\," says Kiley\, whose parents called him "the condiment king" when he was a kid. "We'd have burgers at our house and it would take me seven minutes to assemble mine."\nA basket of warm homemade rolls and cornbread appears with a saucer of black bean dip and an orb of sweet honey butter. Try the fried dill pickle slices ($6)\, lightly battered and served with Cajun remoulade. Then it's on to hot and crisp hand-cut fries ($7)\, which arrive in a conical basket. You choose the spice and sauce. We opt for garlic and parsley with blue cheese\, delicious and piquant.\nFat Cat wings come the same way (10 wings for $7\, 25 for $16\, 50 for $30): pick mild\, medium\, or "XXX" heat and choose one of eight sauces. The wings are moist and spicy (ours have fajita sauce)\, with a nice kick.\nThe Fat Cat takes American food and adds a twist: Consider the barbecue pork nachos ($8)\, a platter with surprisingly sweet and smoky chopped barbecue and caramelized onions\, roasted garlic\, and gooey manchego and cheddar. Skipping from Southwest to New England\, there are lobster-crab nachos ($10)\, which we pass on\; lobster mac 'n' cheese is headed our way.\nThis signature dish contains generous lobster in a four-cheese sauce over corkscrew pasta with a scattering of panko crumbs and small grilled tomatoes. It's creamy\, buttery\, totally decadent\, and enough for lunch the next day.\nGrilled burgers ($7) are 10 ounces\, stuffed into a thick ciabatta roll\, and served with homemade fries. Toppings include avocado\, fried onion rings\, and cheeses (50 cents each). Tasty\, but the dish is overkill: I'd go for a lighter roll.\nBarbecued flank steak ($16)\, has a rather ordinary glaze. Instead\, try baby-back ribs\, slow-smoked\, fall-off-the-bone tender (half rack $10\, full $18). A side of cauliflower mash with garlic and Parmesan is memorable. Baked haddock ($16) in a lemony sauce is served with pancetta for a salty note\, roasted corn for the sweet\, and grape tomatoes with small red potatoes.\nYou won't have room for dessert (all $6)\, but don't let that stop you. There's a baker on the premises. The warm and fudgy thick-as-a-brick brownie sundae comes with vanilla ice cream\, and butterscotch\, raspberry\, and chocolate drizzles.\nA wine and beer list is respectable\, but best are cat-theme cocktails ($8 each)\, such as Alley Cat and Cheshire Cat. Meow. Purr.￼
+item2.URL;type=pref:http://www.fatcatrestaurant.com/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Yoki
+ORG:Yoki;
+NOTE:Medford\nStation Landing\nJapanese\nSushi
+item1.URL;type=pref:http://yokirestaurant.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:R.F. O'Sullivan's
+ORG:R.F. O'Sullivan's;
+NOTE:burgers\nbar\ncheap\n\nBeacon St. in Somerville
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Shaking Crab
+ORG:Shaking Crab;
+NOTE:Crab\nSeafood\nBar\nPorter Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Picco
+ORG:Picco;
+TEL;type=WORK;type=VOICE;type=pref:617 927 0066
+ADR;type=WORK;type=pref:;;513 Tremont St.;Boston;MA;02116;USA
+NOTE:Cheap\nNew\nSouth End\nSandwiches\nPizza\nIce Cream \nWireless\nOuts\nDelivery\n\nFrom "20 Under $20\," Globe Magazine\, 7/16/06\n\nThey have a waitlist\n\n11AM-11PM every day\n\n——— From the T - Orange Line ————————\n\nTake the Orange line to Back Bay/South End. Exit the station on Clarendon Street. Follow Clarendon Street (in the direction of traffic). Turn left on Tremont Street. PICCO will be on the left.\n\n——— From the T - Green Line —————————\n\nTake any green line train to Copley Square. Exit onto Boylston Street and go in the direction of traffic. Turn right at the next block onto Clarendon Street. Follow Clarendon until it ends and turn left on Tremont Street. PICCO will be on the left.
+item1.URL;type=pref:http://www.piccorestaurant.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:FuLoon
+ORG:FuLoon;
+EMAIL;type=INTERNET;type=WORK;type=pref:fuloon_restaurant@hotmail.com
+TEL;type=WORK;type=VOICE;type=pref:781-388-3338
+item1.ADR;type=WORK;type=pref:;;375 Main St.;Malden;MA;02148;USA
+item1.X-ABADR:us
+NOTE:Business Hour:      11:30 am--10 pm\n\nChinese
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Trident Bookseller Cafe
+ORG:Trident Bookseller Cafe;
+TEL;type=WORK;type=VOICE;type=pref:617-421-1880
+item1.ADR;type=WORK;type=pref:;;355 Boylston St.;Boston;MA;;USA
+item1.X-ABADR:us
+NOTE:Cafe\nBoylston T\nAmerican\nCheap\n\n From TealMeal: Charming informal eatery inside a bookstore.  Serve "perpetual breakfast."  Many vegetarian selections\, and a variet of smoothies\, teas\, beers and wines.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Fuji
+ORG:Fuji;
+NOTE:Sushi\nJapanese\nKendall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Rendezvous (defunct)
+ORG:Rendezvous (defunct);
+NOTE:Nice\nBar\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sonsie
+ORG:Sonsie;
+TEL;type=WORK;type=VOICE;type=pref:617-351-2500
+item1.ADR;type=WORK;type=pref:;;327 Newbury St.;Boston;MA;;USA
+item1.X-ABADR:us
+NOTE:Bar\nNice\nBack Bay\nHynes\nOuts\n\nFrom TealMeal: Hip\, trendy place with wide range of food.\n\nOopen 7am-1am.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:River Bar
+ORG:River Bar;
+NOTE:Bar\nAssembly Row\nOutdoor seating
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Montien
+ORG:Montien;
+TEL;type=WORK;type=FAX;type=pref:617-338-4697
+TEL;type=WORK;type=VOICE:617-338-5600
+ADR;type=HOME;type=pref:;;63 Stuart Street;Boston;MA;02116;
+NOTE:Thai\nBar\nNiice\n\nTheatre District\n\n\nThe city’s most delicious proof that life exists beyond Pad Thai is found within these neon-lit walls. Authentic and exceptionally fresh dishes dominate chef-owner Tony Suktheva’s Thai menu (ask for it specifically\, or odds are you’ll be handed the Americanized version)\, and they’ve earned him a rabid following. It’s well deserved. Straight from Bangkok dishes like Kai jeaw goong-sub (omelet with shrimp and chili) and Larb gai (super-spicy minced chicken) sing with the region’s sharp flavors: lemongrass\, kaffir lime leaves\, galangal\, and chili. The red curry is smooth\, sweet\, and teeming with gorgeous veggies.\n\nOh! And for the record: There is Pad Thai\, and it’s superb.\nHealthy Thai Cuisine
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Maggie's Farm
+ORG:Maggie's Farm;
+NOTE:American\nBar\nMiddleton
+item1.URL;type=pref:http://maggiesfarmmiddleton.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Oath
+ORG:Oath;
+NOTE:Davis\nPizza
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Second Street Café
+ORG:Second Street Café;
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Fin's Sushi & Grill
+ORG:Fin's Sushi & Grill;
+ADR;type=WORK;type=pref:;;240 Cambridge St.;Boston;MA;02144;USA
+NOTE:Sushi\nJapanese \nGovernment Center\nCharles\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Frank's Steak House
+ORG:Frank's Steak House;
+NOTE:Cambridge\nSteak\nNew
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Parsnip
+ORG:Parsnip;
+NOTE:Harvard Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Think Tank (DEFUNCT)
+ORG:Think Tank (DEFUNCT);
+NOTE:One Kendall Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Vernissage
+ORG:Vernissage;
+item1.ADR;type=WORK;type=pref:;;1627 Beacon St.;Brookline;MA;02446;USA
+item1.X-ABADR:us
+NOTE:Russian\nBrookline\nBar
+item2.URL;type=pref:www.vernissagerestaurant.com
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Glass House
+ORG:Glass House;
+NOTE:Bar\nKendall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Iron Town Diner
+ORG:Iron Town Diner;
+NOTE:Saugus\nDiner\n\nSecond diner I went to with Paul Gaffney
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Harvest of India
+ORG:Harvest of India;
+NOTE:Indian\nBuffet\nBetween Harvard and Porter\n(Near Cellar)
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Elephant Walk
+ORG:Elephant Walk;
+NOTE:French\nCambodian\nPorter Square\nNice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Kaju Tofu
+ORG:Kaju Tofu;
+NOTE:Korean\nTofu Soup\nAllston\n(Also in Harvard Square)\n\nevernote:///view/4265152/s39/cd012660-58c1-4e76-a06c-50d5e56caad8/cd012660-58c1-4e76-a06c-50d5e56caad8/\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Subway
+ORG:Subway;
+NOTE:Porter Square\nDavis Square\nFast food\nCheap\nKids\nSubs\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Taipei Cuisine
+ORG:Taipei Cuisine;
+ADR;type=WORK;type=pref:;;68 Billings Rd.;Quincy;MA;;USA
+NOTE:Quincy\nNeponset Circle (?)\n\nhttps://www.evernote.com/shard/s39/nl/4265152/899a6cc2-92cd-4a19-b51c-f215add77df4/\n\nReaally good!\n\nNo alcohol\n
+item1.URL;type=pref:http://www.taipeicuisinequincy.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Green Street
+ORG:Green Street;
+TEL;type=WORK;type=VOICE;type=pref:617 876 1655
+ADR;type=WORK;type=pref:;;280 Green St.;Cambridge;MA;;USA
+NOTE:Central Square\nAmerican\nBar\nNice\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Indian Club (DEFUNCT)
+ORG:The Indian Club (DEFUNCT);
+item1.ADR;type=WORK;type=pref:;;1755 Massachusetts Ave\,;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Porter Square\nIndian\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tango
+ORG:Tango;
+NOTE:Argentinian Steak House\nBar\nArlington Center
+item1.URL;type=pref:http://tangoarlington.squarespace.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pikliz
+ORG:Pikliz;
+NOTE:Jamaican (?)\nWinter Hill\nTiny\n\nhttps://www.evernote.com/shard/s39/nl/4265152/6615ad23-c3a1-441d-98bc-6767681d5e91/
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hillstone
+ORG:Hillstone;
+TEL;type=WORK;type=VOICE;type=pref:(617) 573-9777
+ADR;type=WORK;type=pref:;;60 State St;Boston;MA;02109;United States of America
+NOTE:Burgers\nFinancial District \nbar\nNew\n\nhttp://www.yelp.com/biz/T20KsKOmmaGZu2U03D4l8A\n\n\nHours:\n\n\n*	Mon-Thu\, Sun 11:00 a.m.-10:00 p.m.\n*	Fri-Sat 11:30 a.m.-10:30 p.m.\n\n
+item1.URL;type=pref:http://www.hillstone.com/hillstone/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Les Zygomates
+ORG:Les Zygomates;
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Domino's Kendall Square
+ORG:Domino's Kendall Square;
+TEL;type=WORK;type=VOICE;type=pref:617-577-0066
+item1.ADR;type=WORK;type=pref:;;One Broadway;Cambridge;MA;02142;USA
+item1.X-ABADR:us
+NOTE:pizza\nKendall Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Petsi Pies
+ORG:Petsi Pies;
+NOTE:pastries\nNew\n\nBeacon St. in Somerville\n\nAnd across the street is the biggest gem in town in my opinion: Petsi Pies. It's impossible to walk out of that place with fewer than two pies/muffins/cookies/pastries. The key lime\, cherry crumb\, and triple berry pies are wonderful. It's also big with the Aussie crowd for mince meat or some other savory pies\, but I'm stuck on the sweet stuff. (http://community.livejournal.com/davis_square/641704.html)
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Oxford Spa
+ORG:Oxford Spa;
+NOTE:Porter Square\nsandwiches\nout
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Fuji
+ORG:Fuji;
+NOTE:Quincy\nJapanese\nAsian
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hi-Rise Bread Company
+ORG:Hi-Rise Bread Company;
+item1.ADR;type=WORK;type=pref:;;208 Concord Ave.;Cambridge;MA;02138-1335;(617) 876-8766
+item1.X-ABADR:us
+NOTE:Breakfast\nBakery\nHuron Village\n\nHours: Mon-Fri 8am-8pm\, Sat 8am-5pm \, Sun 8am-3pm\n\nDriving directions to 208 Concord Ave\, Cambridge\, MA 02138\n1.3 mi – about 6 mins\n	\n74 Elm St\nSomerville\, MA 02144\n\n1.	Head northwest on Elm St toward Holyoke Rd		\n430 ft\n2.	Turn left at White St		\n0.1 mi\n3.	Turn right at Somerville Ave		\n164 ft\n4.	Turn left at Massachusetts Ave/RT-2A		\n0.3 mi\n5.	Turn right at Linnaean St		\n0.4 mi\n6.	Turn left at Garden St		\n272 ft\n7.	Turn right at Bond St		\n0.1 mi\n8.	Turn right at Concord Ave		\n0.2 mi\n	\n208 Concord Ave\nCambridge\, MA 02138\nBreakfast\nBakery\nHuron Village\n\nHours: Mon-Fri 8am-8pm\, Sat 8am-5pm \, Sun 8am-3pm\n\nDriving directions to 208 Concord Ave\, Cambridge\, MA 02138\n1.3 mi – about 6 mins\n	\n74 Elm St\nSomerville\, MA 02144\n\n1.	Head northwest on Elm St toward Holyoke Rd		\n430 ft\n2.	Turn left at White St		\nn0.1 mi\n3.	Turn right at Somerville Ave		\n164 ft\n4.	Turn left at Massachusetts Ave/RT-2A		\n0.3 mi\n5.	Turn right at Linnaean St		\n0.4 mi\n6.	Turn left at Garden St		\n272 ft\n7.	Turn right at Bond St		\n0.1 mi\n8.	Turn right at Concord Ave		\n0.2 mi\n	\n208 Concord Ave\nCambridge\, MA 02138
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Gaslight
+ORG:Gaslight;
+NOTE:South End\nFrench\nBrasserie\nNice\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pinky's Famous Pizza
+ORG:Pinky's Famous Pizza;
+ADR;type=WORK;type=pref:;;;Medford;MA;;USA
+NOTE:Pizza\nDelivery
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Middle East
+ORG:Middle East;
+TEL;type=WORK;type=VOICE;type=pref:617-354-8238
+ADR;type=HOME;type=pref:;;472 Mass Ave.;Cambridge;MA;;
+NOTE:Central Square \nMiddle Eastern\nBar\n\nDecent\, if somewhat predictable Middle Eastern food in this family-run Central Square restaurant which doubles as a nightclub.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Blackstone Grill
+ORG:The Blackstone Grill;
+NOTE:Went there with Yuji & Knobb around Yuji’s birthday one year\n\nBar\nAmerican\nDowntown\nFaneuil Hall\nDive
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Petit Robert
+ORG:Petit Robert;
+NOTE:Nice\nBack Bay\nKenmore
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Taco Bell
+ORG:Taco Bell;
+NOTE:Mass Ave. in Cambridge\nInman Square\nMexican\nFast\nCheap\nKids\n\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Forest Café
+ORG:Forest Café;
+NOTE:Porter Square\nMexican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Gallows
+ORG:Gallows;
+NOTE:South End\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Yoshi's Japanese Cuisine
+ORG:Yoshi's Japanese Cuisine;
+TEL;type=WORK;type=VOICE;type=pref:617 623 9263
+item1.ADR;type=WORK;type=pref:;;132 College Avenue;Somerville;MA;02144;USA
+item1.X-ABADR:us
+NOTE:Davis Square\nJapanese\nSushi\nout\ndelivert\n\nhttp://community.livejournal.com/davis_square/641704.html\n\nyou can even bring your own bottles of wine or beer!\n\nLunch Hours:\n\nMonday-Saturday	11:30 AM-2:30 PM\nDinner Hours:\n\nMonday-Thursday	5:00-10:00 PM\nFriday-Saturday	5:00-10:30 PM\nSunday	4:30-10:00 PM
+item2.URL;type=pref:http://www.yoshis.net/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Rod Dee
+ORG:Rod Dee;
+ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+NOTE:Thai\nPorter Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Red Hat
+ORG:Red Hat;
+NOTE:American\nDive bar\nGovernment Center
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Grassfields
+ORG:Grassfields;
+ADR;type=WORK;type=pref:;;880 Lexington Street;Waltham;MA;02452;USA
+NOTE:Where Pagan Meat Fest is held\nWaltham\nSteakhouse\nseafood
+item1.URL;type=pref:http://www.grassfieldswaltham.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pescatore
+ORG:Pescatore;
+NOTE:Ball Square\nSeafood
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sip Wine Bar and Kitchen
+ORG:Sip Wine Bar and Kitchen;
+NOTE:Downtown Crossing\nWine Bar\nBar\nJapanese\nRandom other food
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Taipei Tokyo
+ORG:Taipei Tokyo;
+item1.ADR;type=WORK;type=pref:;;;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:Davis Square\nChinese\nJapanese\nSushi\nTakeout
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Intrepid Café
+ORG:Intrepid Café;
+NOTE:Café\nBeer\nWine\nLechmere\nKendall
+item1.URL;type=pref:https://www.intrepidcafe.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Southern Kin
+ORG:Southern Kin;
+NOTE:Southern\nAssembly Row\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Friendly's
+ORG:Friendly's;
+NOTE:Watertown\nAmerican\nKids\nCheap
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tides Restaurant & Pub
+ORG:Tides Restaurant & Pub;
+ADR;type=WORK;type=pref:;;2 Wilson Rd.;Nahant;MA;01908;USA
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Xinh Xinh
+ORG:Xinh Xinh;
+TEL;type=WORK;type=VOICE;type=pref:617-422-0501
+ADR;type=WORK;type=pref:;;7 Beach St;Boston;MA;02298;USA
+NOTE:Chinatown\nVietnamese\nPho\nSmall "hole in the wall" but good
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Lone Star Taco Bar (Brookline)
+ORG:Lone Star Taco Bar (Brookline);
+NOTE:Bar\nMexican\nTacos
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Mela
+ORG:Mela;
+TEL;type=WORK;type=VOICE;type=pref:617 666 2500
+item1.ADR;type=WORK;type=pref:;;102 Washington St.;Somerville;MA;02143;USA
+item1.X-ABADR:us
+NOTE:"Unique Indian Café 'N Grocery"\nIndian\nSomerville\nCobble Hill Plaza\nTakeout\nDelivery\n"Unique Indian Café 'N Grocery"\nIndian\nSomerville\nCobble Hill Plaza\nnTakeout\nDelivery
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Penang
+ORG:Penang;
+TEL;type=WORK;type=VOICE;type=pref:617 451 6373
+ADR;type=WORK;type=pref:;;685-691 Washington Ave.;;;;
+NOTE:Malaysian\nNice\nChinatown\n\nFrom TealMeal: Malaysian cuisine served with rave reviews.  Serve truly authentic dishes - many items (such as chicken feet\, crisy pork intestines\, fish heades\, & frogs) note "ask server for advice before you order!!!"\n\nOnly take Visa/MC
+item1.URL;type=pref:http://go.boston.com/penang
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tu y Yo
+ORG:Tu y Yo;
+NOTE:Mexican\nPowderhouse Square\nDavis Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Kebab Factory
+ORG:Kebab Factory;
+NOTE:Indian\nSomerville\nWashington St.\nNew
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Eagle's Deli
+ORG:Eagle's Deli;
+TEL;type=WORK;type=VOICE;type=pref:617 731 3232
+ADR;type=WORK;type=pref:;;1918 Beacon St.;Boston;MA;;USA
+NOTE:Cheap\nCleveland Circle\nBurgers\nNew\n\n"20 under $20" from Boston Globe Magazine 7/16/06\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Zam Zam
+ORG:Zam Zam;
+NOTE:Medford Square\nPakistani\nIndian\nDesi
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sinclair
+ORG:Sinclair;
+NOTE:Harvard Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tamarind House
+ORG:Tamarind House;
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Thana
+ORG:Thana;
+NOTE:Thai\nArlington\nBYOB\n\nI had the Tom Yum noodle soup that time (pretty good)
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hungry Mother (DEFUNCT)
+ORG:Hungry Mother (DEFUNCT);
+item1.ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Kendall Square\nNice\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sunset Grill
+ORG:Sunset Grill;
+item1.ADR;type=WORK;type=pref:;;130 Brighton Ave.;Boston;MA;02134;USA
+item1.X-ABADR:us
+NOTE:Allston
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sichuan Gourmet
+ORG:Sichuan Gourmet;
+NOTE:Szechuan\nChinese\nBrookline
+item1.URL;type=pref:http://www.laosichuan.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:World of Beer
+ORG:World of Beer;
+NOTE:Cambridgeside\nLechemere\nKendall\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Temple Bar (defunct)
+ORG:Temple Bar (defunct);
+TEL;type=WORK;type=VOICE;type=pref:(617) 547-5055
+TEL;type=HOME;type=VOICE:(617) 547-8650
+ADR;type=HOME;type=pref:;;1688 Massachusetts Avenue;Cambridge;MA;02138;United States of America
+NOTE:Porter Square\nHarvard Square\nNice\nBar\n\nDinner\nSunday - Wednesday: 5:00pm to 10:30pm\n*10:30pm to 12:00am - Late night menu available\nThursday - Saturday: 5:00pm to 11:00pm\n*11pm - 12:30am - Late night menu available\n\nBrunch\nSaturday & Sunday: 10:30am - 4:00pm\n\nBar\nMonday - Friday: 5:00pm - 1:00am\nSaturday - Sunday: 11:00am - 1:00am \n\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Little Donkey
+ORG:Little Donkey;
+ADR;type=WORK;type=pref:;;505 Massachusetts Avenue;Cambridge;MA;02139;USA
+item1.URL;type=pref:http://www.littledonkeybos.com/hours-location
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Qdoba
+ORG:Qdoba;
+TEL;type=WORK;type=FAX;type=pref:(617) 661-4792
+TEL;type=WORK;type=VOICE:(617) 661-4791
+ADR;type=WORK;type=pref:;;3-5-7 White Street;Cambridge;MA;02140;United States of America
+NOTE:Porter Square\nMexican\nCheap\nOuts\nkids
+item1.URL;type=pref:http://www.Qdoba.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Flames
+ORG:Flames;
+TEL;type=WORK;type=VOICE;type=pref:617 296 4972
+ADR;type=WORK;type=pref:;;663 Morton St.;Boston;MA;;USA
+NOTE:Carribean\nCheap\nMattapan\nNew\n\nFrom "20 Under $20\," Globe Magazine\, 7/16/06
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Gran Gusto
+ORG:Gran Gusto;
+NOTE:Off Rindge\nItalian
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:J.J. Foley's
+ORG:J.J. Foley's;
+NOTE:Pub\nBar\nSouth End
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Midwest Grill
+ORG:Midwest Grill;
+NOTE:Saugus\nBrazilian BBQ
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Top Speed Pizzeria
+ORG:Top Speed Pizzeria;
+TEL;type=WORK;type=VOICE;type=pref:617 491 1004
+item1.ADR;type=WORK;type=pref:;;8 Highland Ave.;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:pizza\nouts\ncheap\n \nM-Th: 11AM-11PM\nFri-Sat: 11AM-midnight\nSun: noon-10PM\n\nFree delivery\, $8 minimum
+item2.URL;type=pref:www.topspeedpizza.com
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:International Buffet
+ORG:International Buffet;
+TEL;type=WORK;type=VOICE;type=pref:617 773 9398
+ADR;type=WORK;type=pref:;;237 Quincy Ave.;Quincy;MA;;USA
+NOTE:Chinese\nCheap\nNew\nSushi\nBuffet\nQuincy\n\nFrom "20 Under $20\," Globe Magazine\, 7/16/06\n\nAll you can eat $14
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Harry's
+ORG:Harry's;
+NOTE:bar\nBrighton
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:New Pizza Palace
+ORG:New Pizza Palace;
+NOTE:Pizza\n\nevernote:///view/4265152/s39/fddbb970-1161-4abb-a6dd-380e9a945871/fddbb970-1161-4abb-a6dd-380e9a945871/
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Shiki
+ORG:Shiki;
+item1.ADR;type=WORK;type=pref:;;;Brookline;MA;;USA
+item1.X-ABADR:us
+NOTE:Japanese\nCoolidge Corner\n\nKind of "fusion"-ish
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:4th Wall
+ORG:4th Wall;
+NOTE:Theatre District\nBar\nAmerican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pho 'N Rice
+ORG:Pho 'N Rice;
+NOTE:Beacon Street\, Somerville\nVietnamese\nPho \nThai
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Gaff's
+ORG:Gaff's;
+NOTE:Bar\nWaltham
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Num Pang
+ORG:Num Pang;
+NOTE:Prudential\nBack Bay\nCambodian
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hill Tavern
+ORG:Hill Tavern;
+NOTE:Charles\nMGH\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pho House
+ORG:Pho House;
+NOTE:Pho \nVietnamese\nCambridge\nPorter \nHarvard
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Wings over Somerville
+ORG:Wings over Somerville;
+NOTE:Wings\nPorter
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Veggie Galaxy
+ORG:Veggie Galaxy;
+NOTE:Vegetarian\nVegan\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Thirsty Scholar
+ORG:Thirsty Scholar;
+NOTE:Bar\nInman\nPorter
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Stephi's
+ORG:Stephi's;
+NOTE:Bar\nSouth End\nNice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Miracle of Science
+ORG:Miracle of Science;
+NOTE:Bar\nCentral Square\nAmerican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Schezuan’s Dumplings
+ORG:Schezuan’s Dumplings;
+NOTE:Arlington\nSchezuan\nDumplings
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Rebel Rebel
+ORG:Rebel Rebel;
+NOTE:Union Square\nBow Market\nWIne bar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Merchant
+ORG:Merchant;
+NOTE:Downtown Crossing\nBar\nBurgers
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Tommy Doyle's
+ORG:Tommy Doyle's;
+ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+NOTE:Kendall Square\nHarvard Square\nIrish\nBar\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Dosa Factory
+ORG:Dosa Factory;
+NOTE:Central Square\nIndian
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Butcher Shop
+ORG:The Butcher Shop;
+NOTE:South End\nBar\nAmerican (?)\nWent with José Salgado
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hilltop Steak House (DEFUNCT)
+ORG:Hilltop Steak House (DEFUNCT);
+TEL;type=WORK;type=VOICE;type=pref:(781) 233-7700
+ADR;type=WORK;type=pref:;;855 Broadway;Saugus;MA;01906;
+NOTE:Saugus\nSteak\nNew
+item1.URL;type=pref:http://www.yelp.com/biz/Gasin74cIeQ-DIde04ezHQ
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pinocchio's
+ORG:Pinocchio's;
+item1.ADR;type=WORK;type=pref:;;74 Winthrop St.;Cambridge;MA;02138;USA
+item1.X-ABADR:us
+NOTE:Harvard Square\nPizza
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Thai Moon
+ORG:Thai Moon;
+NOTE:Arlington\nThai
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Rami's
+ORG:Rami's;
+TEL;type=WORK;type=VOICE;type=pref:617 738 3577
+ADR;type=WORK;type=pref:;;324 Harvard St.;Brookline;MA;;USA
+NOTE:Israeli\nMiddle Eastern\nCheap\nCoolidge Corner\nOuts\nKids\n\n From "20 Under $20\," Globe Magazine\, 7/16/06\nClosed Friday evening through Saturday
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Lily P's
+ORG:Lily P's;
+TEL;type=WORK;type=VOICE;type=pref:+1 (617) 225-2900
+item1.ADR;type=WORK;type=pref:;;50 Binney St;Cambridge;MA;02142;United States
+item1.X-ABADR:US
+item1.X-APPLE-SUBLOCALITY:East Cambridge
+item1.X-APPLE-SUBADMINISTRATIVEAREA:Middlesex
+NOTE:Bar\nKendall\nLechemere
+item2.URL;type=pref:https://www.lilypschicken.com
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Roxy's Arcade
+ORG:Roxy's Arcade;
+NOTE:Arcade\nBar\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Il Panino
+ORG:Il Panino;
+NOTE:Subs\nItalian\nJackson Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Savin Bar and Kitchen
+ORG:Savin Bar and Kitchen;
+item1.ADR;type=WORK;type=pref:;;112 Savin Hill Ave.;Boston;MA;02125;USA
+item1.X-ABADR:us
+NOTE:Bar\nDorchester\nSavin Hill
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:Bar & Restaurant;Spirit;;;
+FN:Spirit Bar & Restaurant (DEFUNCT)
+ORG:Spirit Bar & Restaurant (DEFUNCT);
+TEL;type=WORK;type=VOICE;type=pref:(617) 868-1555
+item1.ADR;type=WORK;type=pref:;;2046 Massachusetts Avenue;Cambridge;MA;02140;USA
+item1.X-ABADR:us
+NOTE:Porter Square\nNorth Cambridge\nBar\n\n4 star ratingbased on 26 reviewsRating Details »\nCategories: Nightlife\, Restaurants  [Edit]\nNeighborhoods: Porter Square\, North Cambridge
+PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAASABIAAD/4QBARXhpZgAATU0AKgAA
+ AAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAQqADAAQAAAABAAAAQgAAAAD/7QA4UG
+ hvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+IQ
+ CElDQ19QUk9GSUxFAAEBAAAP+GFwcGwCEAAAbW50clJHQiBYWVogB+UAAwAKABEAFgAGYWNzcE
+ FQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAA
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASZGVzYwAAAVwAAABiZHNjbQAAAc
+ AAAAScY3BydAAABlwAAAAjd3RwdAAABoAAAAAUclhZWgAABpQAAAAUZ1hZWgAABqgAAAAUYlhZ
+ WgAABrwAAAAUclRSQwAABtAAAAgMYWFyZwAADtwAAAAgdmNndAAADvwAAAAwbmRpbgAADywAAA
+ A+Y2hhZAAAD2wAAAAsbW1vZAAAD5gAAAAodmNncAAAD8AAAAA4YlRSQwAABtAAAAgMZ1RSQwAA
+ BtAAAAgMYWFiZwAADtwAAAAgYWFnZwAADtwAAAAgZGVzYwAAAAAAAAAIRGlzcGxheQAAAAAAAA
+ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ AAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAJgAAAAxockhSAAAAFAAAAdhrb0tSAAAADA
+ AAAexuYk5PAAAAEgAAAfhpZAAAAAAAEgAAAgpodUhVAAAAFAAAAhxjc0NaAAAAFgAAAjBkYURL
+ AAAAHAAAAkZubE5MAAAAFgAAAmJmaUZJAAAAEAAAAnhpdElUAAAAGAAAAohlc0VTAAAAFgAAAq
+ Byb1JPAAAAEgAAArZmckNBAAAAFgAAAshhcgAAAAAAFAAAAt51a1VBAAAAHAAAAvJoZUlMAAAA
+ FgAAAw56aFRXAAAACgAAAyR2aVZOAAAADgAAAy5za1NLAAAAFgAAAzx6aENOAAAACgAAAyRydV
+ JVAAAAJAAAA1JlbkdCAAAAFAAAA3ZmckZSAAAAFgAAA4ptcwAAAAAAEgAAA6BoaUlOAAAAEgAA
+ A7J0aFRIAAAADAAAA8RjYUVTAAAAGAAAA9BlbkFVAAAAFAAAA3Zlc1hMAAAAEgAAArZkZURFAA
+ AAEAAAA+hlblVTAAAAEgAAA/hwdEJSAAAAGAAABApwbFBMAAAAEgAABCJlbEdSAAAAIgAABDRz
+ dlNFAAAAEAAABFZ0clRSAAAAFAAABGZwdFBUAAAAFgAABHpqYUpQAAAADAAABJAATABDAEQAIA
+ B1ACAAYgBvAGoAac7st+wAIABMAEMARABGAGEAcgBnAGUALQBMAEMARABMAEMARAAgAFcAYQBy
+ AG4AYQBTAHoA7QBuAGUAcwAgAEwAQwBEAEIAYQByAGUAdgBuAP0AIABMAEMARABMAEMARAAtAG
+ YAYQByAHYAZQBzAGsA5gByAG0ASwBsAGUAdQByAGUAbgAtAEwAQwBEAFYA5AByAGkALQBMAEMA
+ RABMAEMARAAgAGEAIABjAG8AbABvAHIAaQBMAEMARAAgAGEAIABjAG8AbABvAHIATABDAEQAIA
+ BjAG8AbABvAHIAQQBDAEwAIABjAG8AdQBsAGUAdQByIA8ATABDAEQAIAZFBkQGSAZGBikEGgQ+
+ BDsETAQ+BEAEPgQyBDgEOQAgAEwAQwBEIA8ATABDAEQAIAXmBdEF4gXVBeAF2V9pgnIATABDAE
+ QATABDAEQAIABNAOAAdQBGAGEAcgBlAGIAbgD9ACAATABDAEQEJgQyBDUEQgQ9BD4EOQAgBBYE
+ GgAtBDQEOARBBD8EOwQ1BDkAQwBvAGwAbwB1AHIAIABMAEMARABMAEMARAAgAGMAbwB1AGwAZQ
+ B1AHIAVwBhAHIAbgBhACAATABDAEQJMAkCCRcJQAkoACAATABDAEQATABDAEQAIA4qDjUATABD
+ AEQAIABlAG4AIABjAG8AbABvAHIARgBhAHIAYgAtAEwAQwBEAEMAbwBsAG8AcgAgAEwAQwBEAE
+ wAQwBEACAAQwBvAGwAbwByAGkAZABvAEsAbwBsAG8AcgAgAEwAQwBEA4gDswPHA8EDyQO8A7cA
+ IAO/A7gDzAO9A7cAIABMAEMARABGAOQAcgBnAC0ATABDAEQAUgBlAG4AawBsAGkAIABMAEMARA
+ BMAEMARAAgAGEAIABDAG8AcgBlAHMwqzDpMPwATABDAER0ZXh0AAAAAENvcHlyaWdodCBBcHBs
+ ZSBJbmMuLCAyMDIxAABYWVogAAAAAAAA8xYAAQAAAAEWylhZWiAAAAAAAABxwAAAOYoAAAFnWF
+ laIAAAAAAAAGEjAAC55gAAE/ZYWVogAAAAAAAAI/IAAAyQAAC90GN1cnYAAAAAAAAEAAAAAAUA
+ CgAPABQAGQAeACMAKAAtADIANgA7AEAARQBKAE8AVABZAF4AYwBoAG0AcgB3AHwAgQCGAIsAkA
+ CVAJoAnwCjAKgArQCyALcAvADBAMYAywDQANUA2wDgAOUA6wDwAPYA+wEBAQcBDQETARkBHwEl
+ ASsBMgE4AT4BRQFMAVIBWQFgAWcBbgF1AXwBgwGLAZIBmgGhAakBsQG5AcEByQHRAdkB4QHpAf
+ IB+gIDAgwCFAIdAiYCLwI4AkECSwJUAl0CZwJxAnoChAKOApgCogKsArYCwQLLAtUC4ALrAvUD
+ AAMLAxYDIQMtAzgDQwNPA1oDZgNyA34DigOWA6IDrgO6A8cD0wPgA+wD+QQGBBMEIAQtBDsESA
+ RVBGMEcQR+BIwEmgSoBLYExATTBOEE8AT+BQ0FHAUrBToFSQVYBWcFdwWGBZYFpgW1BcUF1QXl
+ BfYGBgYWBicGNwZIBlkGagZ7BowGnQavBsAG0QbjBvUHBwcZBysHPQdPB2EHdAeGB5kHrAe/B9
+ IH5Qf4CAsIHwgyCEYIWghuCIIIlgiqCL4I0gjnCPsJEAklCToJTwlkCXkJjwmkCboJzwnlCfsK
+ EQonCj0KVApqCoEKmAquCsUK3ArzCwsLIgs5C1ELaQuAC5gLsAvIC+EL+QwSDCoMQwxcDHUMjg
+ ynDMAM2QzzDQ0NJg1ADVoNdA2ODakNww3eDfgOEw4uDkkOZA5/DpsOtg7SDu4PCQ8lD0EPXg96
+ D5YPsw/PD+wQCRAmEEMQYRB+EJsQuRDXEPURExExEU8RbRGMEaoRyRHoEgcSJhJFEmQShBKjEs
+ MS4xMDEyMTQxNjE4MTpBPFE+UUBhQnFEkUahSLFK0UzhTwFRIVNBVWFXgVmxW9FeAWAxYmFkkW
+ bBaPFrIW1hb6Fx0XQRdlF4kXrhfSF/cYGxhAGGUYihivGNUY+hkgGUUZaxmRGbcZ3RoEGioaUR
+ p3Gp4axRrsGxQbOxtjG4obshvaHAIcKhxSHHscoxzMHPUdHh1HHXAdmR3DHeweFh5AHmoelB6+
+ HukfEx8+H2kflB+/H+ogFSBBIGwgmCDEIPAhHCFIIXUhoSHOIfsiJyJVIoIiryLdIwojOCNmI5
+ QjwiPwJB8kTSR8JKsk2iUJJTglaCWXJccl9yYnJlcmhya3JugnGCdJJ3onqyfcKA0oPyhxKKIo
+ 1CkGKTgpaymdKdAqAio1KmgqmyrPKwIrNitpK50r0SwFLDksbiyiLNctDC1BLXYtqy3hLhYuTC
+ 6CLrcu7i8kL1ovkS/HL/4wNTBsMKQw2zESMUoxgjG6MfIyKjJjMpsy1DMNM0YzfzO4M/E0KzRl
+ NJ402DUTNU01hzXCNf02NzZyNq426TckN2A3nDfXOBQ4UDiMOMg5BTlCOX85vDn5OjY6dDqyOu
+ 87LTtrO6o76DwnPGU8pDzjPSI9YT2hPeA+ID5gPqA+4D8hP2E/oj/iQCNAZECmQOdBKUFqQaxB
+ 7kIwQnJCtUL3QzpDfUPARANER0SKRM5FEkVVRZpF3kYiRmdGq0bwRzVHe0fASAVIS0iRSNdJHU
+ ljSalJ8Eo3Sn1KxEsMS1NLmkviTCpMcky6TQJNSk2TTdxOJU5uTrdPAE9JT5NP3VAnUHFQu1EG
+ UVBRm1HmUjFSfFLHUxNTX1OqU/ZUQlSPVNtVKFV1VcJWD1ZcVqlW91dEV5JX4FgvWH1Yy1kaWW
+ lZuFoHWlZaplr1W0VblVvlXDVchlzWXSddeF3JXhpebF69Xw9fYV+zYAVgV2CqYPxhT2GiYfVi
+ SWKcYvBjQ2OXY+tkQGSUZOllPWWSZedmPWaSZuhnPWeTZ+loP2iWaOxpQ2maafFqSGqfavdrT2
+ una/9sV2yvbQhtYG25bhJua27Ebx5veG/RcCtwhnDgcTpxlXHwcktypnMBc11zuHQUdHB0zHUo
+ dYV14XY+dpt2+HdWd7N4EXhueMx5KnmJeed6RnqlewR7Y3vCfCF8gXzhfUF9oX4BfmJ+wn8jf4
+ R/5YBHgKiBCoFrgc2CMIKSgvSDV4O6hB2EgITjhUeFq4YOhnKG14c7h5+IBIhpiM6JM4mZif6K
+ ZIrKizCLlov8jGOMyo0xjZiN/45mjs6PNo+ekAaQbpDWkT+RqJIRknqS45NNk7aUIJSKlPSVX5
+ XJljSWn5cKl3WX4JhMmLiZJJmQmfyaaJrVm0Kbr5wcnImc951kndKeQJ6unx2fi5/6oGmg2KFH
+ obaiJqKWowajdqPmpFakx6U4pammGqaLpv2nbqfgqFKoxKk3qamqHKqPqwKrdavprFys0K1Erb
+ iuLa6hrxavi7AAsHWw6rFgsdayS7LCszizrrQltJy1E7WKtgG2ebbwt2i34LhZuNG5SrnCuju6
+ tbsuu6e8IbybvRW9j74KvoS+/796v/XAcMDswWfB48JfwtvDWMPUxFHEzsVLxcjGRsbDx0HHv8
+ g9yLzJOsm5yjjKt8s2y7bMNcy1zTXNtc42zrbPN8+40DnQutE80b7SP9LB00TTxtRJ1MvVTtXR
+ 1lXW2Ndc1+DYZNjo2WzZ8dp22vvbgNwF3IrdEN2W3hzeot8p36/gNuC94UThzOJT4tvjY+Pr5H
+ Pk/OWE5g3mlucf56noMui86Ubp0Opb6uXrcOv77IbtEe2c7ijutO9A78zwWPDl8XLx//KM8xnz
+ p/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9uv5L/tz/bf//cGFyYQAAAAAAAw
+ AAAAJmZgAA8qcAAA1ZAAAT0AAAClt2Y2d0AAAAAAAAAAEAAQAAAAAAAAABAAAAAQAAAAAAAAAB
+ AAAAAQAAAAAAAAABAABuZGluAAAAAAAAADYAAKdAAABVgAAATMAAAJ7AAAAlgAAADMAAAFAAAA
+ BUQAACMzMAAjMzAAIzMwAAAAAAAAAAc2YzMgAAAAAAAQxyAAAF+P//8x0AAAe6AAD9cv//+53/
+ //2kAAAD2QAAwHFtbW9kAAAAAAAABhAAAKAZAAAAAMzXEAAAAAAAAAAAAAAAAAAAAAAAdmNncA
+ AAAAAAAwAAAAJmZgADAAAAAmZmAAMAAAACZmYAAAACMzM0AAAAAAIzMzQAAAAAAjMzNAD/wAAR
+ CABCAEIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAg
+ EDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcY
+ GRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJip
+ KTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
+ 8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBA
+ cFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRom
+ JygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZ
+ aXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3
+ +Pn6/9sAQwACAgICAgIDAgIDBAMDAwQFBAQEBAUHBQUFBQUHCAcHBwcHBwgICAgICAgICgoKCg
+ oKCwsLCwsNDQ0NDQ0NDQ0N/9sAQwECAgIDAwMGAwMGDQkHCQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0N
+ DQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0N/90ABAAF/9oADAMBAAIRAxEAPwD5Ft/Acf
+ hvXLLxf8Nb+Twp4p0mVJ7PU7Mhnhk2FXAUggiQSfOCCOvBrx34m2fxN1TV/wDhIPGtkuqusRib
+ UtNPlSlQfMDTI5dCWZ8kBVz6ivqex8bfDXxZemPxBJP4M1OUQq7aku6xdgSGzPGnlIXTa/zOGB
+ D/AC9qpPqFtBqV1p1rew3It5pYFfkxyKGDK6MOWX+YrpqRhsjVbnwvoWqajoesJrnhS/ubLU7Y
+ EJcWalb1V6lXgILuvrgbT9K/Qf4Nftaax4WifxZrdydH1gTxafqOt6RamaxmR1ke1XUrLZJHJG
+ cOA6mN1OcMp5Hl+ofDPw7r091feIZ3ZJfngW0iSI25Xkspj+dj3wetSeG9Blsfgd4k0bTLFvEA
+ 8SajazQfaY2t9St0sY2Fu6TrI8LK295NjxgnGDKelcVSsqXu1D0sHgKuJk40+h+wXwh+PXwv1/
+ UJ9R1i107SV8T2rW934nt75r7Tr6UMDCj3U3mTW7bZT+7lcJH2c4xX274Vv7iXRbZ9QXN4q4lV
+ AWVn3tl1KcMG4O7p3r+Rvwt4k8VeANUW60C/u9EuJyyTwSxDbPs6+ZBL/o10g7svzgZxzX6Q/A
+ 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
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:New Asia
+ORG:New Asia;
+TEL;type=WORK;type=VOICE;type=pref:617-491-1176
+item1.ADR;type=WORK;type=pref:;;;Cambridge;MA;;
+item1.X-ABADR:us
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Minado
+ORG:Minado;
+NOTE:Japanese Buffet\nNewton (?)
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Fritz
+ORG:Fritz;
+TEL;type=WORK;type=VOICE;type=pref:617-482-4428
+ADR;type=WORK;type=pref:;;26 Chandler St.;Boston;MA;02116;USA
+NOTE:Bar\nSouth End\n\n
+item1.URL;type=pref:http://www.fritzboston.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Pepe Bocca
+ORG:Pepe Bocca;
+NOTE:Davis\nItalian
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Irish Pub
+ORG:The Irish Pub;
+ADR;type=WORK;type=pref:;;51 Billings Rd.;Quincy;MA;02171;USA
+NOTE:Dive bar\nQuincy\nNeponset Circle (?)
+item1.URL;type=pref:https://www.evernote.com/shard/s39/nl/4265152/34a82bb5-be79-4485-9618-0a657e85d9b0/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:The Druid
+ORG:The Druid;
+NOTE:Bar\nInman
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Evoo
+ORG:Evoo;
+NOTE:Kendall Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Stoddard's
+ORG:Stoddard's;
+NOTE:Bar\nPark Street
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:West Side Lounge
+ORG:West Side Lounge;
+NOTE:Porter Square\nNice\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Seoul Food (DEFUNCT)
+ORG:Seoul Food (DEFUNCT);
+item1.ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Porter Square\nKorean\nOuts
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Texas Roadhouse
+ORG:Texas Roadhouse;
+EMAIL;type=INTERNET;type=WORK;type=pref:617-381-9598
+NOTE:Everett\nsteak
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:No Name Restaurant
+ORG:No Name Restaurant;
+TEL;type=WORK;type=VOICE;type=pref:617-338-7539
+ADR;type=HOME;type=pref:;;15 Fish Pier St W;Boston;MA;02210;United States of America
+NOTE:Seafood\nCheap\nKids\n\nFrom http://www.evite.com/pages/venue/venueDetails.jsp?venueID=MEMDLAFFNXIQOGHLFATP:\n\nHours\nMon-Sat 11am-10pm\nSun 11am-9pm \n\n\nIn Short\nThe No Name's large dining room sports a no-frills feel\, and prices are kept low\, in part\, due to the lack of linen napkins or tablecloths. Congenial waiters recommend their favorites off the limited menu. The fish is as fresh as it gets\, and all the kitchen does is either fry it or bake it. Popular choices include baked scrod\, fried calamari and shrimp scampi. Dessert options include straightforward fruit pies and grapenut pudding.\nInsider Tips\nKeep an eye on the neighboring Bank of America Pavillion's concert schedule--the area is a mess on event nights.\n\nSeafood\nCheap\nKids\n\nFrom http://www.evite.com/pages/venue/venueDetails.jsp?venueID=MEMDLAFFNXIQOGHLFATP:\n\nHours\nMon-Sat 11am-10pm\nSun 11am-9pm \n\n\nIn Short\nThe No Name's large dining room sports a no-frills feel\n\, and prices are kept low\, in part\, due to the lack of linen napkins or tablecloths. Congenial waiters recommend their favorites off the limited menu. The fish is as fresh as it gets\, and all the kitchen does is either fry it or bake it. Popular choices include baked scrod\, fried calamari and shrimp scampi. Dessert options include straightforward fruit pies and grapenut pudding.\nInsider Tips\nKeep an eye on the neighboring Bank of America Pavillion's concert schedule--the area is a mess on event nights.\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Dok Bua
+ORG:Dok Bua;
+NOTE:Thai\nBrookline
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Frenchie
+ORG:Frenchie;
+TEL;type=WORK;type=VOICE;type=pref:857-233-5941
+ADR;type=WORK;type=pref:;;560 Tremont Street;Boston;MA;02118;USA
+NOTE:French\nBistrot\nBar\n\nSouth End
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:UBurger
+ORG:UBurger;
+TEL;type=WORK;type=VOICE;type=pref:617-536-0448
+ADR;type=WORK;type=pref:;;636 Beacon St;Boston;MA;02215;USA
+NOTE:Burgers\nKenmore Square\n
+item1.URL;type=pref:www.uburgerboston.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Haven
+ORG:Haven;
+NOTE:Scottish\nBar\nJamaica Plan (near Yuji’s house)
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:River Gods (DEFUNCT)
+ORG:River Gods (DEFUNCT);
+TEL;type=WORK;type=VOICE;type=pref:617 576 1881
+ADR;type=WORK;type=pref:;;125 River St.;Cambridge;MA;;USA
+NOTE:Irish\nCheap\nBar\nCentral Square\n\nFrom "20 Under $20\," Globe Magazine\, 7/16/06
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Passage to India
+ORG:Passage to India;
+NOTE:Indian\nouts\ndelivery\ncheap\nPorter Square
+item1.URL;type=pref:http://passagetoindia.foodler.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Middlesex Lounge
+ORG:Middlesex Lounge;
+ADR;type=WORK;type=pref:;;315 Massachusetts Ave.;Cambridge;MA;02139;USA
+NOTE:Bar\nCentral Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Punjabi Dhaba
+ORG:Punjabi Dhaba;
+TEL;type=WORK;type=VOICE;type=pref:617 547 8272
+ADR;type=WORK;type=pref:;;225 Hampshire St.;Cambridge;MA;;USA
+NOTE:Cheap\nNew\nIndian\nInman Square\n\nFrom "20 Under $20\," Globe Magazine\, 7/16/06
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Spice Thai Cuisine
+ORG:Spice Thai Cuisine;
+item1.ADR;type=WORK;type=pref:;;24 Holyoke St.;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Thai\nHarvard Square\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Precinct (DEFUNCT)
+ORG:Precinct (DEFUNCT);
+NOTE:Union Square\nBar\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:KO Pies
+ORG:KO Pies;
+NOTE:Australian meat pies\nEast Boston
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Lo Conte's
+ORG:Lo Conte's;
+TEL;type=OTHER;type=VOICE;type=pref:617 720 0339 (reservations)
+TEL;type=WORK;type=VOICE:617-720-3550
+ADR;type=WORK;type=pref:;;114-116 Salem St.;Boston;MA;;USA
+NOTE:New\nItalian\nNorth End\nHaymarket\nNice\n\nFrom TealMeal:\nVery good Italian in North End.  Reasonably priced\, good selection of seafoot pasta\; also quite a big of veal.  Excellent pesto tortellinis.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Mi Pueblito
+ORG:Mi Pueblito;
+TEL;type=WORK;type=VOICE;type=pref:617-569-3787
+ADR;type=WORK;type=pref:;;333 Border St.;Boston;MA;;
+NOTE:Salvadoran\nMexican\nEast Boston\nNew \nCheap\nBurritos\n\nFrom "20 Under $20\," Globe Magazine\, 7/16/06
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Roka (DEFUNCT)
+ORG:Roka (DEFUNCT);
+NOTE:Sushi\nHarvard Square\nNew
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Meju
+ORG:Meju;
+NOTE:Korean\nDavis\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Sugar & Spice
+ORG:Sugar & Spice;
+ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+NOTE:Thai\nPorter Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Marliave
+ORG:Marliave;
+NOTE:Park Street\nBar
+X-ABShowAs:COMPANY
+END:VCARD

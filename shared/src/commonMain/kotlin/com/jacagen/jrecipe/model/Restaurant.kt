@@ -9,12 +9,13 @@ typealias RestaurantId = String
 
 @Serializable
 data class Restaurant(
-    val id: RestaurantId,
+    @ObjectId val id: RestaurantId,
     val name: String,
-    val address: String,    // Make this more structured, someday
-    val open: WeeklyHours,
-    val tags: Set<Tag>,
-    val source: EntitySource,
+    val url: String?,    // Maybe should be real URL???
+//    val address: String,    // Make this more structured, someday
+//    val open: WeeklyHours,
+//    val tags: Set<Tag>,
+//    val source: EntitySource,
 )
 
 @Serializable(with = DayOfWeekSerializer::class)

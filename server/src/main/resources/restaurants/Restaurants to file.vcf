@@ -1,0 +1,924 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Central Kitchen
+ORG:Central Kitchen;
+NOTE:Central Square\nNice\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Daddy Jones
+ORG:Daddy Jones;
+NOTE:Middle Eastern\nMagoun Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Rudy's
+ORG:Rudy's;
+NOTE:Teele Square\nMexican\nbar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Aceituna Café
+ORG:Aceituna Café;
+item1.ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Kendall Square\nMediterranean\nTakeout
+item2.URL;type=pref:http://www.aceitunacafe.com/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Back Bar
+ORG:Back Bar;
+NOTE:Bar\nUnion Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cellar
+ORG:Cellar;
+NOTE:Harvard Square\nNice\nBar\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Dakzen
+ORG:Dakzen;
+NOTE:Thai\nNoodles\nDavis\nSmall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cunard Tavern
+ORG:Cunard Tavern;
+NOTE:East Boston\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Gargoyle's (DEFUNCT)
+ORG:Gargoyle's (DEFUNCT);
+TEL;type=WORK;type=VOICE;type=pref:617-776-5300
+NOTE:Davis Square\nbar\nnice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Catalyst
+ORG:Catalyst;
+NOTE:Nice\nBar\nKendall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:BiBim
+ORG:BiBim;
+NOTE:Allston\nKorean
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cinquecento
+ORG:Cinquecento;
+NOTE:Italian\nSouth End\nNice\nBar\n\nWent with Lee & Jim after some art thing in South End studios
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Joshua Tree
+ORG:Joshua Tree;
+item1.ADR;type=WORK;type=pref:;;;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:Davis Square\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Blaze
+ORG:Blaze;
+NOTE:Pizza\nLechemere
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Café Art Science
+ORG:Café Art Science;
+NOTE:Bar\nKendall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Antonio's
+ORG:Antonio's;
+NOTE:Italian \nCharles\nMGH
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Alive & Kicking Lobsters
+ORG:Alive & Kicking Lobsters;
+NOTE:LeftOff\n\nCambridgeport\nCentral Square\n\nLobster sandwiches\nSeafood
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Brass Union
+ORG:Brass Union;
+NOTE:Bar\nUnion Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:CasaB
+ORG:CasaB;
+NOTE:Union Square\nTapas\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Blue Diner
+ORG:Blue Diner;
+TEL;type=WORK;type=VOICE;type=pref:617-338-4639
+ADR;type=WORK;type=pref:;;150 Kneeland St.;Boston;MA;;USA
+NOTE:24 hours\nSouth Station\nAmerican \nFast\nCheap\nNice\n\n50's diner\, open 24 hours Fri-Sun.\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cuisine en Locale
+ORG:Cuisine en Locale;
+NOTE:Bar\nHighland
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Blue Ribbon Barbecue
+ORG:Blue Ribbon Barbecue;
+ADR;type=WORK;type=pref:;;;Arlington;MA;;USA
+NOTE:Barbecue\nArlington\n\nOuts\nKids\n
+item1.URL;type=pref:http://www.blueribbonbbq.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Border Café
+ORG:Border Café;
+TEL;type=WORK;type=VOICE;type=pref:(617) 864-6100
+ADR;type=HOME;type=pref:;;32 Church St.;Cambridge;MA;;United States of America
+NOTE:Mexican\nHarvard Square\nSaugus\nBar\n\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cambridge Brewing Company
+ORG:Cambridge Brewing Company;
+ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+NOTE:One Kendall Square\nBar\nBrewpub\nAmerican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Black Sheep
+ORG:Black Sheep;
+TEL;type=WORK;type=VOICE;type=pref:617-577-1300
+NOTE:Kendall\nNice\nBar
+item1.URL;type=pref:http://www.kendallhotel.com/dining-events/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Arirang House
+ORG:Arirang House;
+TEL;type=WORK;type=VOICE;type=pref:617-536-1277
+ADR;type=WORK;type=pref:;;162 Mass. Ave.;Boston;MA;;
+NOTE:Korean\nsushi\ncheap\n\nKorean buffet & Sushi. Buffet has better-than-average selection of uniquely Korean dishes. Also have Sushi.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:3 Little Figs
+ORG:3 Little Figs;
+NOTE:Spring Hill\nCafé\nCoffee\nBreakfast
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Chocho's
+ORG:Chocho's;
+TEL;type=WORK;type=VOICE;type=pref:617 868 4246
+ADR;type=WORK;type=pref:;;1815 Massachusetts Ave.;Cambridge;MA;;USA
+NOTE:Cheap\nKorean\nPorter Square\nPorter Exchange\n\n"20 under $20" from Boston Globe Magazine 7/16/06
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bar Lyon
+ORG:Bar Lyon;
+NOTE:French\nBar\nSouth End\n\nhttps://www.evernote.com/shard/s39/nl/4265152/96893646-01ba-45f7-ad71-3f9fd1ebc34a/
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Club Cafe
+ORG:Club Cafe;
+TEL;type=WORK;type=VOICE;type=pref:(617) 536-0966
+ADR;type=HOME;type=pref:;;209 Columbus;Boston;MA;;
+NOTE:Bar\nGay\nNice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Namaskar
+ORG:Namaskar;
+NOTE:Davis Square\nIndian\nNew
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Dante
+ORG:Dante;
+TEL;type=WORK;type=VOICE;type=pref:617-497-4200
+item1.ADR;type=WORK;type=pref:;;40 Edwin H. Land Blvd.;Cambridge;MA;02142;USA
+item1.X-ABADR:us
+NOTE:Nice\nKendall Square\nBar \n\nBar at Royal Sonesta
+item2.URL;type=pref:www.RestaurantDante.com
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Christo's Seven Star (DEFUNCT)
+ORG:Christo's Seven Star (DEFUNCT);
+NOTE:Pizza\nSubs\nDavis
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bugaboo Creek
+ORG:Bugaboo Creek;
+ADR;type=WORK;type=pref:;;;Watertown;MA;;USA
+NOTE:Watertown\nKids\nWatertown\nJapanese\nSushi\nSushi bar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Blue Moon
+ORG:Blue Moon;
+NOTE:Huron Ave.\nCambridge\nKids\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Hammersmith
+ORG:Hammersmith;
+ADR;type=WORK;type=pref:;;330 Central St.;Saugus;MA;01906;USA
+NOTE:Diner\n\nSaugus\n\nWent with Paul Gaffney—I think this was the more run-down of the two we went to
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Diva
+ORG:Diva;
+TEL;type=WORK;type=VOICE;type=pref:617-864-2553
+TEL;type=CELL;type=VOICE:1 (617) 666-8282
+TEL;type=WORK;type=VOICE:1 (617) 623-4383
+item1.ADR;type=WORK;type=pref:;;;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:Indian\nDavis Square\n\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Coppa
+ORG:Coppa;
+NOTE:Italian \nSouth End\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Newtowne Grille
+ORG:Newtowne Grille;
+NOTE:Dive\nBar\npizza\nPorter Square
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Common Ground
+ORG:Common Ground;
+NOTE:Arlington Center\nBar\nOutdoor seating\nAmerican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Boca Grande (Kendall)
+ORG:Boca Grande (Kendall);
+TEL;type=WORK;type=VOICE;type=pref:617-354-5550
+ADR;type=WORK;type=pref:;;149 1st St.;Cambridge;MA;;
+NOTE:More "California-style" tacos & burritos. Lemon-grilled chicken is a specialty.\n\nAlso 149 1st St.\, Kendall T.\n617-354-5550. Open M-Sat 10am - 9pm.\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Chart House
+ORG:Chart House;
+NOTE:Nice\nSeafood\nWaterfront\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Boloco
+ORG:Boloco;
+TEL;type=WORK;type=FAX;type=pref:617 440 1084
+TEL;type=WORK;type=VOICE:617 440 1082
+ADR;type=WORK;type=pref:;;187 Elm St.;Somerville;MA;02144;USA
+NOTE:Burritos\nDavis Square\nWireless\n\n7AM-11PM
+item1.URL;type=pref:http://www.boloco.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Waypoint
+ORG:Waypoint;
+NOTE:Harvard\nBar\nNice
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bocelli's
+ORG:Bocelli's;
+ADR;type=WORK;type=pref:;;374 Main St.;Medford;MA;;USA
+NOTE:Italian\nMedford\n\nWhere Ian's friend Justin had his birthday party in Kindergarten.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Asgard
+ORG:Asgard;
+NOTE:Central Square\nBar\nIrish\n\nhttp://www.classicirish.com/
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Orleans
+ORG:Orleans;
+item1.ADR;type=WORK;type=pref:;;Holland St.;Somerville;MA;;USA
+item1.X-ABADR:us
+NOTE:Davis Square\nNice\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bob's Imported Food and Buffet Catering
+ORG:Bob's Imported Food and Buffet Catering;
+TEL;type=WORK;type=VOICE;type=pref:781 395 0400
+ADR;type=WORK;type=pref:;;324 Main St.;Medford;MA;02155;USA
+NOTE:Italian\nSubs\nMedford\nOut\n\nMon-Thurs 9AM-8PM\nFri-Sat 8AM-8PM\nSun 8AM-7PM
+item1.URL;type=pref:www.bobsfood.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bisuteki Tokyo
+ORG:Bisuteki Tokyo;
+NOTE:Japanese
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Boston Market
+ORG:Boston Market;
+ADR;type=WORK;type=pref:;;616 Fellsway;Medford;MA;02155;USA
+NOTE:Wellington\nMedford\n\nhttps://www.yelp.com/biz/boston-market-medford
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bon Me
+ORG:Bon Me;
+NOTE:Bahn Mi\nLechemere\nKendall
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Boston Beer Works
+ORG:Boston Beer Works;
+ADR;type=WORK;type=pref:;;;Boston;MA;;USA
+NOTE:Fenway\nBar\nAmerican\nBrewpub
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Greg's
+ORG:Greg's;
+NOTE:Watertown\nItalian\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cheesecake Factory (Cambridgeside Galleria)
+ORG:Cheesecake Factory (Cambridgeside Galleria);
+NOTE:Cambridgeside Galleria\nAmerican\nKids\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:City Slicker Cafe
+ORG:City Slicker Cafe;
+TEL;type=WORK;type=VOICE;type=pref:(617) 625-0700
+NOTE:Porter Square\nAmerican
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cathedral Station
+ORG:Cathedral Station;
+NOTE:South Boston\nBar\nBroadway\nGay\nOutdoor seating
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bondir
+ORG:Bondir;
+NOTE:East Cambridge\nFrench\nPrix Fixe
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Café du Pays
+ORG:Café du Pays;
+NOTE:Québecois\nBar\nCanadian
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cornwalls
+ORG:Cornwalls;
+NOTE:Bar\nKenmore
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Spike's (DEFUNCT)
+ORG:Spike's (DEFUNCT);
+NOTE:Davis Square\nHot dogs\nOuts\nCheap\n\nNext to Gargoyle's
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Celeste
+ORG:Celeste;
+ADR;type=WORK;type=pref:;;21 Bow Street;Somerville;MA;02143;USA
+NOTE:Peruvian\nUnion Square\n\nGood!  Went with Jim on 6/24\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Buttermilk & Bourbon
+ORG:Buttermilk & Bourbon;
+ADR;type=WORK;type=pref:;;160 Commonwealth Ave;Boston;MA;02116;United States
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cantina La Mexicana
+ORG:Cantina La Mexicana;
+NOTE:Mexican\nUnion Square\nBar?
+item1.URL;type=pref:https://www.cantinalamexicana.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bukowski's
+ORG:Bukowski's;
+NOTE:Bar\nAmerican\nInman Square
+item1.URL;type=pref:https://www.bukowskitavern.net/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Boca Grande (Porter)
+ORG:Boca Grande (Porter);
+NOTE:More "California-style" tacos & burritos. Lemon-grilled chicken is a specialty.\n\n1728 Mass. Ave.\, Porter T. 617-354-7400. Open 7 days 10am - 11pm\n\nAlso 149 1st St.\, Kendall T.\n617-354-5550. Open M-Sat 10am - 9pm.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cafe Jaffa
+ORG:Cafe Jaffa;
+TEL;type=WORK;type=VOICE;type=pref:617-536-0230
+ADR;type=WORK;type=pref:;;48 Gloucester St.;Bosotn;MA;;USA
+NOTE:Middle Eastern\nBack Bay\nCheap\nHamburgers\nOut\nHynes\n\nFrom TealMeal: Small place off the beaten Back Bay track specializing in Middle Eastern cuisine.  Excellent tabouli & hummus.  Make surprisingly tasty "American" burgers & fries.  Also to take-out & catering.  \n\nM-Th 11AM-10:30PM\nF-Sat til 11PM\nSun noon-10PM
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Chuck E. Cheese
+ORG:Chuck E. Cheese;
+item1.ADR;type=WORK;type=pref:;;;Everett;MA;;USA
+item1.X-ABADR:us
+NOTE:Pizza\nKids\nEverett
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cosi
+ORG:Cosi;
+item1.ADR;type=WORK;type=pref:;;;Cambridge;MA;;USA
+item1.X-ABADR:us
+NOTE:Sandwiches\nKendall Square\nTakeout
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Café on Main
+ORG:Café on Main;
+TEL;type=WORK;type=VOICE;type=pref:617 621 0903
+NOTE:_____________________________________________\nFrom: Parker Jr.\, John\nSent: Friday\, March 28\, 2008 10:23 PM\nTo: Pega Cambridge\nSubject: Cafe On Main At 101 Main Street Coming Soon\nImportance: High\n\n\n                 \n                Cafe On Main\n\n\nOur building management company here in Cambridge has indicated that the new restaurant - Cafe on Main will be opening soon! The only hurdle at this point is the final approvals by the City of Cambridge. \n\nItems of interest\n\n\n·       The operating hours for Cafe on Main will be Monday - Friday from 7:30 A.M. - 3:00 P.M.\, serving breakfast\, lunch and featuring Starbucks Coffees. \n\n\n·       A sample menu is attached. \n\n\n·       The cafe will feature different daily specials\, a carvery\, deli\, salad bar\, and grill. \n\n\n·       Wireless internet access for your computing needs is available\n\n\n·       A full catering menu will be available once the cafe opens.\n\n\nAlthough the specific date for the Grand Opening has not been finalized\, it is expected to occur by mid April.  We will keep you posted once we get closer to the long anticipated opening!\n\n<<Sample Cafe on Main Menu.pdf>>\n\nCorporate Services
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Art Bar
+ORG:Art Bar;
+NOTE:Bar\nKendall Square\nLechemere\n\nAt Royal Sonesta
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Christine's (Defunct)
+ORG:Christine's (Defunct);
+NOTE:Sub shop\nLechemere
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bertucci's
+ORG:Bertucci's;
+NOTE:Pizza\nItalian\nKendall Square\nAlewife\nHarvard Square\n\nKids\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:China Delight
+ORG:China Delight;
+NOTE:Chinese\nSpring Hill \nPorter\nBar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Dali
+ORG:Dali;
+EMAIL;type=INTERNET;type=WORK;type=pref:dalirestaurant@verizon.net
+TEL;type=WORK;type=FAX;type=pref:617-661-2813
+TEL;type=WORK;type=VOICE:617 661 3254
+item1.ADR;type=WORK;type=pref:;;415 Washington St.;Somerville;MA;02143;USA
+item1.X-ABADR:us
+NOTE:Spanish\nTapas\n\nFrom TealMeal: Usually crowded\n\nDinner nightly 5:30 to 11:00 | Bar until 12:30
+item2.URL;type=pref:http://www.dalirestaurant.com/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Chili's
+ORG:Chili's;
+NOTE:American\nKids\nCopley mall\nBack Bay
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bambara
+ORG:Bambara;
+ADR;type=WORK;type=pref:;;25 Edwin H. Land Blvd.;Cambridge;MA;;
+NOTE:Nice\nBar\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Gustazo
+ORG:Gustazo;
+NOTE:Cuban\nPorter\nOld Elephant Walk place
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:China Pearl
+ORG:China Pearl;
+TEL;type=WORK;type=VOICE;type=pref:617-426-4338
+ADR;type=WORK;type=pref:;;9 Tyler St.;Boston;MA;;USA
+NOTE:Cheap\nDim sum\nChinese\nChinatown\n\n\n"20 under $20" from Boston Globe Magazine 7/16/06\nServes dim sum on request until 11PM.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Clerys
+ORG:Clerys;
+NOTE:Bar\nSouth End
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Causeway Restaurant
+ORG:Causeway Restaurant;
+NOTE:Gloucester\nHole-in-the-wall\nSeafood\n\nWent with David \nNot great?\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Blue Room
+ORG:Blue Room;
+NOTE:One Kendall Square\nNice\nBar\nBrunch\n\nNext door is Belly Wine Bar
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bluefin
+ORG:Bluefin;
+TEL;type=WORK;type=VOICE;type=pref:617-497-8022
+ADR;type=WORK;type=pref:;;1815 Mass. Ave.;Cambridge;MA;;USA
+NOTE:Porter Square\nSushi\nJapanese\n\n (in the Porter Exchange mall)\n\nPorter Sq. T\nExcellent sushi & great deals: 32 pieces of nigiri or maki for $26! Also have tako sashimi.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Cuchi Cuchi
+ORG:Cuchi Cuchi;
+NOTE:Kendall\nBar\nNice\nSmall plates
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bull McCabe's
+ORG:Bull McCabe's;
+NOTE:Bar\nUnion Square
+item1.URL;type=pref:http://bullmccabesboston.com
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Blue Ginger
+ORG:Blue Ginger;
+TEL;type=WORK;type=VOICE;type=pref:(781) 283-5790
+ADR;type=HOME;type=pref:;;583 Washington Street;Wellesley;MA;02482;United States of America
+NOTE:Wellesley\nChinese\nNice\n\nMonday-Thursday\nLunch 11:30am-2:00pm\nDinner 5:30pm-9:30pm\nFriday\nLunch 11:30am-2:00pm\nDinner 5:30pm-10:00pm\nSaturday\nDinner 5:00pm-10:00pm\n\nSunday\nClosed\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Café G
+ORG:Café G;
+NOTE:Isabella Stewart Gardner museum\nFenway
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:B-Good
+ORG:B-Good;
+NOTE:Harvard Square\nBurgers\n\nBad "healthy" burgers.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Craigie on Main
+ORG:Craigie on Main;
+TEL;type=WORK;type=VOICE;type=pref:617-497-5511
+item1.ADR;type=WORK;type=pref:;;853 Main Street\nCambridge;Cambridge;MA;02139;USA
+item1.X-ABADR:us
+NOTE:French\nNice\nBar\n\nOpen Tuesday-Sunday\nDining Room: 5:30-10:00pm (10:30 Fri & Sat)\nBar: 5:30pm-1:00am\nBar Food Menu: 5:30 to Midnight\nBrunch: Sunday 11:00am-2:00pm
+item2.URL;type=pref:http://www.craigieonmain.com/
+item2.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bombay Cafe
+ORG:Bombay Cafe;
+ADR;type=WORK;type=pref:;;175 Massachusetts Ave.;Boston;MA;;USA
+NOTE:Symphony\nIndian\nDelivery\nNice\nNew\n\nMon-Sat unti 11PM\nSun until 10 PM\n\nExcellent Indian on Mass. Ave.  Very reasonably priced.  Waitstaff is top-notch\, and the food is absolutely flawless.  The portions are perhaps smaller than average\, but it's quality over quantity.  Special $5.95 lunch buffet every day til 4pm.  (Starts 11:30 am M-F\; noon weekends).  They also deliver.
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Brown Sugar Café
+ORG:Brown Sugar Café;
+NOTE:Thai\nAllston\nBrighton
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bickford's (defunct)
+ORG:Bickford's (defunct);
+NOTE:Somerville\nAmerican\nCheap \nKids\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Café Mami
+ORG:Café Mami;
+NOTE:Japanese\nPorter Square\n
+X-ABShowAs:COMPANY
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 15.5//EN
+N:;;;;
+FN:Bergamot
+ORG:Bergamot;
+NOTE:Nice\nBar\nSomerville
+X-ABShowAs:COMPANY
+END:VCARD
