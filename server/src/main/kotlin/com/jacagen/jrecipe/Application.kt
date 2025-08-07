@@ -5,14 +5,18 @@ import com.jacagen.jrecipe.llm.`interface`.recipeBot
 import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
 import io.ktor.http.*
-import io.ktor.http.content.*
+import io.ktor.http.content.MultiPartData
+import io.ktor.http.content.PartData
+import io.ktor.http.content.asFlow
+import io.ktor.http.content.forEachPart
+import io.ktor.http.content.streamProvider
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
-import io.ktor.server.request.*
+import io.ktor.server.request.receiveMultipart
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.json.Json
@@ -35,6 +39,7 @@ fun Application.module() {
         allowHeader(HttpHeaders.ContentType)
     }
     install(ContentNegotiation) {
+        ignoreType<MultiPartData>()
         json(Json {
             serializersModule = SerializersModule {
                 contextual(Instant::class, InstantIso8601Serializer)
@@ -77,7 +82,29 @@ fun Application.module() {
             call.respond(tagsDefinitions)
         }
         post("/chat") {
-            val (message, currentRecipe, fileBytes) = retrieveTextAndFileFromHttpRequest(call)
+            // Text request, current selected recipe, uploaded file
+            val multipart = call.receiveMultipart()
+            var message: String? = null
+            var fileBytes: ByteArray? = null
+            var fileName: String? = null
+            val currentRecipe = call.request.queryParameters["selectedRecipe"]
+            multipart.forEachPart { part ->
+                when (part) {
+                    is PartData.FormItem -> {
+                        if (part.name == "message") {
+                            message = part.value
+                        }
+                    }
+                    is PartData.FileItem -> {
+                        if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
+                            fileName = part.originalFileName
+                            fileBytes = part.streamProvider().readBytes()
+                        }
+                    }
+                    else -> {}
+                }
+                part.dispose()
+            }
             if (message == null) {
                 call.respond(HttpStatusCode.BadRequest, "Missing 'message' part")
                 return@post
@@ -92,35 +119,6 @@ fun Application.module() {
             call.respondText(response)
         }
     }
-}
-
-private suspend fun retrieveTextAndFileFromHttpRequest(call: RoutingCall): Triple<String?, String?, ByteArray?> {  // Text request, current selected recipe, uploaded file
-    val multipart = call.receiveMultipart()
-    var message: String? = null
-    var fileBytes: ByteArray? = null
-    var fileName: String? = null
-    val currentRecipe = call.request.queryParameters["selectedRecipe"]
-
-    multipart.forEachPart { part ->
-        when (part) {
-            is PartData.FormItem -> {
-                if (part.name == "message") {
-                    message = part.value
-                }
-            }
-
-            is PartData.FileItem -> {
-                if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
-                    fileName = part.originalFileName
-                    fileBytes = part.streamProvider().readBytes()
-                }
-            }
-
-            else -> {}
-        }
-        part.dispose()
-    }
-    return Triple(message, currentRecipe, fileBytes)
 }
 
 fun ByteArray.extractTextFromPdf(): String {
