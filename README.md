@@ -1,27 +1,18 @@
-This is a Kotlin Multiplatform project targeting Web, Server.
+This is a toy Recipe Manager project that I've been working on just for fun.  The result isn't particularly useful yet, but I but I wanted to write something something which would let me to pull in:
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-    - `commonMain` is for code that’s common for all targets.
-    - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-      For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-      `iosMain` would be the right folder for such calls.
+* Both front end (Kotlin/React) and back end (Kotlin/Ktor)
+* Data (MongoDB)
+* The use of LLMs & semantic search (using ChatGPT)
 
-* `/server` is for the Ktor server application.
+I did not originally intend for this to be shown off, but it kind of shows some of the breadth of technologies that I've
+dealt with.
 
-* `/shared` is for the code that will be shared between all targets in the project.
-  The most important subfolder is `commonMain`. If preferred, you can add code to the platform-specific folders here
-  too.
+* The backend is in `/server`
+* The front end is in `/web`
+* `/shared` contains code (mostly data definitions) used by both
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+(I originally tried to use Jetpack Compose for the front end, but found that it really didn't do everything I wanted in my web UI, so I fell back to vanilla React. You can see the remnants of my original attempt in `/composeApp`.)
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack
-channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+I usually like to design with an "end-to-end" approach--as such, this is a complete application from UI to data storage.  But it doesn't have a whole lot of interesting _features_ yet. 
 
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
-
-# Notes
-[Compose tutorial](https://developer.android.com/develop/ui/compose/tutorial)
+![Sample screen](./doc/sample-screen.png)
