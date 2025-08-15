@@ -2,7 +2,6 @@ package com.jacagen.jrecipe.component
 
 import com.jacagen.jrecipe.model.RecipeSummary
 import com.jacagen.jrecipe.model.TagDefinition
-import js.objects.jso
 import js.objects.unsafeJso
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
@@ -103,9 +102,9 @@ val Navigator = FC<NavigatorProps> { props ->
                 recipes.forEach { recipe ->
                     ListItemButton {
                         onClick = { scope.launch { props.onRecipeClick(recipe) } }
-                        sx = jso { paddingLeft = 32.px }
+                        sx = unsafeJso { paddingLeft = 32.px }
                         ListItemIcon {
-                            sx = jso {
+                            sx = unsafeJso {
                                 minWidth = 36.px // or even 32.px
                             }
                             RestaurantMenu()
