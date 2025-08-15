@@ -10,6 +10,7 @@ import io.ktor.client.request.*
 import js.core.JsAny
 import kotlinx.browser.window
 import kotlinx.coroutines.await
+import kotlinx.serialization.json.Json
 import mui.material.Box
 import mui.material.Paper
 import mui.system.sx
@@ -21,8 +22,8 @@ import react.Props
 import react.useEffect
 import react.useState
 import web.cssom.*
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
+
+// I should probably move HTTP calls into their own helper class
 
 val ThreeColumnLayout = FC<Props> {
     val theme = useTheme()

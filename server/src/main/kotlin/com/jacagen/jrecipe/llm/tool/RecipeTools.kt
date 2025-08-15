@@ -2,23 +2,20 @@
 
 package com.jacagen.jrecipe.llm.tool
 
-import com.jacagen.jrecipe.data.dao.mongodb.recipeCollection
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.importer.embedAndStore
 import com.jacagen.jrecipe.llm.embeddingModel
-import com.jacagen.jrecipe.model.Recipe
-import com.jacagen.jrecipe.model.RecipeId
-import com.jacagen.jrecipe.model.Tag
-import com.jacagen.jrecipe.model.TagCatalog
+import com.jacagen.jrecipe.model.*
 import dev.langchain4j.agent.tool.Tool
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.runBlocking
-import kotlin.collections.toList
 import kotlin.math.sqrt
 import kotlin.time.ExperimentalTime
 
 @Suppress("unused")
 class RecipeTools {
+    @Tool
+    fun getAllRecipes(): List<RecipeSummary> = runBlocking { recipeDao.getSummariesSortedByTitle() }
+
     @Tool
     fun getAllTags() = runBlocking {
         recipeDao.getAll().map { it.tags }.flatten().toSet()
@@ -32,7 +29,7 @@ class RecipeTools {
 
         // This could be streamed better, or more done in  Mongo
         println("Getting recipes")
-        val recipes = recipeCollection.find().toList().filter { it.embedding != null }
+        val recipes = recipeDao.getAll().filter { it.embedding != null }
 
         println("Getting cosine similarities")
         val recipesWithSimilarities = recipes.map { cosineSimilarity(it.embedding!!, queryEmbedding) to it }
