@@ -6,6 +6,7 @@ import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.importer.embedAndStore
 import com.jacagen.jrecipe.llm.embeddingModel
 import com.jacagen.jrecipe.model.*
+import dev.langchain4j.agent.tool.P
 import dev.langchain4j.agent.tool.Tool
 import kotlinx.coroutines.runBlocking
 import kotlin.math.sqrt
@@ -61,6 +62,15 @@ class RecipeTools {
             tags = oldRecipe.tags,
         )
         embedAndStore(updatedRecipe)
+    }
+
+    @Tool("Forward a recipe to the UI")
+    fun forwardRecipeToUi(
+        @P("Recipe ID (UUID or slug)") id: RecipeId
+    ): RecipeId {
+        //onSelect(id)              // <-- your side effect to update the other part of the app
+        println("Forward recipe $id")
+        return "Forward recipe $id"
     }
 }
 

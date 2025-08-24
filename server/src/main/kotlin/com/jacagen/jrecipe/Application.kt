@@ -2,7 +2,6 @@ package com.jacagen.jrecipe
 
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.llm.chat
-import com.jacagen.jrecipe.llm.`interface`.recipeBot
 import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
 import io.ktor.http.*
@@ -127,12 +126,14 @@ private suspend fun decomposeRequest(call: RoutingCall): Triple<String?, String?
                     message = part.value
                 }
             }
+
             is PartData.FileItem -> {
                 if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
                     fileName = part.originalFileName
                     fileBytes = part.streamProvider().readBytes()
                 }
             }
+
             else -> {}
         }
         part.dispose()

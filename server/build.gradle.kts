@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.langgraph4j.core)
     implementation(libs.logback)
     implementation(libs.mongodb.kotlin)
+    implementation(libs.plantuml)
 
     testImplementation(libs.ktor.serverTestHost)
     testImplementation(libs.kotlin.testJunit)

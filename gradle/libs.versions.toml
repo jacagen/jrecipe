@@ -2,6 +2,7 @@
 # Is there a way to specify these only down to the minor release?
 apache-pdfbox = "3.0.5"
 clikt = "5.0.3"
+jackson = "2.19.0"
 kotlin = "2.1.21"
 kotlin-emotion = "2025.3.26"
 kotlin-mui = "2025.6.5-5.17.1"
@@ -15,7 +16,7 @@ langchain-kotlin = "1.0.1-beta6"
 langgraph4j = "1.6.1"
 logback = "1.5.18"
 mongodb = "5.5.0"
-jackson = "2.19.0"
+plantuml = "1.2025.3"
 
 
 [libraries]
@@ -72,7 +73,7 @@ logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
 mongodb-kotlin = { module = "org.mongodb:mongodb-driver-kotlin-coroutine", version.ref = "mongodb" }
 
-
+plantuml = { module = "net.sourceforge.plantuml:plantuml-mit", version.ref = "plantuml" }
 
 
 [plugins]
