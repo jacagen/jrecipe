@@ -1,6 +1,7 @@
 package com.jacagen.jrecipe
 
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
+import com.jacagen.jrecipe.llm.chat
 import com.jacagen.jrecipe.llm.`interface`.recipeBot
 import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
@@ -89,7 +90,7 @@ fun Application.module() {
             val messagePartThree =
                 if (fileBytes == null) "" else "\n\n\nThe contents of the attached file are as follow: ${fileBytes.extractTextFromPdf()}"
 
-            val response = recipeBot.chat(messagePartOne + message + messagePartThree)
+            val response = chat(messagePartOne + message + messagePartThree)
             call.respondText(response)
         }
     }

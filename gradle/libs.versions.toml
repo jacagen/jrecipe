@@ -12,6 +12,7 @@ kotlinx-datetime = "0.6.2"
 ktor = "3.2.0"
 langchain = "1.0.1"
 langchain-kotlin = "1.0.1-beta6"
+langgraph4j = "1.6.1"
 logback = "1.5.18"
 mongodb = "5.5.0"
 jackson = "2.19.0"
@@ -62,6 +63,10 @@ ktor-serverTestHost = { module = "io.ktor:ktor-server-test-host-jvm", version.re
 langchain4j = { module = "dev.langchain4j:langchain4j", version.ref = "langchain" }
 langchain4j-kotlin = { module = "dev.langchain4j:langchain4j-kotlin", version.ref = "langchain-kotlin" }
 langchain4j-openAi = { module = "dev.langchain4j:langchain4j-open-ai", version.ref = "langchain" }
+
+langgraph4j-agent-executor = { module = "org.bsc.langgraph4j:langgraph4j-agent-executor", version.ref = "langgraph4j" }
+langgraph4j-bom = { module = "org.bsc.langgraph4j:langgraph4j-bom", version.ref = "langgraph4j" }
+langgraph4j-core = { module = "org.bsc.langgraph4j:langgraph4j-core" }
 
 logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
