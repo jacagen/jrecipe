@@ -1,5 +1,6 @@
 package com.jacagen.jrecipe.component
 
+import com.jacagen.jrecipe.model.ChatResponse
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import mui.icons.material.HourglassEmpty
@@ -15,7 +16,7 @@ import web.cssom.*
 import web.html.HTMLInputElement
 
 external interface ChatColumnProps : Props {
-    var onSubmitChatRequest: suspend (String, File?) -> String
+    var onSubmitChatRequest: suspend (String, File?) -> ChatResponse
 }
 
 val ChatColumn = FC<ChatColumnProps> { props ->
@@ -99,7 +100,7 @@ val ChatColumn = FC<ChatColumnProps> { props ->
                         coroutineScope.launch {
                             isThinking = true
                             try {
-                                val reply = props.onSubmitChatRequest(currentInput, currentFile)
+                                val (reply, _)  = props.onSubmitChatRequest(currentInput, currentFile)
                                 currentFile = null
                                 setMessages { old -> old + "LLM: $reply" }
                             } catch (e: Throwable) {

@@ -2,6 +2,7 @@ package com.jacagen.jrecipe
 
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.llm.chat
+import com.jacagen.jrecipe.model.ChatResponse
 import com.jacagen.jrecipe.model.tagsDefinitions
 import com.jacagen.jrecipe.serde.InstantIso8601Serializer
 import io.ktor.http.*
@@ -92,7 +93,7 @@ fun Application.module() {
                 if (fileBytes == null) "" else "\n\n\nThe contents of the attached file are as follow: ${fileBytes.extractTextFromPdf()}"
 
             val response = chat(cid, messagePartOne + message + messagePartThree)
-            call.respondText(response)
+            call.respond(ChatResponse(response))
         }
     }
 }

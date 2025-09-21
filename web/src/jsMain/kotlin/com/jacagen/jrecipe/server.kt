@@ -1,5 +1,6 @@
 package com.jacagen.jrecipe
 
+import com.jacagen.jrecipe.model.ChatResponse
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.RecipeSummary
 import com.jacagen.jrecipe.model.TagDefinition
@@ -26,7 +27,7 @@ internal suspend fun retrieveRecipe(summary: RecipeSummary): Recipe {
     } else throw Exception(response.statusText)
 }
 
-internal suspend fun submitChatRequest(input: String, cid: String, selectedRecipe: Recipe?, file: File?): String {
+internal suspend fun submitChatRequest(input: String, cid: String, selectedRecipe: Recipe?, file: File?): ChatResponse {
     fun createChatRequest(input: String, file: File? = null): RequestInit {
         val formData = FormData()
         formData.append("message", input)
@@ -52,6 +53,9 @@ internal suspend fun submitChatRequest(input: String, cid: String, selectedRecip
         else "http://localhost:8080/chat?selectedRecipe=${selectedRecipe.id}&cid=$cid"
     val requestInit = createChatRequest(input, file)
     val response = window.fetch(url, requestInit).await()
-    if (response.ok) return response.text().await()
+    if (response.ok) {
+        val text = response.text().await()
+        return Json.decodeFromString(text)
+    }
     else throw Exception(response.statusText)
 }
