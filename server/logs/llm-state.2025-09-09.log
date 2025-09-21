@@ -1,0 +1,598 @@
+*********************************** Show me a recipe that uses the grill.
+
+---------
+NodeOutput{node=__START__, state={
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=model, state={
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=action_dispatcher, state={
+	next_action=findTopRecipeMatches
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=findTopRecipeMatches, state={
+	next_action=findTopRecipeMatches
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	]
+	tool_execution_results=[
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	]
+	}}
+--------
+
+
+---------
+NodeOutput{node=action_dispatcher, state={
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=model, state={
+	agent_response=Here's a recipe for a **Grilled Cheeseburger**:
+
+### Grilled Cheeseburger
+- **Yield**: Serves 4
+- **Source**: [Cooks Illustrated](http://www.cooksillustrated.com/recipes/detail.asp?docid=6561)
+- **Notes**: Published February 1, 2005. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.
+
+#### Ingredients
+- 1 1/2 pounds 80 percent lean ground chuck
+- 3 1/2 ounces cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled
+- 1 teaspoon table salt
+- 1/2 teaspoon ground black pepper
+- Vegetable oil, for oiling grill rack
+- 4 buns and desired toppings
+
+#### Steps
+1. Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).
+
+2. Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.
+
+3. Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately.
+
+Enjoy your grilled cheeseburgers!
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=__END__, state={
+	agent_response=Here's a recipe for a **Grilled Cheeseburger**:
+
+### Grilled Cheeseburger
+- **Yield**: Serves 4
+- **Source**: [Cooks Illustrated](http://www.cooksillustrated.com/recipes/detail.asp?docid=6561)
+- **Notes**: Published February 1, 2005. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.
+
+#### Ingredients
+- 1 1/2 pounds 80 percent lean ground chuck
+- 3 1/2 ounces cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled
+- 1 teaspoon table salt
+- 1/2 teaspoon ground black pepper
+- Vegetable oil, for oiling grill rack
+- 4 buns and desired toppings
+
+#### Steps
+1. Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).
+
+2. Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.
+
+3. Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately.
+
+Enjoy your grilled cheeseburgers!
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+*********************************** Please show me a different recipe that uses the grill.
+
+---------
+NodeOutput{node=__START__, state={
+	agent_response=Here's a recipe for a **Grilled Cheeseburger**:
+
+### Grilled Cheeseburger
+- **Yield**: Serves 4
+- **Source**: [Cooks Illustrated](http://www.cooksillustrated.com/recipes/detail.asp?docid=6561)
+- **Notes**: Published February 1, 2005. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.
+
+#### Ingredients
+- 1 1/2 pounds 80 percent lean ground chuck
+- 3 1/2 ounces cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled
+- 1 teaspoon table salt
+- 1/2 teaspoon ground black pepper
+- Vegetable oil, for oiling grill rack
+- 4 buns and desired toppings
+
+#### Steps
+1. Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).
+
+2. Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.
+
+3. Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately.
+
+Enjoy your grilled cheeseburgers!
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	UserMessage { name = null contents = [TextContent { text = "Please show me a different recipe that uses the grill." }] }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=model, state={
+	agent_response=Here's a recipe for a **Grilled Cheeseburger**:
+
+### Grilled Cheeseburger
+- **Yield**: Serves 4
+- **Source**: [Cooks Illustrated](http://www.cooksillustrated.com/recipes/detail.asp?docid=6561)
+- **Notes**: Published February 1, 2005. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.
+
+#### Ingredients
+- 1 1/2 pounds 80 percent lean ground chuck
+- 3 1/2 ounces cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled
+- 1 teaspoon table salt
+- 1/2 teaspoon ground black pepper
+- Vegetable oil, for oiling grill rack
+- 4 buns and desired toppings
+
+#### Steps
+1. Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).
+
+2. Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.
+
+3. Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately.
+
+Enjoy your grilled cheeseburgers!
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	UserMessage { name = null contents = [TextContent { text = "Please show me a different recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_2RVVbWoIfYPhsQNbnOPP1YSP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":2}" }], attributes = {} }
+	]
+	tool_execution_results=[]
+	}}
+--------
+
+
+---------
+NodeOutput{node=__END__, state={
+	agent_response=Here's a recipe for a **Grilled Cheeseburger**:
+
+### Grilled Cheeseburger
+- **Yield**: Serves 4
+- **Source**: [Cooks Illustrated](http://www.cooksillustrated.com/recipes/detail.asp?docid=6561)
+- **Notes**: Published February 1, 2005. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.
+
+#### Ingredients
+- 1 1/2 pounds 80 percent lean ground chuck
+- 3 1/2 ounces cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled
+- 1 teaspoon table salt
+- 1/2 teaspoon ground black pepper
+- Vegetable oil, for oiling grill rack
+- 4 buns and desired toppings
+
+#### Steps
+1. Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).
+
+2. Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.
+
+3. Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately.
+
+Enjoy your grilled cheeseburgers!
+	messages=[
+	UserMessage { name = null contents = [TextContent { text = "Show me a recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_xPb8KJj62sfaZF2iUfpEjyEP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":1}" }], attributes = {} }
+	ToolExecutionResultMessage { id = "call_xPb8KJj62sfaZF2iUfpEjyEP" toolName = "findTopRecipeMatches" text = "[ {
+  "id" : "02b502c8-0119-482a-8955-0912966119b6",
+  "title" : "Grilled Cheeseburger",
+  "source" : "EVERNOTE",
+  "author" : null,
+  "sourceUrl" : "http://www.cooksillustrated.com/recipes/detail.asp?docid=6561",
+  "yield" : "Serves 4",
+  "notes" : "Published February 1, 2005. See also The America's Test Kitchen Cookbook: p. 128. Techniques include igniting charcoal and ensuring patties are well seared without pressing down.",
+  "ingredients" : [ {
+    "ingredient" : "80 percent lean ground chuck",
+    "amount" : "1 1/2",
+    "unit" : "pounds",
+    "note" : null
+  }, {
+    "ingredient" : "cheddar cheese or Swiss, Monteray Jack, or blue cheese, shredded or crumbled",
+    "amount" : "3 1/2",
+    "unit" : "ounces",
+    "note" : null
+  }, {
+    "ingredient" : "table salt",
+    "amount" : "1",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "ground black pepper",
+    "amount" : "1/2",
+    "unit" : "teaspoon",
+    "note" : null
+  }, {
+    "ingredient" : "Vegetable oil",
+    "amount" : null,
+    "unit" : null,
+    "note" : "for oiling grill rack"
+  }, {
+    "ingredient" : "buns and desired toppings",
+    "amount" : "4",
+    "unit" : null,
+    "note" : null
+  } ],
+  "steps" : [ "Ignite about 6 quarts (1 large chimney or about 6 pounds) of charcoal and burn until coals are completely covered with a thin coating of light gray ash, 20 to 30 minutes. Spread coals evenly over grill bottom, position grill rack above the coals, and heat until medium-hot (you can hold your hand 5 inches above grill surface for no longer than 3 or 4 seconds).", "Break up ground chuck with your hands in a medium bowl. Sprinkle cheese, salt, and pepper over the meat; toss lightly with hands to distribute seasonings. Divide meat into four 6-ounce portions. Gently toss one portion of meat back and forth between hands to form a loose ball. Lightly flatten into a patty 3/4-inch thick and about 4 1/2-inches in diameter. Gently press the center of the patty down until about 1/2-inch thick, creating a slight depression in each patty; repeat with remaining portions of meat.", "Scrape hot grill rack clean with a wire brush. Lightly dip wadded paper towels in vegetable oil; holding wad with tongs, wipe grill rack. Grill patties, uncovered, without pressing down on them, until well seared on the first side, about 2 1/2 minutes. Flip burgers with a metal barbecue spatula; continue grilling about 2 minutes for rare, 2 1/2 minutes for medium-rare, or 3 minutes for medium. Serve immediately." ],
+  "createdInSource" : {
+    "epochSeconds" : 1107280320,
+    "nanosecondsOfSecond" : 0
+  },
+  "updatedInSource" : {
+    "epochSeconds" : 1708221677,
+    "nanosecondsOfSecond" : 0
+  },
+  "tags" : [ "Grill", "Main Course", "Bread" ],
+  "embedding" : null,
+  "verified" : null
+} ]" }
+	UserMessage { name = null contents = [TextContent { text = "Please show me a different recipe that uses the grill." }] }
+	AiMessage { text = null, thinking = null, toolExecutionRequests = [ToolExecutionRequest { id = "call_2RVVbWoIfYPhsQNbnOPP1YSP", name = "findTopRecipeMatches", arguments = "{"arg0":"grill","arg1":2}" }], attributes = {} }
+	]
+	tool_execution_results=[]
+	}}
+--------
+

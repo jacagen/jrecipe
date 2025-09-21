@@ -78,6 +78,8 @@ fun Application.module() {
             call.respond(tagsDefinitions)
         }
         post("/chat") {
+            val cid = call.request.queryParameters["cid"]!!
+            log.debug("CID: $cid")
             val (message, currentRecipe, fileBytes) = decomposeRequest(call)
             if (message == null) {
                 call.respond(HttpStatusCode.BadRequest, "Missing 'message' part")
@@ -89,7 +91,7 @@ fun Application.module() {
             val messagePartThree =
                 if (fileBytes == null) "" else "\n\n\nThe contents of the attached file are as follow: ${fileBytes.extractTextFromPdf()}"
 
-            val response = chat(messagePartOne + message + messagePartThree)
+            val response = chat(cid,messagePartOne + message + messagePartThree)
             call.respondText(response)
         }
     }
@@ -117,7 +119,7 @@ private suspend fun decomposeRequest(call: RoutingCall): Triple<String?, String?
     val multipart = call.receiveMultipart()
     var message: String? = null
     var fileBytes: ByteArray? = null
-    var fileName: String? = null
+    @Suppress("VariableNeverRead") var fileName: String? = null
     val currentRecipe = call.request.queryParameters["selectedRecipe"]
     multipart.forEachPart { part ->
         when (part) {
@@ -129,6 +131,7 @@ private suspend fun decomposeRequest(call: RoutingCall): Triple<String?, String?
 
             is PartData.FileItem -> {
                 if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
+                    @Suppress("AssignedValueIsNeverRead")
                     fileName = part.originalFileName
                     fileBytes = part.streamProvider().readBytes()
                 }

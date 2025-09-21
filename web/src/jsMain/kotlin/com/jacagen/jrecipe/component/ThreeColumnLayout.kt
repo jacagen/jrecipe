@@ -19,6 +19,7 @@ import org.w3c.files.File
 import org.w3c.xhr.FormData
 import react.FC
 import react.Props
+import react.use
 import react.useEffect
 import react.useState
 import web.cssom.*
@@ -33,6 +34,8 @@ val ThreeColumnLayout = FC<Props> {
 
     var tags by useState(emptyList<TagDefinition>())
 
+    val cid = use(ConversationIdContext)!!
+
     useEffect(Unit) {
         val result = client.get("http://localhost:8080/recipes/summary?sortByTitle")
         recipes = result.body()
@@ -45,8 +48,8 @@ val ThreeColumnLayout = FC<Props> {
 
     suspend fun submitChatRequest(requestInit: RequestInit): JsAny {
         val url = // Don't hardcode
-            if (selectedRecipe == null) "http://localhost:8080/chat"
-            else "http://localhost:8080/chat?selectedRecipe=${selectedRecipe!!.id}"
+            if (selectedRecipe == null) "http://localhost:8080/chat?cid=$cid"
+            else "http://localhost:8080/chat?selectedRecipe=${selectedRecipe!!.id}&cid=$cid"
         val response = window.fetch(url, requestInit).await()
         if (response.ok) return response.text().await()
         else throw Exception(response.statusText)

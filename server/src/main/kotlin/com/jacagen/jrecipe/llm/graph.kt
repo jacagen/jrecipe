@@ -8,36 +8,48 @@ import net.sourceforge.plantuml.SourceStringReader
 import org.bsc.langgraph4j.CompileConfig
 import org.bsc.langgraph4j.CompiledGraph
 import org.bsc.langgraph4j.GraphRepresentation
-import org.bsc.langgraph4j.NodeOutput
-import org.bsc.langgraph4j.agentexecutor.AgentExecutorEx
+import org.bsc.langgraph4j.agentexecutor.AgentExecutor
+import org.slf4j.LoggerFactory
 import java.io.FileOutputStream
 
-val stateGraph = AgentExecutorEx.builder().chatModel(model) // add object with tools
+private val logger = LoggerFactory.getLogger("com.jacagen.jrecipe.llm.state")
+
+val stateGraph = AgentExecutor.builder().chatModel(model) // add object with tools
     .toolsFromObject(RecipeTools()) // add dynamic tool
     .systemMessage(systemMessage).build()
 val compileConfig = CompileConfig.builder().checkpointSaver(checkpointSaver).build()
 val workflow = stateGraph.compile(compileConfig).also { saveGraphAsPng(it, "graph.png") }
 
-fun chat(msg: String): String {
+/**
+ * @param cid the client session ID, which should be the same across multiple calls to `chat` for the same end user
+ */
+fun chat(cid: String, msg: String): String {
     val stream = workflow.stream(
         mapOf(
             "messages" to listOf(
                 //systemMessage,
                 UserMessage.from(msg),
-            )
+            ),
+            "thread_id" to cid,
+            "agent_response" to null,   // This seems to be critical, as stale responses seem to wreak havoc
         )
     )
-    // workflow.invoke(mapOf("messages" to listOf(UserMessage.from(msg)))).get().finalResponse().get()
-    // Should change this to real logging (debug)
-    println("***********************************")
-    var lastEvent: NodeOutput<AgentExecutorEx.State>? = null
+
+    logger.debug("*********************************** $msg")
+    var finalResponse: String? = null
     for (event in stream) {
-        lastEvent = event
-        println("\n")
-        println(event)
-        println("\n")
+        logger.debug("\n---------") // use trace instead?
+        logger.debug(event.toString())
+        logger.debug("--------\n")
+
+        event.state().finalResponse().ifPresent { finalResponse = it }
     }
-    return lastEvent!!.state().finalResponse().get()
+
+    if (finalResponse == null) {
+        throw IllegalStateException("FinalResponse was null!!!!")
+    } else {
+        return finalResponse
+    }
 }
 
 fun saveGraphAsPng(compiled: CompiledGraph<*>, filePath: String) {

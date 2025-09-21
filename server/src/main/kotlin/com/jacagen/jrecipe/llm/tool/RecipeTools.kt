@@ -6,11 +6,13 @@ import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.importer.embedAndStore
 import com.jacagen.jrecipe.llm.embeddingModel
 import com.jacagen.jrecipe.model.*
-import dev.langchain4j.agent.tool.P
 import dev.langchain4j.agent.tool.Tool
 import kotlinx.coroutines.runBlocking
+import org.slf4j.LoggerFactory
 import kotlin.math.sqrt
 import kotlin.time.ExperimentalTime
+
+private val logger = LoggerFactory.getLogger(RecipeTools::class.java)
 
 @Suppress("unused")
 class RecipeTools {
@@ -25,23 +27,26 @@ class RecipeTools {
     @OptIn(ExperimentalTime::class)
     @Tool
     fun findTopRecipeMatches(query: String, topK: Int = 5): List<Recipe> = runBlocking {
-        println("Getting embeddings for query: $query")
+        logger.debug("*** TOOL findTopRecipeMatches: Getting embeddings for query: $query")
         val queryEmbedding = embeddingModel.embed(query).content().vector().toList()
 
         // This could be streamed better, or more done in  Mongo
-        println("Getting recipes")
+        logger.debug("*** TOOL findTopRecipeMatches: Getting recipes")
         val recipes = recipeDao.getAll().filter { it.embedding != null }
 
-        println("Getting cosine similarities")
+        logger.debug("*** TOOL findTopRecipeMatches: Getting cosine similarities")
         val recipesWithSimilarities = recipes.map { cosineSimilarity(it.embedding!!, queryEmbedding) to it }
 
-        println("Sorting results")
+        logger.debug("*** TOOL findTopRecipeMatches: Sorting results")
         val sortedRecipes = recipesWithSimilarities.sortedByDescending { it.first }
-        sortedRecipes.take(topK).map { it.second }.map { it.copy(embedding = null) }
+        val result = sortedRecipes.take(topK).map { it.second }.map { it.copy(embedding = null) }
+        logger.debug("*** TOOL findTopRecipeMatches: ***** FindTopRecipeMatches returns {} recipes", result.size)
+        result
     }
 
     @Tool
     fun importRecipe(id: String, tags: Set<Tag>, recipe: Recipe) = runBlocking {
+        logger.debug("*** TOOL importRecipe {}", id)
         @Suppress("UNCHECKED_CAST") val adjustedTags =
             tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
         val recipeToSave = recipe.copy(id = id, tags = adjustedTags)
@@ -50,12 +55,15 @@ class RecipeTools {
 
     @Tool
     fun getRecipeById(id: RecipeId) = runBlocking {
-        recipeDao.findById(id)
+        logger.debug("*** TOOL getRecipeById {}", id)
+        val result: Recipe = recipeDao.findById(id)!!
+        logger.debug("*** TOOL getRecipeById found {}", id)
+        result
     }
 
     @Tool
-    fun updateRecipeContents(id: RecipeId, updatedRecipe: Recipe) = runBlocking{
-        println("**** Update recipe $id with contents: $updatedRecipe")
+    fun updateRecipeContents(id: RecipeId, updatedRecipe: Recipe) = runBlocking {
+        logger.debug("*** TOOL updateRecipeContents Update recipe {} with contents: {}", id, updatedRecipe)
         val oldRecipe = recipeDao.findById(id)!!
         val updatedRecipe = updatedRecipe.copy(
             id = id,
@@ -64,14 +72,14 @@ class RecipeTools {
         embedAndStore(updatedRecipe)
     }
 
-    @Tool("Forward a recipe to the UI")
-    fun forwardRecipeToUi(
-        @P("Recipe ID (UUID or slug)") id: RecipeId
-    ): RecipeId {
-        //onSelect(id)              // <-- your side effect to update the other part of the app
-        println("Forward recipe $id")
-        return "Forward recipe $id"
-    }
+//    @Tool("Forward a recipe to the UI")
+//    fun forwardRecipeToUi(
+//        @P("Recipe ID (UUID or slug)") id: RecipeId
+//    ): RecipeId {
+//        //onSelect(id)              // <-- your side effect to update the other part of the app
+//        logger.debug("Forward recipe $id")
+//        return "Forward recipe $id"
+//    }
 }
 
 fun cosineSimilarity(vecA: List<Float>, vecB: List<Float>): Float {

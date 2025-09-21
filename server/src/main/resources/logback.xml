@@ -4,9 +4,29 @@
             <pattern>%d{YYYY-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
+
+    <!-- LLM state -->
+    <appender name="LLM_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/llm-state.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover; keep 30 days -->
+            <fileNamePattern>logs/llm-state.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>500</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
     <root level="trace">
         <appender-ref ref="STDOUT"/>
     </root>
+
     <logger name="org.eclipse.jetty" level="INFO"/>
     <logger name="io.netty" level="INFO"/>
+    <logger name="com.jacagen.jrecipe.llm.state" level="DEBUG" additivity="false">
+        <appender-ref ref="LLM_FILE"/>
+    </logger>
 </configuration>
