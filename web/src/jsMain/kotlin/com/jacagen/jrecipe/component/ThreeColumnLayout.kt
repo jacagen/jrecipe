@@ -1,16 +1,13 @@
 package com.jacagen.jrecipe.component
 
-import com.jacagen.jrecipe.client
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.RecipeSummary
 import com.jacagen.jrecipe.model.TagDefinition
+import com.jacagen.jrecipe.retrieveRecipe
+import com.jacagen.jrecipe.retrieveRecipeSummaries
+import com.jacagen.jrecipe.retrieveTags
 import com.jacagen.jrecipe.submitChatRequest
 import com.jacagen.jrecipe.theme.useTheme
-import io.ktor.client.call.*
-import io.ktor.client.request.*
-import kotlinx.browser.window
-import kotlinx.coroutines.await
-import kotlinx.serialization.json.Json
 import mui.material.Box
 import mui.material.Paper
 import mui.system.sx
@@ -31,22 +28,11 @@ val ThreeColumnLayout = FC<Props> {
     val cid = use(ConversationIdContext)!!
 
     useEffect(Unit) {
-        val result = client.get("http://localhost:8080/recipes/summary?sortByTitle")
-        recipes = result.body()
+        recipes = retrieveRecipeSummaries()
     }
 
     useEffect(Unit) {
-        val result = client.get("http://localhost:8080/tags")
-        tags = result.body()
-    }
-
-    suspend fun retrieveRecipe(summary: RecipeSummary): Recipe {
-        val url = "http://localhost:8080/recipes/${summary.id}"
-        val response = window.fetch(url).await()
-        if (response.ok) {
-            val text = response.text().await()
-            return Json.decodeFromString(text)
-        } else throw Exception(response.statusText)
+        tags = retrieveTags()
     }
 
     suspend fun onSubmitChat(input: String, file: File?) = submitChatRequest(input, cid, selectedRecipe, file)

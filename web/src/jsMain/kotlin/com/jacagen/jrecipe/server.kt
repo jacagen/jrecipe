@@ -1,21 +1,32 @@
 package com.jacagen.jrecipe
 
 import com.jacagen.jrecipe.model.Recipe
+import com.jacagen.jrecipe.model.RecipeSummary
+import com.jacagen.jrecipe.model.TagDefinition
+import io.ktor.client.call.*
+import io.ktor.client.request.*
 import kotlinx.browser.window
 import kotlinx.coroutines.await
-import org.w3c.fetch.CORS
-import org.w3c.fetch.DEFAULT
-import org.w3c.fetch.FOLLOW
-import org.w3c.fetch.RequestCache
-import org.w3c.fetch.RequestCredentials
-import org.w3c.fetch.RequestInit
-import org.w3c.fetch.RequestMode
-import org.w3c.fetch.RequestRedirect
-import org.w3c.fetch.SAME_ORIGIN
+import kotlinx.serialization.json.Json
+import org.w3c.fetch.*
 import org.w3c.files.File
 import org.w3c.xhr.FormData
 
-suspend fun submitChatRequest(input: String, cid: String, selectedRecipe: Recipe?, file: File?): String {
+internal suspend fun retrieveRecipeSummaries(): List<RecipeSummary> =
+    client.get("http://localhost:8080/recipes/summary?sortByTitle").body()
+
+internal suspend fun retrieveTags(): List<TagDefinition> = client.get("http://localhost:8080/tags").body()
+
+internal suspend fun retrieveRecipe(summary: RecipeSummary): Recipe {
+    val url = "http://localhost:8080/recipes/${summary.id}"
+    val response = window.fetch(url).await()
+    if (response.ok) {
+        val text = response.text().await()
+        return Json.decodeFromString(text)
+    } else throw Exception(response.statusText)
+}
+
+internal suspend fun submitChatRequest(input: String, cid: String, selectedRecipe: Recipe?, file: File?): String {
     fun createChatRequest(input: String, file: File? = null): RequestInit {
         val formData = FormData()
         formData.append("message", input)
