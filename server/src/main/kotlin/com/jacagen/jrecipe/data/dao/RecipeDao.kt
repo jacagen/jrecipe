@@ -10,6 +10,7 @@ interface RecipeDao {
     suspend fun getAll(): List<Recipe>
     suspend fun getAllSortedByTitle(): List<Recipe>
     suspend fun getSummariesSortedByTitle(): List<RecipeSummary>
+    suspend fun chooseRandomRecipe(): Recipe
     suspend fun findById(id: String): Recipe?
     suspend fun insert(recipe: Recipe)
     suspend fun insert(recipes: List<Recipe>)

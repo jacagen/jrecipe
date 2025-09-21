@@ -20,6 +20,9 @@ val stateGraph = AgentExecutor.builder().chatModel(model) // add object with too
 val compileConfig = CompileConfig.builder().checkpointSaver(checkpointSaver).build()
 val workflow = stateGraph.compile(compileConfig).also { saveGraphAsPng(it, "graph.png") }
 
+// There are some interesting ideas for testing the `chat` method
+// [here](https://chatgpt.com/share/68d01d4f-89a0-8003-a851-76623d6aac41)
+
 /**
  * @param cid the client session ID, which should be the same across multiple calls to `chat` for the same end user
  */

@@ -91,7 +91,7 @@ fun Application.module() {
             val messagePartThree =
                 if (fileBytes == null) "" else "\n\n\nThe contents of the attached file are as follow: ${fileBytes.extractTextFromPdf()}"
 
-            val response = chat(cid,messagePartOne + message + messagePartThree)
+            val response = chat(cid, messagePartOne + message + messagePartThree)
             call.respondText(response)
         }
     }

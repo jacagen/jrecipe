@@ -27,26 +27,31 @@ class RecipeTools {
     @OptIn(ExperimentalTime::class)
     @Tool
     fun findTopRecipeMatches(query: String, topK: Int = 5): List<Recipe> = runBlocking {
-        logger.debug("*** TOOL findTopRecipeMatches: Getting embeddings for query: $query")
+        logger.debug("findTopRecipeMatches: Getting embeddings for query: $query")
         val queryEmbedding = embeddingModel.embed(query).content().vector().toList()
 
         // This could be streamed better, or more done in  Mongo
-        logger.debug("*** TOOL findTopRecipeMatches: Getting recipes")
+        logger.debug("findTopRecipeMatches: Getting recipes")
         val recipes = recipeDao.getAll().filter { it.embedding != null }
 
-        logger.debug("*** TOOL findTopRecipeMatches: Getting cosine similarities")
+        logger.debug("findTopRecipeMatches: Getting cosine similarities")
         val recipesWithSimilarities = recipes.map { cosineSimilarity(it.embedding!!, queryEmbedding) to it }
 
-        logger.debug("*** TOOL findTopRecipeMatches: Sorting results")
+        logger.debug("findTopRecipeMatches: Sorting results")
         val sortedRecipes = recipesWithSimilarities.sortedByDescending { it.first }
         val result = sortedRecipes.take(topK).map { it.second }.map { it.copy(embedding = null) }
-        logger.debug("*** TOOL findTopRecipeMatches: ***** FindTopRecipeMatches returns {} recipes", result.size)
+        logger.debug("findTopRecipeMatches: FindTopRecipeMatches returns {} recipes", result.size)
         result
     }
 
     @Tool
+    fun chooseRandomRecipe(): Recipe = runBlocking {
+        recipeDao.chooseRandomRecipe()
+    }
+
+    @Tool
     fun importRecipe(id: String, tags: Set<Tag>, recipe: Recipe) = runBlocking {
-        logger.debug("*** TOOL importRecipe {}", id)
+        logger.debug("importRecipe {}", id)
         @Suppress("UNCHECKED_CAST") val adjustedTags =
             tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
         val recipeToSave = recipe.copy(id = id, tags = adjustedTags)
@@ -55,15 +60,15 @@ class RecipeTools {
 
     @Tool
     fun getRecipeById(id: RecipeId) = runBlocking {
-        logger.debug("*** TOOL getRecipeById {}", id)
+        logger.debug("getRecipeById {}", id)
         val result: Recipe = recipeDao.findById(id)!!
-        logger.debug("*** TOOL getRecipeById found {}", id)
+        logger.debug("getRecipeById found {}", id)
         result
     }
 
     @Tool
     fun updateRecipeContents(id: RecipeId, updatedRecipe: Recipe) = runBlocking {
-        logger.debug("*** TOOL updateRecipeContents Update recipe {} with contents: {}", id, updatedRecipe)
+        logger.debug("updateRecipeContents Update recipe {} with contents: {}", id, updatedRecipe)
         val oldRecipe = recipeDao.findById(id)!!
         val updatedRecipe = updatedRecipe.copy(
             id = id,
