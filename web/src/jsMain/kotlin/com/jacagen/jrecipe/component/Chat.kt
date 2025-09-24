@@ -10,6 +10,7 @@ import mui.material.styles.TypographyVariant
 import mui.system.sx
 import org.w3c.files.File
 import react.*
+import react.dom.events.KeyboardEvent
 import react.dom.html.ReactHTML.div
 import react.dom.onChange
 import web.cssom.*
@@ -27,6 +28,26 @@ val ChatColumn = FC<ChatColumnProps> { props ->
     var isThinking by useState(false)
     var currentFile by useState<File?>(null)
 
+    val submit: () -> Unit = {
+        if (userInput.isNotBlank()) {
+            val currentInput = userInput
+            userInput = ""
+            setMessages { old -> old + "You: $currentInput" }
+            coroutineScope.launch {
+                isThinking = true
+                try {
+                    val (reply, _)  = props.onSubmitChatRequest(currentInput, currentFile)
+                    currentFile = null
+                    setMessages { old -> old + "LLM: $reply" }
+                } catch (e: Throwable) {
+                    setMessages { old -> old + "ERROR: $e" }
+                } finally {
+                    isThinking = false
+                }
+            }
+        }
+    }
+
     Box {
         sx {
             height = 100.vh
@@ -43,6 +64,7 @@ val ChatColumn = FC<ChatColumnProps> { props ->
             val file = event.dataTransfer.files.item(0)
             if (file != null) {
                 if (file.type == "application/pdf") {
+                    @Suppress("CAST_NEVER_SUCCEEDS")    // For some reason the cast is needed to compile
                     currentFile = file as File
                 } else {
                     messages = messages + "Cannot handle files of type ${file.type}"
@@ -86,31 +108,19 @@ val ChatColumn = FC<ChatColumnProps> { props ->
                         userInput = target.value
                     }
                 }
+                onKeyDown = { e: KeyboardEvent<*> ->
+                    if (e.key == "Enter" && (e.metaKey || e.ctrlKey)) {
+                        e.preventDefault()
+                        submit()
+                    }
+                }
                 label = ReactNode("Ask a question...")
                 variant = FormControlVariant.outlined
                 fullWidth = true
             }
 
             IconButton {
-                onClick = {
-                    if (userInput.isNotBlank()) {
-                        val currentInput = userInput
-                        userInput = ""
-                        setMessages { old -> old + "You: $currentInput" }
-                        coroutineScope.launch {
-                            isThinking = true
-                            try {
-                                val (reply, _)  = props.onSubmitChatRequest(currentInput, currentFile)
-                                currentFile = null
-                                setMessages { old -> old + "LLM: $reply" }
-                            } catch (e: Throwable) {
-                                setMessages { old -> old + "ERROR: $e" }
-                            } finally {
-                                isThinking = false
-                            }
-                        }
-                    }
-                }
+                onClick = { submit() }
 
                 if (isThinking) {
                     HourglassEmpty()
