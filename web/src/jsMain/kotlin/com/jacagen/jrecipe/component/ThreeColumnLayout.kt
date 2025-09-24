@@ -1,5 +1,6 @@
 package com.jacagen.jrecipe.component
 
+import com.jacagen.jrecipe.model.ChatResponse
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.RecipeSummary
 import com.jacagen.jrecipe.model.TagDefinition
@@ -35,7 +36,12 @@ val ThreeColumnLayout = FC<Props> {
         tags = retrieveTags()
     }
 
-    suspend fun onSubmitChat(input: String, file: File?) = submitChatRequest(input, cid, selectedRecipe, file)
+    suspend fun onSubmitChat(input: String, file: File?): ChatResponse {
+        val response = submitChatRequest(input, cid, selectedRecipe, file)
+        if (response.selectedRecipe != null)
+            selectedRecipe = response.selectedRecipe
+        return response
+    }
 
     Box {
         sx {

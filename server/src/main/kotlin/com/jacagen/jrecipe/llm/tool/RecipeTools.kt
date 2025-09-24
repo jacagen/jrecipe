@@ -1,21 +1,23 @@
-@file:OptIn(ExperimentalTime::class) @file:JvmName("RestaurantToolsKt")
+@file:OptIn(ExperimentalTime::class, ExperimentalAtomicApi::class) @file:JvmName("RestaurantToolsKt")
 
 package com.jacagen.jrecipe.llm.tool
 
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.importer.embedAndStore
+import com.jacagen.jrecipe.llm.TurnState
 import com.jacagen.jrecipe.llm.embeddingModel
 import com.jacagen.jrecipe.model.*
 import dev.langchain4j.agent.tool.Tool
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory
+import kotlin.concurrent.atomics.ExperimentalAtomicApi
 import kotlin.math.sqrt
 import kotlin.time.ExperimentalTime
 
 private val logger = LoggerFactory.getLogger(RecipeTools::class.java)
 
 @Suppress("unused")
-class RecipeTools {
+class RecipeTools(val turnState: TurnState) {
     @Tool
     fun getAllRecipes(): List<RecipeSummary> = runBlocking { recipeDao.getSummariesSortedByTitle() }
 
@@ -40,13 +42,17 @@ class RecipeTools {
         logger.debug("findTopRecipeMatches: Sorting results")
         val sortedRecipes = recipesWithSimilarities.sortedByDescending { it.first }
         val result = sortedRecipes.take(topK).map { it.second }.map { it.copy(embedding = null) }
+        if (result.size == 1)
+            turnState.selectedRecipe.compareAndSet(null, result[0].id)
         logger.debug("findTopRecipeMatches: FindTopRecipeMatches returns {} recipes", result.size)
         result
     }
 
     @Tool
     fun chooseRandomRecipe(): Recipe = runBlocking {
-        recipeDao.chooseRandomRecipe()
+        val recipe = recipeDao.chooseRandomRecipe()
+        turnState.selectedRecipe.compareAndSet(null, recipe.id)
+        recipe
     }
 
     @Tool
@@ -56,6 +62,7 @@ class RecipeTools {
             tags.map { TagCatalog[it] }.filter { it != null }.toSet() as Set<Tag>
         val recipeToSave = recipe.copy(id = id, tags = adjustedTags)
         recipeDao.insert(recipeToSave)
+        turnState.selectedRecipe.compareAndSet(null, id)
     }
 
     @Tool
@@ -63,6 +70,7 @@ class RecipeTools {
         logger.debug("getRecipeById {}", id)
         val result: Recipe = recipeDao.findById(id)!!
         logger.debug("getRecipeById found {}", id)
+        turnState.selectedRecipe.compareAndSet(null, id)
         result
     }
 
@@ -75,19 +83,17 @@ class RecipeTools {
             tags = oldRecipe.tags,
         )
         embedAndStore(updatedRecipe)
+        turnState.selectedRecipe.compareAndSet(null, id)
     }
 
-//    @Tool("Forward a recipe to the UI")
-//    fun forwardRecipeToUi(
-//        @P("Recipe ID (UUID or slug)") id: RecipeId
-//    ): RecipeId {
-//        //onSelect(id)              // <-- your side effect to update the other part of the app
-//        logger.debug("Forward recipe $id")
-//        return "Forward recipe $id"
-//    }
+    @Tool("Note that a single specific recipe was discussed")
+    fun noteChosenRecipe(id: RecipeId) {
+        logger.debug("noteChosenRecipe {}", id)
+        turnState.selectedRecipe.compareAndSet(null, id)
+    }
 }
 
-fun cosineSimilarity(vecA: List<Float>, vecB: List<Float>): Float {
+private fun cosineSimilarity(vecA: List<Float>, vecB: List<Float>): Float {
     val dot = vecA.zip(vecB).sumOf { (a, b) -> (a * b).toDouble() }
     val normA = sqrt(vecA.sumOf { (it * it).toDouble() })
     val normB = sqrt(vecB.sumOf { (it * it).toDouble() })
