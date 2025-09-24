@@ -15,6 +15,8 @@ import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import io.ktor.utils.io.*
+import kotlinx.io.readByteArray
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import org.apache.pdfbox.Loader
@@ -133,7 +135,7 @@ private suspend fun decomposeRequest(call: RoutingCall): Triple<String?, String?
                 if (part.name == "file" && part.originalFileName?.isNotBlank() == true) {
                     @Suppress("AssignedValueIsNeverRead")
                     fileName = part.originalFileName
-                    fileBytes = part.streamProvider().readBytes()
+                    fileBytes = part.provider().readRemaining().readByteArray()
                 }
             }
 
