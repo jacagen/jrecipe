@@ -25,7 +25,7 @@ class MongoRecipeDao(private val collection: MongoCollection<Recipe>) : RecipeDa
 
     override suspend fun getSummariesSortedByTitle(): List<RecipeSummary> {
         val summary = collection.withDocumentClass(RecipeSummary::class.java)
-        return summary.find().projection(Document(mapOf("_id" to 1, "title" to 1, "tags" to 1)))
+        return summary.find().projection(Document(mapOf("_id" to 1, "title" to 1, "tags" to 1, "source" to 1)))
             .sort(Document("title", 1)).toList()
     }
 

@@ -12,6 +12,7 @@ typealias RecipeId = String
 data class RecipeSummary(
     @ObjectId val id: RecipeId,
     val title: String,
+    val source: String,
     val tags: Set<Tag>,
 )
 
