@@ -2,25 +2,32 @@
 
 package com.jacagen.jrecipe.importer.evernote
 
+import com.jacagen.jrecipe.data.dao.mongodb.MongoEvernoteNoteDao
+import com.jacagen.jrecipe.data.dao.mongodb.evernoteNoteCollection
+import com.jacagen.jrecipe.model.EvernoteNote
 import org.w3c.dom.Element
 import java.io.File
-import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import javax.xml.parsers.DocumentBuilderFactory
+import kotlin.time.ExperimentalTime
+import kotlin.time.Instant
+import kotlin.time.toKotlinInstant
 import kotlin.uuid.ExperimentalUuidApi
 
 private val evernoteInstantFormatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss'Z'")
 
 internal suspend fun loadEvernoteToMongo() {
+    val dao = MongoEvernoteNoteDao(evernoteNoteCollection)
     val resource =
         EvernoteNote::class.java.classLoader.getResource("recipeSource/Recipes.enex") ?: error("Resource not found")
     val file = File(resource.toURI())
     val notes = parseEnexFile(file)
-    saveNotesToMongo(notes)
+    dao.saveNotesToMongo(notes)
 }
 
+@OptIn(ExperimentalTime::class)
 private fun parseEnexFile(file: File): List<EvernoteNote> {
     val notes = mutableListOf<EvernoteNote>()
 
@@ -92,6 +99,10 @@ private fun parseEnexFile(file: File): List<EvernoteNote> {
     return notes
 }
 
+@OptIn(ExperimentalTime::class)
 private fun parseEvernoteTimestamp(ts: String): Instant {
-    return LocalDateTime.parse(ts, evernoteInstantFormatter).toInstant(ZoneOffset.UTC)
+    return LocalDateTime
+        .parse(ts, evernoteInstantFormatter)
+        .toInstant(ZoneOffset.UTC)
+        .toKotlinInstant()
 }

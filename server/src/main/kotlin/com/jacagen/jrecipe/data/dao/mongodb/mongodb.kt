@@ -4,6 +4,7 @@ package com.jacagen.jrecipe.data.dao.mongodb
 
 import com.jacagen.jrecipe.data.dao.codec.KotlinTimeInstantCodecProvider
 import com.jacagen.jrecipe.data.dao.codec.KotlinUuidCodecProvider
+import com.jacagen.jrecipe.model.EvernoteNote
 import com.jacagen.jrecipe.model.Recipe
 import com.mongodb.MongoClientSettings
 import com.mongodb.kotlin.client.coroutine.MongoClient
@@ -23,8 +24,11 @@ val settings = MongoClientSettings.builder()
     .codecRegistry(codecRegistry)
     .build()
 
-val coroutineMongoClient = MongoClient.Factory.create(settings) // Should close at app shutdown
+val coroutineMongoClient = MongoClient.create(settings) // Should close at app shutdown
 val database = coroutineMongoClient.getDatabase("jcmenu")
 
 internal val recipeCollection = database.getCollection<Recipe>("recipe")
 val recipeDao = MongoRecipeDao(recipeCollection)
+
+internal val evernoteNoteCollection = database.getCollection<EvernoteNote>("evernote")
+val evernoteNoteDao = MongoEvernoteNoteDao(evernoteNoteCollection)

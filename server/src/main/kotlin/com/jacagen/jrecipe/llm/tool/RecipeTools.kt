@@ -2,6 +2,7 @@
 
 package com.jacagen.jrecipe.llm.tool
 
+import com.jacagen.jrecipe.data.dao.mongodb.evernoteNoteDao
 import com.jacagen.jrecipe.data.dao.mongodb.recipeDao
 import com.jacagen.jrecipe.importer.embedAndStore
 import com.jacagen.jrecipe.llm.TurnState
@@ -90,6 +91,12 @@ class RecipeTools(val turnState: TurnState) {
     fun noteChosenRecipe(id: RecipeId) {
         logger.debug("noteChosenRecipe {}", id)
         turnState.selectedRecipe.compareAndSet(null, id)
+    }
+
+    @Tool("List raw Evernote recipes")
+    fun listRawEvernoteRecipes(): List<EvernoteNoteSummary> = runBlocking {
+        logger.debug("Listing all raw Evernote recipes")
+        evernoteNoteDao.getSummaries()
     }
 }
 

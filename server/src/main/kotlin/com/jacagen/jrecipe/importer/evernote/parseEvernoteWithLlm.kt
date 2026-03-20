@@ -10,6 +10,7 @@ import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.Tag
 import com.jacagen.jrecipe.model.TagCatalog
 import com.jacagen.jrecipe.llm.`interface`.SourceToRecipeConverter
+import com.jacagen.jrecipe.model.EvernoteNote
 import dev.langchain4j.service.AiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

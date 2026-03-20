@@ -1,7 +1,7 @@
 package com.jacagen.jrecipe.llm.`interface`
 
 import com.jacagen.jrecipe.importer.applenote.AppleNoteRecipe
-import com.jacagen.jrecipe.importer.evernote.EvernoteNote
+import com.jacagen.jrecipe.model.EvernoteNote
 import com.jacagen.jrecipe.model.Recipe
 import dev.langchain4j.service.SystemMessage
 

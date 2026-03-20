@@ -1,22 +1,24 @@
 @file:OptIn(ExperimentalTime::class, ExperimentalUuidApi::class)
 
-package com.jacagen.jrecipe.importer.evernote
+package com.jacagen.jrecipe.model
 
-
-import com.jacagen.jrecipe.data.dao.mongodb.database
-import com.jacagen.jrecipe.model.ObjectId
-import com.jacagen.jrecipe.model.Tag
-import org.bson.Document
-import java.time.Instant
+import com.jacagen.jrecipe.serde.InstantIso8601Serializer
+import kotlinx.serialization.Serializable
+import kotlin.time.Instant
 import kotlin.time.ExperimentalTime
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
-internal data class EvernoteNote(
+data class EvernoteNoteSummary(
     @ObjectId val id: String = Uuid.random().toString(),    // Using real Uuids turns out to be a giant pain in the neck
     val title: String,
-    val created: Instant,
-    val updated: Instant,
+)
+
+data class EvernoteNote(
+    @ObjectId val id: String = Uuid.random().toString(),    // Using real Uuids turns out to be a giant pain in the neck
+    val title: String,
+    @Serializable(with = InstantIso8601Serializer::class) val created: Instant,
+    @Serializable(with = InstantIso8601Serializer::class) val updated: Instant,
     val author: String?,
     val source: String?,
     val sourceUrl: String?,
@@ -41,19 +43,6 @@ internal data class EvernoteNote(
         println("Content: ${content.take(100)}...")
         println("---")
     }
-}
-
-
-internal suspend fun saveNotesToMongo(notes: List<EvernoteNote>) {
-    val collection = database.getCollection<EvernoteNote>("evernote")
-
-    // Remove all existing documents
-    collection.deleteMany(Document())  // or Filters.empty()
-
-    // Insert new notes
-    collection.insertMany(notes)
-
-    println("Inserted ${notes.size} Evernote notes into MongoDB.")
 }
 
 

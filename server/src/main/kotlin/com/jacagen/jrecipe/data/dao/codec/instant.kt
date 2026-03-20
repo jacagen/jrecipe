@@ -3,6 +3,7 @@
 package com.jacagen.jrecipe.data.dao.codec
 
 import org.bson.BsonReader
+import org.bson.BsonType
 import org.bson.BsonWriter
 import org.bson.codecs.Codec
 import org.bson.codecs.DecoderContext
@@ -23,19 +24,29 @@ class KotlinTimeInstantCodec : Codec<Instant> {
     }
 
     override fun decode(reader: BsonReader, decoderContext: DecoderContext): Instant {
-        reader.readStartDocument()
-        val epochSeconds = reader.readInt64("epochSeconds")
-        val nanos = reader.readInt32("nanosecondsOfSecond")
-        reader.readEndDocument()
+        return when (reader.currentBsonType) {
+            BsonType.DATE_TIME -> {
+                val millis = reader.readDateTime()
+                JavaInstant.ofEpochMilli(millis).toKotlinInstant()
+            }
 
-        return JavaInstant.ofEpochSecond(epochSeconds, nanos.toLong()).toKotlinInstant()
+            BsonType.DOCUMENT -> {
+                reader.readStartDocument()
+                val epochSeconds = reader.readInt64("epochSeconds")
+                val nanos = reader.readInt32("nanosecondsOfSecond")
+                reader.readEndDocument()
+                JavaInstant.ofEpochSecond(epochSeconds, nanos.toLong()).toKotlinInstant()
+            }
+
+            else -> error("Unsupported BSON type for kotlin.time.Instant: ${reader.currentBsonType}")
+        }
     }
 
     override fun getEncoderClass(): Class<Instant> = Instant::class.java
 }
 
 class KotlinTimeInstantCodecProvider : CodecProvider {
-    override fun <T : Any?> get(clazz: Class<T>, registry: CodecRegistry): Codec<T>? {
+    override fun <T> get(clazz: Class<T>, registry: CodecRegistry): Codec<T>? {
         return if (clazz == Instant::class.java) {
             @Suppress("UNCHECKED_CAST")
             KotlinTimeInstantCodec() as Codec<T>
