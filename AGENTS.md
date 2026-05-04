@@ -15,6 +15,7 @@ This repo is a Gradle multi-project build rooted at `jrecipe`.
 - Prefer existing Kotlin patterns over introducing new abstractions.
 - Preserve the current split: HTTP and persistence logic in `server`, UI logic in `web`, shared DTOs/models in `shared`.
 - The frontend currently talks directly to `http://localhost:8080`; do not silently change ports or transport assumptions without updating both sides.
+- Do not commit generated build artifacts, runtime logs, or archives unless explicitly requested.
 - Whenever you author content yourself, including code, documentation, plans, or work items, add a short attribution note near the top crediting Codex as the writer.
 
 ## Common commands
@@ -32,6 +33,7 @@ This repo is a Gradle multi-project build rooted at `jrecipe`.
 - Web API calls are hard-coded in `web/src/jsMain/kotlin/com/jacagen/jrecipe/server.kt`.
 - MongoDB access is initialized in `server/src/main/kotlin/com/jacagen/jrecipe/data/dao/mongodb/mongodb.kt`.
 - LLM integration lives under `server/src/main/kotlin/com/jacagen/jrecipe/llm`.
+- `server.zip` is an archive artifact, not source of truth.
 
 ## Testing expectations
 
@@ -39,6 +41,11 @@ This repo is a Gradle multi-project build rooted at `jrecipe`.
 - For shared model/serializer changes, run `:shared:jvmTest` and any affected module tests.
 - For frontend behavior changes, run `:web:jsTest` when practical.
 - If tests cannot be run, state that explicitly in the handoff.
+
+## Security and secrets
+
+- Do not add hardcoded secrets. Prefer environment variables or local configuration for credentials.
+- If secret handling becomes part of a task, flag existing hardcoded credentials and propose moving them out of source control.
 
 ## Avoid
 
