@@ -10,7 +10,10 @@ typealias RecipeId = String
 
 @Serializable
 data class RecipeSummary(
-    @ObjectId val id: RecipeId,
+    @param:ObjectId
+    @property:ObjectId
+    val id: RecipeId,
+
     val title: String,
     val source: String,
     val tags: Set<Tag>,
@@ -18,7 +21,10 @@ data class RecipeSummary(
 
 @Serializable
 data class Recipe @OptIn(ExperimentalTime::class, ExperimentalUuidApi::class) constructor(
-    @ObjectId val id: RecipeId,
+
+    @param:ObjectId
+    @property:ObjectId
+    val id: RecipeId,
 
     val title: String,
     val source: String, // RecipeSource,

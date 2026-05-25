@@ -2,23 +2,27 @@
 
 package com.jacagen.jrecipe.model
 
-import com.jacagen.jrecipe.serde.InstantIso8601Serializer
-import kotlinx.serialization.Serializable
-import kotlin.time.Instant
 import kotlin.time.ExperimentalTime
+import kotlin.time.Instant
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 data class EvernoteNoteSummary(
-    @ObjectId val id: String = Uuid.random().toString(),    // Using real Uuids turns out to be a giant pain in the neck
+    @param:ObjectId
+    @property:ObjectId
+    val id: String = Uuid.random().toString(),    // Using real uuids turns out to be a giant pain in the neck
+
     val title: String,
 )
 
 data class EvernoteNote(
-    @ObjectId val id: String = Uuid.random().toString(),    // Using real Uuids turns out to be a giant pain in the neck
+    @param:ObjectId
+    @property:ObjectId
+    val id: String = Uuid.random().toString(),    // Using real uuids turns out to be a giant pain in the neck
+
     val title: String,
-    @Serializable(with = InstantIso8601Serializer::class) val created: Instant,
-    @Serializable(with = InstantIso8601Serializer::class) val updated: Instant,
+    val created: Instant,
+    val updated: Instant,
     val author: String?,
     val source: String?,
     val sourceUrl: String?,

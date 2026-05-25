@@ -3,12 +3,13 @@ package com.jacagen.jrecipe.component
 import com.jacagen.jrecipe.model.Ingredient
 import com.jacagen.jrecipe.model.Recipe
 import com.jacagen.jrecipe.model.Tag
-import js.objects.jso
+import js.objects.unsafeJso
 import mui.icons.material.Kitchen
 import mui.icons.material.Label
 import mui.icons.material.LocalDining
 import mui.material.*
 import mui.material.styles.TypographyVariant
+import mui.system.SxProps
 import mui.system.responsive
 import mui.system.sx
 import react.FC
@@ -16,7 +17,6 @@ import react.Props
 import react.ReactNode
 import react.create
 import web.cssom.*
-import web.cssom.PropertyName.Companion.alignItems
 
 external interface RecipeDetailProps : Props {
     var recipe: Recipe?
@@ -26,7 +26,7 @@ val RecipeDetail = FC<RecipeDetailProps> { props ->
     val recipe = props.recipe
 
     Box {
-        sx = jso {
+        sx = unsafeJso {
             padding = 16.px
             flexGrow = number(3.0)
             display = Display.flex
@@ -86,9 +86,15 @@ val Ingredients = FC<IngredientsProps> { props ->
                         direction = responsive(StackDirection.row)
                         spacing = responsive(1)
                         ListItemIcon {
-                            sx = jso { minWidth = 20.px }
+                            sx = unsafeJso {
+                                minWidth =
+                                    20.px
+                            }
                             Kitchen {
-                                sx = jso { fontSize = 20.px }
+                                sx = unsafeJso {
+                                    fontSize =
+                                        20.px
+                                }
                             }
                         }
                         ReactMarkdown {
@@ -119,10 +125,14 @@ external interface RecipeTitleProps : Props {
 var RecipeTitle = FC<RecipeTitleProps> { props ->
     val title = props.title
     Box {
-        sx = jso { display = web.cssom.Display.flex; alignItems = web.cssom.AlignItems.center }
+        sx =
+            unsafeJso {
+                display = Display.flex; alignItems =
+                AlignItems.center
+            }
 
         ListItemIcon {
-            sx = jso { minWidth = 40.px }
+            sx = unsafeJso { minWidth = 40.px }
             LocalDining()
         }
 
@@ -161,7 +171,7 @@ val RecipeTagRow = FC<RecipeTagRowProps> { props ->
                 Chip {
                     label = ReactNode(tag)
                     icon = Label.create() {
-                        sx = jso { fontSize = 16.px }
+                        sx = unsafeJso { fontSize = 16.px }
                     }
                     sx {
                         paddingInline = 8.px
@@ -211,7 +221,9 @@ val Steps = FC<StepsProps> { props ->
             steps.withIndex().forEach { (index, step) ->
                 Stack {
                     direction = responsive(StackDirection.row)
-                    sx = jso {
+                    sx = unsafeJso<// optional: space between number and text
+                            SxProps<mui.material.styles.Theme>> // optional: space between number and text
+                    {
                         alignItems = AlignItems.flexStart
                         gap = 8.px // optional: space between number and text
                     }

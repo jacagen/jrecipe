@@ -3,7 +3,7 @@
 apache-pdfbox = "3.0.5"
 clikt = "5.0.3"
 jackson = "2.19.0"
-kotlin = "2.1.21"
+kotlin = "2.3.21"
 kotlin-emotion = "2025.3.26"
 kotlin-mui = "2025.6.5-5.17.1"
 kotlin-react = "2025.6.5-19.1.0"
@@ -23,14 +23,9 @@ plantuml = "1.2025.3"
 apache-pdfbox = { module = "org.apache.pdfbox:pdfbox", version.ref = "apache-pdfbox" }
 
 clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
-clikt-markdown = { module = "com.github.ajalt.clikt:clikt-markdown", version.ref = "clikt" }
 
-jackson-annotations = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jackson" }
 jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson" }
 jackson-jsonSchema = { module = "com.fasterxml.jackson.module:jackson-module-jsonSchema", version.ref = "jackson" }
-jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
-
-#junit = { module = "junit:junit", version.ref = "junit" }
 
 kotlin-emotion = { group = "org.jetbrains.kotlin-wrappers", name = "kotlin-emotion", version.ref = "kotlin-emotion" }
 
@@ -50,7 +45,6 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
-ktor-client = { module = "io.ktor:ktor-client", version.ref = "ktor" }
 ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
