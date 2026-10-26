@@ -9,8 +9,10 @@ internal val openAiApiKey: String = System.getenv("OPENAI_API_KEY")
     ?: error("OPENAI_API_KEY must be set in the environment or .env before running JRecipe")
 
 private fun loadOpenAiApiKeyFromDotEnv(): String? {
-    val envFile = Path.of(".env")
-    if (!Files.isRegularFile(envFile)) return null
+    val envFile = generateSequence(Path.of("").toAbsolutePath()) { it.parent }
+        .map { it.resolve(".env") }
+        .firstOrNull(Files::isRegularFile)
+        ?: return null
 
     return Files.readAllLines(envFile)
         .firstNotNullOfOrNull { line ->
