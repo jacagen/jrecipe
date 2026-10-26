@@ -26,6 +26,7 @@ server.zip
 
 # Secrets
 **/apiKey.kt
+.env
 
 # NPM
 node_modules
