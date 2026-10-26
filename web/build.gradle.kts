@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
+
+// Authorship note: Codex configured the development server to avoid the backend API port.
 plugins {
     kotlin("multiplatform")
 }
@@ -7,6 +10,9 @@ kotlin {
         browser {
             commonWebpackConfig {
                 outputFileName = "main.js"
+                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
+                    port = 8081
+                }
             }
             testTask {
                 useKarma {

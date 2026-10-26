@@ -34,6 +34,8 @@ fun Application.module() {
     install(CORS) {
         anyHost() // You can use allowHost(...) instead for stricter security
         allowMethod(HttpMethod.Get)
+        // Authorship note: Codex enabled cross-origin chat submissions from the web development server.
+        allowMethod(HttpMethod.Post)
         allowHeader(HttpHeaders.ContentType)
     }
     install(ContentNegotiation) {
