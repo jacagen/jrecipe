@@ -18,12 +18,17 @@ import kotlin.time.ExperimentalTime
 
 
 class RecipeTool : CliktCommand() {
+    // Authorship note: Targeted embedding CLI support added by Codex.
     val load by option("--load-evernote", help = "Load Evernote notes").flag()
     val dropRecipes by option("--drop-recipes", help = "Drop recipes").flag()
     val parseRecipesWithLlm by option("--parse-evernote-recipes-with-llm", help = "Parse recipes with LLM").flag()
     val parseAppleRecipesWithLlm by option("--parse-apple-note-recipes-with-llm", help = "Parse recipes with LLM").flag()
     val normalizeTags by option("--normalize-tags", help = "Normlize recipe tags").flag()
     val createEmbeddings by option("--create-embeddings",  help = "Create Embeddings").flag()
+    val createEmbeddingsForIds by option(
+        "--create-embeddings-for-ids",
+        help = "Create embeddings only for comma-separated recipe IDs"
+    )
 
 
     override fun run() = runBlocking {
@@ -53,6 +58,15 @@ class RecipeTool : CliktCommand() {
             recipeDao.getAll().forEach { r ->
                 embedAndStore(r)
                 println("Created embedding for ${r.title}")
+                delay(5000)
+            }
+        }
+        val embeddingIds = createEmbeddingsForIds
+        if (embeddingIds != null) {
+            embeddingIds.split(',').map(String::trim).filter(String::isNotEmpty).forEach { id ->
+                val recipe = requireNotNull(recipeDao.findById(id)) { "No recipe found for ID $id" }
+                embedAndStore(recipe)
+                println("Created embedding for ${recipe.title}")
                 delay(5000)
             }
         }

@@ -14,6 +14,14 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
+// Authorship note: Codex added this focused loader task for targeted recipe embedding generation.
+tasks.register<JavaExec>("embedRecipes") {
+    group = "application"
+    description = "Runs the recipe loader, including targeted embedding generation."
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("com.jacagen.jrecipe.importer.LoaderKt")
+}
+
 dependencies {
     implementation(platform(libs.langgraph4j.bom))
 
