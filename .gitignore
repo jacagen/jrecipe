@@ -20,6 +20,10 @@ captures
 # Recipe data
 shared/src/jvmMain/resources/recipeSource/**
 
+# Generated server artifacts
+server/logs/
+server.zip
+
 # Secrets
 **/apiKey.kt
 
